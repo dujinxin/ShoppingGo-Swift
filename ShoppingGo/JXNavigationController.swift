@@ -14,6 +14,11 @@ class JXNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationBar.barTintColor = UIColor.orange//导航条颜色
+        self.navigationBar.tintColor = UIColor.yellow   //item图片文字颜色
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.red,NSFontAttributeName:UIFont.systemFont(ofSize: 25)]//标题设置
+        
     }
 
     override func didReceiveMemoryWarning() {

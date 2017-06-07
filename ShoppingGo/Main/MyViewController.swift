@@ -8,19 +8,42 @@
 
 import UIKit
 
-class MyViewController: BaseViewController {
+private let cellId = "cellId"
+
+
+class MyViewController: JXTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "title_icon_notice"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextPage))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "title_icon_notice", target: self, action: #selector(nextPage))
+        
+        self.tableView?.frame = CGRect.init(x: 0, y: 64, width: self.view.bounds.size.width, height: UIScreen.main.bounds.size.height - 64 - 49)
+        self.tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+    
+        //dataArray = NSMutableArray.init()
+        dataArray.addObjects(from: ["12345","34567","234567","346578","678675645"])
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func requestData() {
+        
+        
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 4) { 
+            
+            self.refreshControl?.endRefreshing()
+            self.dataArray.addObjects(from: ["12345","34567","234567","346578","678675645"])
+            self.tableView?.reloadData()
+        }
+    }
 
     func nextPage() {
         let v = ViewController()
@@ -28,4 +51,18 @@ class MyViewController: BaseViewController {
         
     }
 
+}
+
+extension MyViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        cell.textLabel?.text = dataArray[indexPath.row] as? String
+        return cell
+    }
 }
