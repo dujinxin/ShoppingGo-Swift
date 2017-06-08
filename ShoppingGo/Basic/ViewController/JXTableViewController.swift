@@ -10,12 +10,12 @@ import UIKit
 
 class JXTableViewController: BaseViewController{
 
+    //tableview
     var tableView : UITableView?
-    
+    //refreshControl
     var refreshControl : UIRefreshControl?
-    
+    //data array
     var dataArray = NSMutableArray()
-    
     
     
     
@@ -23,12 +23,9 @@ class JXTableViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTableView()
+        //isLogin ? setUpTableView() : setUpDefaultView()
         
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(requestData), for: UIControlEvents.valueChanged)
         
-        self.tableView?.addSubview(refreshControl!)
         
         // Do any additional setup after loading the view.
     }
@@ -46,6 +43,10 @@ class JXTableViewController: BaseViewController{
 
 extension JXTableViewController : UITableViewDelegate,UITableViewDataSource{
     
+    override func setUpMainView() {
+        setUpTableView()
+    }
+    
     func setUpTableView(){
         
         self.tableView = UITableView(frame: self.view.bounds, style: .plain)
@@ -54,6 +55,11 @@ extension JXTableViewController : UITableViewDelegate,UITableViewDataSource{
         self.tableView?.dataSource = self
         
         self.view.addSubview(self.tableView!)
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(requestData), for: UIControlEvents.valueChanged)
+        
+        self.tableView?.addSubview(refreshControl!)
     }
     
     

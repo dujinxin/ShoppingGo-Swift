@@ -15,9 +15,9 @@ class JXNavigationController: UINavigationController {
 
         // Do any additional setup after loading the view.
         
-        self.navigationBar.barTintColor = UIColor.orange//导航条颜色
-        self.navigationBar.tintColor = UIColor.yellow   //item图片文字颜色
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.red,NSFontAttributeName:UIFont.systemFont(ofSize: 25)]//标题设置
+        self.navigationBar.barTintColor = UIColor.yellow//导航条颜色
+        self.navigationBar.tintColor = UIColor.black   //item图片文字颜色
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
         
     }
 

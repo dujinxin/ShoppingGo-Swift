@@ -10,6 +10,14 @@ import UIKit
 
 extension  UIBarButtonItem {
     
+    /// custom UIBarButtonItem
+    ///
+    /// - Parameters:
+    ///   - title:
+    ///   - fontSize: default 13
+    ///   - imageName:
+    ///   - target:
+    ///   - action:
     convenience init(title:String = "",fontSize:CGFloat = 13, imageName:String = "",target:Any,action:Selector) {
         
         let btn = UIButton()

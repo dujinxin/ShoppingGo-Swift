@@ -33,3 +33,14 @@ class FindViewController: BaseViewController {
     */
 
 }
+
+extension FindViewController {
+    override func setUpDefaultView() {
+        super.setUpDefaultView()
+        
+        self.defaultView.setSubViewContent(type: .noNetwork)
+    }
+    override func requestData() {
+        print("重新请求")
+    }
+}

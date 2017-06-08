@@ -13,7 +13,9 @@ class BusinessViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barTintColor = UIColor.orange//导航条颜色
+        navigationController?.navigationBar.tintColor = UIColor.red   //item图片文字颜色
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blue,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
     }
 
     override func didReceiveMemoryWarning() {

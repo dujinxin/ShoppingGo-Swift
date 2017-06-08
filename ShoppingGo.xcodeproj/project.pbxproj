@@ -19,7 +19,7 @@
 		35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D481EE697AD001B31A1 /* MyViewController.swift */; };
 		359750271EE6BE1700419474 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
-		3597502D1EE793CF00419474 /* JXTable11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502C1EE793CF00419474 /* JXTable11ViewController.swift */; };
+		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		35260D481EE697AD001B31A1 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
-		3597502C1EE793CF00419474 /* JXTable11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTable11ViewController.swift; sourceTree = "<group>"; };
+		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +103,7 @@
 		35260D3F1EE697AD001B31A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				359750551EE7FB6E00419474 /* JXDefaultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,7 +113,6 @@
 			children = (
 				35260D411EE697AD001B31A1 /* BaseViewController.swift */,
 				3597502A1EE793A300419474 /* JXTableViewController.swift */,
-				3597502C1EE793CF00419474 /* JXTable11ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -185,6 +185,7 @@
 				TargetAttributes = {
 					35260D271EE696EF001B31A1 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -226,9 +227,9 @@
 				35260D4C1EE697AD001B31A1 /* BusinessViewController.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
 				35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */,
-				3597502D1EE793CF00419474 /* JXTable11ViewController.swift in Sources */,
 				359750271EE6BE1700419474 /* UIBarButtonItem+Extension.swift in Sources */,
 				35260D4A1EE697AD001B31A1 /* JXNavigationController.swift in Sources */,
+				359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */,
 				35260D4E1EE697AD001B31A1 /* HomeViewController.swift in Sources */,
 				35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */,
 				35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */,
@@ -339,10 +340,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ShoppingGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MySelf.ShoppingGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -352,10 +356,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ShoppingGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MySelf.ShoppingGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
