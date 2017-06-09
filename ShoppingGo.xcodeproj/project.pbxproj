@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CE2BBEE9D969C72D5CCFD28 /* Pods_ShoppingGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */; };
 		35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D2B1EE696EF001B31A1 /* AppDelegate.swift */; };
 		35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D2D1EE696EF001B31A1 /* ViewController.swift */; };
 		35260D331EE696EF001B31A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35260D321EE696EF001B31A1 /* Assets.xcassets */; };
@@ -20,10 +21,12 @@
 		359750271EE6BE1700419474 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
-		359750581EEA35A700419474 /* JXNavigationController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750571EEA35A700419474 /* JXNavigationController1.swift */; };
+		3597505A1EEA810100419474 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750591EEA810100419474 /* UIColor+Extension.swift */; };
+		3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505B1EEA9FF500419474 /* ApiEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.debug.xcconfig"; sourceTree = "<group>"; };
 		35260D281EE696EF001B31A1 /* ShoppingGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35260D2B1EE696EF001B31A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35260D2D1EE696EF001B31A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +42,10 @@
 		359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
-		359750571EEA35A700419474 /* JXNavigationController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNavigationController1.swift; sourceTree = "<group>"; };
+		359750591EEA810100419474 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		3597505B1EEA9FF500419474 /* ApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEnum.swift; sourceTree = "<group>"; };
+		F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +53,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE2BBEE9D969C72D5CCFD28 /* Pods_ShoppingGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		273C03ABE8E514D0085F3DDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */,
+				F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		35260D1F1EE696EF001B31A1 = {
 			isa = PBXGroup;
 			children = (
 				35260D2A1EE696EF001B31A1 /* ShoppingGo */,
 				35260D291EE696EF001B31A1 /* Products */,
+				273C03ABE8E514D0085F3DDD /* Pods */,
+				6C219682BB50C243C35AE9F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +96,6 @@
 				35260D2B1EE696EF001B31A1 /* AppDelegate.swift */,
 				35260D2D1EE696EF001B31A1 /* ViewController.swift */,
 				35260D421EE697AD001B31A1 /* JXNavigationController.swift */,
-				359750571EEA35A700419474 /* JXNavigationController1.swift */,
 				35260D431EE697AD001B31A1 /* JXTabBarController.swift */,
 				35260D321EE696EF001B31A1 /* Assets.xcassets */,
 				35260D371EE696EF001B31A1 /* Info.plist */,
@@ -136,6 +153,7 @@
 			children = (
 				35260D511EE6BB6C001B31A1 /* Additions */,
 				35260D521EE6BB6C001B31A1 /* Extension */,
+				3597505B1EEA9FF500419474 /* ApiEnum.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -151,8 +169,17 @@
 			isa = PBXGroup;
 			children = (
 				359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */,
+				359750591EEA810100419474 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6C219682BB50C243C35AE9F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35260D3A1EE696EF001B31A1 /* Build configuration list for PBXNativeTarget "ShoppingGo" */;
 			buildPhases = (
+				5DC92F2A2E65E3E54B148F4A /* [CP] Check Pods Manifest.lock */,
 				35260D241EE696EF001B31A1 /* Sources */,
 				35260D251EE696EF001B31A1 /* Frameworks */,
 				35260D261EE696EF001B31A1 /* Resources */,
+				240B19F868771E172926939A /* [CP] Embed Pods Frameworks */,
+				22A7809498CD3188E5E19878 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,6 +252,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22A7809498CD3188E5E19878 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		240B19F868771E172926939A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DC92F2A2E65E3E54B148F4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35260D241EE696EF001B31A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -236,8 +314,9 @@
 				35260D4E1EE697AD001B31A1 /* HomeViewController.swift in Sources */,
 				35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */,
 				35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */,
+				3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */,
 				35260D4B1EE697AD001B31A1 /* JXTabBarController.swift in Sources */,
-				359750581EEA35A700419474 /* JXNavigationController1.swift in Sources */,
+				3597505A1EEA810100419474 /* UIColor+Extension.swift in Sources */,
 				35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */,
 				35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */,
 			);
@@ -341,6 +420,7 @@
 		};
 		35260D3B1EE696EF001B31A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -357,6 +437,7 @@
 		};
 		35260D3C1EE696EF001B31A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

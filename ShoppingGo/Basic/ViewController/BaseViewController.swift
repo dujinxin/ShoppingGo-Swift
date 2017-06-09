@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
     /// default view
     lazy var defaultView: JXDefaultView = {
         let v = JXDefaultView()
-        v.backgroundColor = UIColor.blue
+        v.backgroundColor = UIColor.randomColor()
         return v
     }()
     
@@ -52,6 +52,10 @@ class BaseViewController: UIViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.rgbColor(rgbValue: 0xf1f1f1)
+        view.backgroundColor = UIColor.rgbColor(from: 200, 200, 200)
+        view.backgroundColor = UIColor.randomColor()
+        
         
         isLogin ? setUpMainView() : setUpDefaultView()
         
