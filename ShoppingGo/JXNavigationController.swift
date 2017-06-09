@@ -19,22 +19,39 @@ class JXNavigationController: UINavigationController {
         self.navigationBar.tintColor = UIColor.black   //item图片文字颜色
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
         
+        self.navigationBar.isHidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension JXNavigationController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+      
+        
+        if  let vc = viewController as? BaseViewController{
+            if viewControllers.count > 0 {
+                vc.hidesBottomBarWhenPushed = true
+                
+                var titleName = "返回"
+                
+                if viewControllers.count == 1 {
+                    titleName = viewControllers.first?.title ?? titleName
+                }
+                
+                vc.customNavigationItem.leftBarButtonItem = UIBarButtonItem(title: titleName, target: self, action: #selector(pop))
+            }
+        }
+        super.pushViewController(viewController, animated: true)
     }
-    */
-
+    
+    func pop() {
+        popViewController(animated: true)
+    }
 }

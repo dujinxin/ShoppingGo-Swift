@@ -10,6 +10,27 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    //MARK: - custom NavigationBar
+    //自定义导航栏
+    lazy var customNavigationBar : UINavigationBar = {
+        let navigationBar = UINavigationBar(frame:CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
+        navigationBar.barTintColor = UIColor.cyan//导航条颜色
+        navigationBar.tintColor = UIColor.brown //item图片文字颜色
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.red,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
+        return navigationBar
+    }()
+    lazy var customNavigationItem: UINavigationItem = {
+        let item = UINavigationItem()
+        return item
+    }()
+    
+    //重写title的setter方法
+    override var title: String?{
+        didSet {
+            customNavigationItem.title = title
+        }
+    }
+    
     //MARK: - default view info
     
     /// default view
@@ -34,6 +55,8 @@ class BaseViewController: UIViewController {
         
         isLogin ? setUpMainView() : setUpDefaultView()
         
+        setCustomNavigationBar()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +64,17 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Navigation
-    
-    
+}
 
+extension BaseViewController {
+    func setCustomNavigationBar() {
+        //隐藏navigationBar
+        //1.自定义view代替NavigationBar,需要自己实现手势返回;
+        //2.自定义navigatioBar代替系统的，手势返回不用自己实现
+        view.addSubview(customNavigationBar)
+        customNavigationBar.items = [customNavigationItem]
+        
+    }
 }
 
 extension BaseViewController {

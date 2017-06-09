@@ -1,19 +1,20 @@
 //
-//  FindViewController.swift
-//  ShoppingGo-Swift
+//  JXNavigationController1.swift
+//  ShoppingGo
 //
-//  Created by 杜进新 on 2017/6/6.
+//  Created by 杜进新 on 2017/6/9.
 //  Copyright © 2017年 杜进新. All rights reserved.
 //
 
 import UIKit
 
-class FindViewController: BaseViewController {
+class JXNavigationController1: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationBar.barTintColor = UIColor.yellow//导航条颜色
+        self.navigationBar.tintColor = UIColor.black   //item图片文字颜色
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,16 +33,4 @@ class FindViewController: BaseViewController {
     }
     */
 
-}
-
-extension FindViewController {
-    override func setUpDefaultView() {
-        super.setUpDefaultView()
-        
-        self.defaultView.style = .noNetwork
-        //self.defaultView.setSubViewContent(type: .noNetwork)
-    }
-    override func requestData() {
-        print("重新请求")
-    }
 }

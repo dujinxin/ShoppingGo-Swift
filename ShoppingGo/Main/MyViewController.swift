@@ -15,10 +15,13 @@ class MyViewController: JXTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "title_icon_notice"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextPage))
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "title_icon_notice", target: self, action: #selector(nextPage))
+        isLogin = true
+        
+
+        self.customNavigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextPage))
+        
+        self.customNavigationItem.rightBarButtonItem = UIBarButtonItem.init(imageName: "title_icon_notice", target: self, action: #selector(nextPage))
         
         self.tableView?.frame = CGRect.init(x: 0, y: 64, width: self.view.bounds.size.width, height: UIScreen.main.bounds.size.height - 64 - 49)
         self.tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
@@ -45,8 +48,9 @@ class MyViewController: JXTableViewController {
         }
     }
 
-    func nextPage() {
+    @objc private func nextPage() {
         let v = ViewController()
+        v.title = "登录"
         navigationController?.pushViewController(v, animated: true)
         
     }

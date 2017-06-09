@@ -16,6 +16,10 @@ class BusinessViewController: BaseViewController {
         navigationController?.navigationBar.barTintColor = UIColor.orange//导航条颜色
         navigationController?.navigationBar.tintColor = UIColor.red   //item图片文字颜色
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blue,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "title_icon_notice"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextPage))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "title_icon_notice", target: self, action: #selector(nextPage))
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +27,11 @@ class BusinessViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc private func nextPage() {
+        let v = ViewController()
+        navigationController?.pushViewController(v, animated: true)
+        
+    }
 
     /*
     // MARK: - Navigation

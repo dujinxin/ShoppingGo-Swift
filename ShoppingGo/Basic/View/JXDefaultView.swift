@@ -18,9 +18,9 @@ enum JXDefaultViewStyle : Int{
 class JXDefaultView: UIView {
     
     /// 风格类型
-    var style : JXDefaultViewStyle? {
+    var style : JXDefaultViewStyle = .none{
         didSet {
-
+            setSubViewContent(type: style)
         }
     }
     
@@ -143,7 +143,6 @@ extension JXDefaultView {
     }
     
     func setSubViewContent(type:JXDefaultViewStyle) {
-        style = type
         //
         var imageName : String?
         var content : String?

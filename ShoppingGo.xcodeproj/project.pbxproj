@@ -20,6 +20,7 @@
 		359750271EE6BE1700419474 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
+		359750581EEA35A700419474 /* JXNavigationController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750571EEA35A700419474 /* JXNavigationController1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
+		359750571EEA35A700419474 /* JXNavigationController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNavigationController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				35260D2B1EE696EF001B31A1 /* AppDelegate.swift */,
 				35260D2D1EE696EF001B31A1 /* ViewController.swift */,
 				35260D421EE697AD001B31A1 /* JXNavigationController.swift */,
+				359750571EEA35A700419474 /* JXNavigationController1.swift */,
 				35260D431EE697AD001B31A1 /* JXTabBarController.swift */,
 				35260D321EE696EF001B31A1 /* Assets.xcassets */,
 				35260D371EE696EF001B31A1 /* Info.plist */,
@@ -234,6 +237,7 @@
 				35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */,
 				35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */,
 				35260D4B1EE697AD001B31A1 /* JXTabBarController.swift in Sources */,
+				359750581EEA35A700419474 /* JXNavigationController1.swift in Sources */,
 				35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */,
 				35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */,
 			);
