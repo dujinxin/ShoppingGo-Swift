@@ -23,6 +23,9 @@
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
 		3597505A1EEA810100419474 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750591EEA810100419474 /* UIColor+Extension.swift */; };
 		3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505B1EEA9FF500419474 /* ApiEnum.swift */; };
+		3597505F1EEE2E9A00419474 /* JXNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505E1EEE2E9A00419474 /* JXNetworkManager.swift */; };
+		359750611EEE2ED000419474 /* JXBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750601EEE2ED000419474 /* JXBaseRequest.swift */; };
+		359750631EEE3FFB00419474 /* JXRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750621EEE3FFB00419474 /* JXRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
 		359750591EEA810100419474 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3597505B1EEA9FF500419474 /* ApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEnum.swift; sourceTree = "<group>"; };
+		3597505E1EEE2E9A00419474 /* JXNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkManager.swift; sourceTree = "<group>"; };
+		359750601EEE2ED000419474 /* JXBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseRequest.swift; sourceTree = "<group>"; };
+		359750621EEE3FFB00419474 /* JXRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXRequest.swift; sourceTree = "<group>"; };
 		F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +157,7 @@
 		35260D501EE6BB6C001B31A1 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3597505D1EEBCF5000419474 /* JXNetwork */,
 				35260D511EE6BB6C001B31A1 /* Additions */,
 				35260D521EE6BB6C001B31A1 /* Extension */,
 				3597505B1EEA9FF500419474 /* ApiEnum.swift */,
@@ -172,6 +179,16 @@
 				359750591EEA810100419474 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3597505D1EEBCF5000419474 /* JXNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				3597505E1EEE2E9A00419474 /* JXNetworkManager.swift */,
+				359750601EEE2ED000419474 /* JXBaseRequest.swift */,
+				359750621EEE3FFB00419474 /* JXRequest.swift */,
+			);
+			path = JXNetwork;
 			sourceTree = "<group>";
 		};
 		6C219682BB50C243C35AE9F1 /* Frameworks */ = {
@@ -308,6 +325,9 @@
 				35260D4C1EE697AD001B31A1 /* BusinessViewController.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
 				35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */,
+				3597505F1EEE2E9A00419474 /* JXNetworkManager.swift in Sources */,
+				359750611EEE2ED000419474 /* JXBaseRequest.swift in Sources */,
+				359750631EEE3FFB00419474 /* JXRequest.swift in Sources */,
 				359750271EE6BE1700419474 /* UIBarButtonItem+Extension.swift in Sources */,
 				35260D4A1EE697AD001B31A1 /* JXNavigationController.swift in Sources */,
 				359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */,
