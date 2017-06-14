@@ -20,7 +20,7 @@ class MyViewController: JXTableViewController {
         isLogin = true
         
 
-        self.customNavigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextPage))
+        self.customNavigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(login))
         
         self.customNavigationItem.rightBarButtonItem = UIBarButtonItem.init(imageName: "title_icon_notice", target: self, action: #selector(nextPage))
         
@@ -149,6 +149,10 @@ class MyViewController: JXTableViewController {
         }
     }
 
+    func login() {
+        navigationController?.pushViewController(JXLoginViewController(), animated: true)
+    }
+    
     @objc private func nextPage() {
         let v = ViewController()
         v.title = "登录"

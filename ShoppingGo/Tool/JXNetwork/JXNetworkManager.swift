@@ -16,7 +16,7 @@ class JXNetworkManager: NSObject {
     
     var requestCache = [String:JXBaseRequest]()
     
-    var networkStatus : AFNetworkReachabilityStatus = .unknown
+    var networkStatus : AFNetworkReachabilityStatus = .reachableViaWiFi
     
     
     static let manager = JXNetworkManager()
@@ -149,6 +149,7 @@ extension JXNetworkManager{
 }
 
 extension JXNetworkManager {
+    
     func buildUrl(url:String?) -> String {
         
         guard url != nil else {

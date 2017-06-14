@@ -8,5 +8,5 @@ target 'ShoppingGo' do
   pod "MJExtension"
   pod "MJRefresh"
   pod "FMDB"
-
+  pod "SnapKit"
 end

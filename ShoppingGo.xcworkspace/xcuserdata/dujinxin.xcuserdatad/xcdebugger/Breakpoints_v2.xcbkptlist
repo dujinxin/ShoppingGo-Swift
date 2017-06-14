@@ -26,7 +26,7 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Main/MyViewController.swift"
-                  timestampString = "518951397.178401"
+                  timestampString = "519026936.814457"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
@@ -41,12 +41,12 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Main/MyViewController.swift"
-                  timestampString = "518951397.180702"
+                  timestampString = "519026936.816565"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
                   endingLineNumber = "89"
-                  offsetFromSymbolStart = "6515">
+                  offsetFromSymbolStart = "6396">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -56,7 +56,7 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Main/MyViewController.swift"
-                  timestampString = "518951397.182733"
+                  timestampString = "519026936.818953"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
@@ -153,11 +153,11 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/JXNetwork/JXBaseRequest.swift"
-                  timestampString = "518951397.200644"
+                  timestampString = "519026936.864737"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
                   offsetFromSymbolStart = "72">
                </Location>
                <Location
@@ -168,11 +168,11 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/JXNetwork/JXBaseRequest.swift"
-                  timestampString = "518951397.20198"
+                  timestampString = "519026936.866099"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
                   offsetFromSymbolStart = "6">
                </Location>
             </Locations>
@@ -224,6 +224,117 @@
             endingLineNumber = "101"
             landmarkName = "JXBaseRequest"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/JXNetwork/JXNetworkManager.swift"
+            timestampString = "519026721.842719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "buildUrl(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/JXNetwork/JXNetworkManager.swift"
+            timestampString = "519026839.914074"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "buildRequest(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/JXNetwork/JXNetworkManager.swift"
+            timestampString = "519026915.914618"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "buildRequest(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Main/MyViewController.swift"
+            timestampString = "519026947.123608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShoppingGo.MyViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "ShoppingGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Main/MyViewController.swift"
+                  timestampString = "519026947.127885"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "4800">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShoppingGo.MyViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "ShoppingGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Main/MyViewController.swift"
+                  timestampString = "519026947.129478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "6396">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShoppingGo.MyViewController.(viewDidLoad () -&gt; ()).(closure #3)"
+                  moduleName = "ShoppingGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Main/MyViewController.swift"
+                  timestampString = "519026947.130974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

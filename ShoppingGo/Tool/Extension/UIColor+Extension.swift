@@ -54,6 +54,26 @@ extension UIColor{
         return color
     }
     
+    class var jx333333Color : UIColor {
+        return UIColor.rgbColor(rgbValue: 0x333333)
+    }
+    class var jx666666Color : UIColor {
+        return UIColor.rgbColor(rgbValue: 0x666666)
+    }
+    class var jx999999Color : UIColor {
+        return UIColor.rgbColor(rgbValue: 0x999999)
+    }
+    class var jxeeeeeeColor : UIColor {
+        return UIColor.rgbColor(rgbValue: 0xeeeeee)
+    }
+    class var jxffffffColor : UIColor {
+        return UIColor.rgbColor(rgbValue: 0xffffff)
+    }
+    class var jxf1f1f1Color : UIColor {
+        return UIColor.rgbColor(rgbValue: 0xf1f1f1)
+    }
+    
+    
 }
 
 

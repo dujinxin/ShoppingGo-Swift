@@ -74,10 +74,11 @@ class JXDefaultView: UIView {
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
+        setNeedsUpdateConstraints()
 
     }
     
-    override func layoutSubviews() {
+    override func updateConstraints() {
         //imageView
         addConstraint(.init(item: imageView,
                             attribute: .centerX,
@@ -115,10 +116,13 @@ class JXDefaultView: UIView {
                                                 attribute: .width,
                                                 relatedBy: .equal,
                                                 toItem: nil,//没有参照物
-                                                attribute: .notAnAttribute,//没有参照物
-                                                multiplier: 1.0,
-                                                constant: noticeWidth)])
+                            attribute: .notAnAttribute,//没有参照物
+                            multiplier: 1.0,
+                            constant: noticeWidth)])
+        
+        super.updateConstraints()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

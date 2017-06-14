@@ -26,6 +26,8 @@
 		3597505F1EEE2E9A00419474 /* JXNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505E1EEE2E9A00419474 /* JXNetworkManager.swift */; };
 		359750611EEE2ED000419474 /* JXBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750601EEE2ED000419474 /* JXBaseRequest.swift */; };
 		359750631EEE3FFB00419474 /* JXRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750621EEE3FFB00419474 /* JXRequest.swift */; };
+		359750671EEFB68300419474 /* JXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750661EEFB68300419474 /* JXLoginViewController.swift */; };
+		359750691EEFE75400419474 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750681EEFE75400419474 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		3597505E1EEE2E9A00419474 /* JXNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkManager.swift; sourceTree = "<group>"; };
 		359750601EEE2ED000419474 /* JXBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseRequest.swift; sourceTree = "<group>"; };
 		359750621EEE3FFB00419474 /* JXRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXRequest.swift; sourceTree = "<group>"; };
+		359750661EEFB68300419474 /* JXLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXLoginViewController.swift; sourceTree = "<group>"; };
+		359750681EEFE75400419474 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +154,7 @@
 				35260D461EE697AD001B31A1 /* FindViewController.swift */,
 				35260D471EE697AD001B31A1 /* HomeViewController.swift */,
 				35260D481EE697AD001B31A1 /* MyViewController.swift */,
+				359750661EEFB68300419474 /* JXLoginViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				359750261EE6BE1700419474 /* UIBarButtonItem+Extension.swift */,
 				359750591EEA810100419474 /* UIColor+Extension.swift */,
+				359750681EEFE75400419474 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -328,11 +334,13 @@
 				3597505F1EEE2E9A00419474 /* JXNetworkManager.swift in Sources */,
 				359750611EEE2ED000419474 /* JXBaseRequest.swift in Sources */,
 				359750631EEE3FFB00419474 /* JXRequest.swift in Sources */,
+				359750671EEFB68300419474 /* JXLoginViewController.swift in Sources */,
 				359750271EE6BE1700419474 /* UIBarButtonItem+Extension.swift in Sources */,
 				35260D4A1EE697AD001B31A1 /* JXNavigationController.swift in Sources */,
 				359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */,
 				35260D4E1EE697AD001B31A1 /* HomeViewController.swift in Sources */,
 				35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */,
+				359750691EEFE75400419474 /* UIView+Extension.swift in Sources */,
 				35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */,
 				3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */,
 				35260D4B1EE697AD001B31A1 /* JXTabBarController.swift in Sources */,
