@@ -10,14 +10,6 @@ import UIKit
 
 extension UIColor{
     
-    //计算型属性
-//    var debugColor : UIColor?{
-//        didSet {
-//            
-//        }
-//    }
-    
-    
     /// 通过16进制数值设置色值
     ///
     /// - Parameters:
@@ -46,10 +38,24 @@ extension UIColor{
         let color = UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
         return color
     }
-    /// 随机色值
+    
+    /// 调试颜色
+    var debugColor : UIColor?{
+        set{
+            
+        }
+        get{
+            if isDebug == true {
+                return UIColor.randomColor
+            }else{
+                return UIColor.clear
+            }
+        }
+    }
+    /// 随机色值,各种颜色，计算型类属性
     ///
     /// - Returns: UIColor
-    class func randomColor() -> UIColor {
+    class var randomColor : UIColor {
         let color = UIColor(red:CGFloat(arc4random_uniform(255))/255.0, green: CGFloat(arc4random_uniform(255))/255.0, blue: CGFloat(arc4random_uniform(255))/255.0, alpha: 1.0)
         return color
     }
@@ -71,6 +77,10 @@ extension UIColor{
     }
     class var jxf1f1f1Color : UIColor {
         return UIColor.rgbColor(rgbValue: 0xf1f1f1)
+    }
+    
+    class var originColor: UIColor {
+        return UIColor.rgbColor(from: 219, 80, 8)
     }
     
     

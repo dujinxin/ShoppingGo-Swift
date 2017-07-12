@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
     /// default view
     lazy var defaultView: JXDefaultView = {
         let v = JXDefaultView()
-        v.backgroundColor = UIColor.randomColor()
+        v.backgroundColor = UIColor.randomColor
         return v
     }()
     
@@ -54,7 +54,7 @@ class BaseViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.backgroundColor = UIColor.rgbColor(rgbValue: 0xf1f1f1)
         view.backgroundColor = UIColor.rgbColor(from: 200, 200, 200)
-        view.backgroundColor = UIColor.randomColor()
+        view.backgroundColor = UIColor.randomColor
         
         
         isLogin ? setUpMainView() : setUpDefaultView()

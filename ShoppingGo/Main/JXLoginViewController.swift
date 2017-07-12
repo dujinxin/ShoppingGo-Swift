@@ -10,6 +10,49 @@ import UIKit
 
 class JXLoginViewController: BaseViewController {
 
+    lazy var userTextField : UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = UITextBorderStyle.roundedRect
+        textField.leftViewMode = UITextFieldViewMode.always
+        textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        textField.clearButtonMode = UITextFieldViewMode.whileEditing
+        textField.returnKeyType = UIReturnKeyType.next
+        textField.delegate = self
+        textField.leftView = {
+            let iv = UIImageView()
+            
+            return iv
+        }()
+        textField.placeholder = "请输入手机号"
+        textField.font = UIFont.systemFont(ofSize: 13)
+        textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .valueChanged)
+        return textField
+    }()
+    
+    lazy var passwordTextField : UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = UITextBorderStyle.roundedRect
+        textField.leftViewMode = UITextFieldViewMode.always
+        textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        textField.clearButtonMode = UITextFieldViewMode.whileEditing
+        textField.returnKeyType = UIReturnKeyType.join
+        textField.isSecureTextEntry = true
+        textField.delegate = self
+        textField.leftView = {
+            let iv = UIImageView()
+            
+            return iv
+        }()
+        textField.placeholder = "请输入密码"
+        textField.font = UIFont.systemFont(ofSize: 13)
+        textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .valueChanged)
+        return textField
+    }()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,9 +60,8 @@ class JXLoginViewController: BaseViewController {
         
         setUpMainView()
         
-        
-        
-        
+        userTextField.text = "13121273646"
+        passwordTextField.text = "123456"
         
         
     }
@@ -33,49 +75,8 @@ class JXLoginViewController: BaseViewController {
 extension JXLoginViewController : UITextFieldDelegate{
     
     override func setUpMainView() {
-        let userTextField : UITextField = {
-            let textField = UITextField()
-            textField.translatesAutoresizingMaskIntoConstraints = false
-            textField.borderStyle = UITextBorderStyle.roundedRect
-            textField.leftViewMode = UITextFieldViewMode.always
-            textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-            textField.clearButtonMode = UITextFieldViewMode.whileEditing
-            textField.returnKeyType = UIReturnKeyType.next
-            textField.delegate = self
-            textField.leftView = {
-                let iv = UIImageView()
-                
-                return iv
-            }()
-            textField.placeholder = "请输入手机号"
-            textField.font = UIFont.systemFont(ofSize: 13)
-            textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .valueChanged)
-            return textField
-        }()
         
         view.addSubview(userTextField)
-        
-        let passwordTextField : UITextField = {
-            let textField = UITextField()
-            textField.translatesAutoresizingMaskIntoConstraints = false
-            textField.borderStyle = UITextBorderStyle.roundedRect
-            textField.leftViewMode = UITextFieldViewMode.always
-            textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-            textField.clearButtonMode = UITextFieldViewMode.whileEditing
-            textField.returnKeyType = UIReturnKeyType.join
-            textField.isSecureTextEntry = true
-            textField.delegate = self
-            textField.leftView = {
-                let iv = UIImageView()
-                
-                return iv
-            }()
-            textField.placeholder = "请输入密码"
-            textField.font = UIFont.systemFont(ofSize: 13)
-            textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .valueChanged)
-            return textField
-        }()
-        
         view.addSubview(passwordTextField)
         
         let loginButton : UIButton = {
@@ -117,8 +118,11 @@ extension JXLoginViewController : UITextFieldDelegate{
     func textFieldEditingChanged() {
         
     }
-    
     func login() {
-        
+        JXRequest.request(url: ApiString.userLogin.rawValue, param: ["ua":userTextField.text!,"Up":passwordTextField.text!], success: { (data, msg) in
+            print(data)
+        }) { (msg, errorCode) in
+            print(msg)
+        }
     }
 }

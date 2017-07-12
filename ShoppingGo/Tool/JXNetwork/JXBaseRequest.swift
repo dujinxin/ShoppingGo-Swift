@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 enum JXRequestMethod : NSInteger{
     case get
@@ -14,6 +15,8 @@ enum JXRequestMethod : NSInteger{
     case put
     case head
     case delete
+    
+    case unknow
 }
 
 
@@ -22,12 +25,23 @@ class JXBaseRequest: NSObject {
     ///请求URL
     var requestUrl : String?
     ///请求参数
-    var param : [String:String]?
+    var param : Dictionary<String, Any>?
     ///请求方式
     var method : JXRequestMethod = .post
+    ///标记不同的解析方式
+    var tag : Int = 0
+    
     
     var sessionTask : URLSessionTask?
+    //func constructingBlock< T : AFMultipartFormData >(formData : [T]) -> T
     
+    typealias constructingBlock = ((_ formData : AFMultipartFormData) -> Void)?
+    typealias successCompletion = ((_ data:Any?, _ message:String) -> ())
+    typealias failureCompletion = ((_ message:String,_ code:JXNetworkError) -> ())
+    
+    
+    var success : successCompletion?
+    var failure : failureCompletion?
     
     ///开始请求
     func startRequest() {
@@ -40,38 +54,20 @@ class JXBaseRequest: NSObject {
         JXNetworkManager.manager.cancelRequest(request: self)
     }
     
-    typealias successCompletion = ((_ data:Any?, _ message:String?,_ alertType:String) -> ())
     
-    typealias failureCompletion = ((_ task:URLSessionDataTask, _ error:Error?) -> ())
-    
-    var success : successCompletion?
-    
-    var failure : failureCompletion?
-    
-    
-    
-//    ///
-//    class func request(with method:JXRequestMethod = .post, url:String, param:[String:String],completion:(_ task:URLSessionDataTask, _ data:Any?, _ error:Error?) -> ()) {
-//        let request = JXBaseRequest(url: url, param: param) { (task:URLSessionDataTask, data:Any?, error:Error?) in
-//            //
-//        }
-//        
-//        request.startRequest()
-//    }
-    
-    ///
-    class func request(with method:JXRequestMethod = .post, url:String, param:[String:String],success:@escaping successCompletion,failure:@escaping failureCompletion) {
-        
-        
-        
-        let request = JXBaseRequest()
 
-        request.requestUrl = url
-        request.param = param
-        request.success = success
-        request.failure = failure
+    /// 网络请求
+    ///
+    /// - Parameters:
+    ///   - tag: 暂时用来标记 来源，区别不同的域名，导致不同的数据格式
+    ///   - method: 请求方式
+    ///   - url: 请求URL
+    ///   - param: 请求参数
+    ///   - success: 成功回调
+    ///   - failure: 失败回调
+    class func request(tag:Int = 0, method:JXRequestMethod = .post, url:String, param:Dictionary<String, Any>,success:@escaping successCompletion,failure:@escaping failureCompletion) {
         
-        //let request = self.init(with: url, param: param, success: success, failure: failure)
+        let request = self.init(tag: tag, url: url, param: param, success: success, failure: failure)
         
         request.startRequest()
     }
@@ -80,37 +76,31 @@ class JXBaseRequest: NSObject {
         super.init()
     }
     
-//    init(with url:String ,param:[String:String],success:@escaping successCompletion,failure:@escaping failureCompletion) {
-//        
-//        
-//        self.requestUrl = url
-//        self.param = param
-//        
-//        self.success = success
-//        self.failure = failure
-//        
-//        super.init()
-//    }
+    required init(tag:Int,url:String ,param:Dictionary<String, Any>,success:@escaping successCompletion,failure:@escaping failureCompletion) {
+        
+        self.tag = tag
+        self.requestUrl = url
+        self.param = param
+        
+        self.success = success
+        self.failure = failure
+        
+        super.init()
+    }
     
    
-    
-//    func requestSuccess(responseData:Any) {
-//        
-//    }
-//    func requestFailure(responseData:Any) {
-//        
-//    }
-    
-    func requestSuccess(responseData: Any) {
-        print(responseData)
-        guard let success = self.success else {
-            return
-        }
-        success(responseData,"123","34")
+    //子类实现
+    func customConstruct() ->constructingBlock?  {
+        return nil
+    }
+    func buildCustomUrlRequest() -> URLRequest?{
+        return nil
+    }
+    func requestSuccess(responseData:Any) {
         
     }
-    func requestFailure(responseData: Any) {
-        print(responseData)
+    func requestFailure(error: Error) {
+        
     }
     
 }
@@ -120,7 +110,6 @@ extension JXBaseRequest {
         guard let response = self.sessionTask?.response as? HTTPURLResponse else {
             return [AnyHashable : Any]()
         }
-        //let response = self.sessionTask?.response as! HTTPURLResponse
         return response.allHeaderFields 
     }
     

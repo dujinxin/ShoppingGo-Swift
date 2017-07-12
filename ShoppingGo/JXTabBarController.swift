@@ -16,8 +16,11 @@ class JXTabBarController: UITabBarController {
         view.backgroundColor = UIColor.red
         
         setJXViewControllers()
+        
+        setGuideView()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,4 +78,16 @@ extension JXTabBarController {
         
     }
     
+}
+
+extension JXTabBarController {
+    func setGuideView() {
+
+        let vc = JXGuideView(frame: view.bounds) { (guide) in
+            guide.removeFromSuperview()
+        }
+        
+        view.addSubview(vc)
+        
+    }
 }
