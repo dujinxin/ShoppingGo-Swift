@@ -15,11 +15,11 @@ class UserModel: BaseModel {
     var Token : String?
     var RefreshToken : String?
     var PhoneNumber : String?
-    var UserID : String?
+    var UserID : Int = 0
     var UserName : String?
-    var UserAge : String?
+    var UserAge : Int = 0
     var UserImage : String?
-    var UserGender : String?
+    var UserGender : Int = 0
     var HxAccount : String?
     var HxPassword : String?
     

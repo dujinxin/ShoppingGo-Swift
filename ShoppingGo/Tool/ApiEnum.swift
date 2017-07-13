@@ -10,6 +10,7 @@
 import Foundation
 
 enum ApiString : String {
-    case getTokenByKey = "/UserLogin/GetTokenByKey"
+    case getTokenByKey = "/UserLogin/GetTokenByKey" //获取token
+    case refreshToken  = "/UserLogin/RefreshToken"  //刷新token
     case userLogin     = "/UserLogin/Login"
 }

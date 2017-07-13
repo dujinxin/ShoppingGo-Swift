@@ -79,7 +79,17 @@ class JXHorizontalView: UIView {
 
 protocol JXHorizontalViewDelegate {
     
+    /// scroll to indexPath
+    ///
+    /// - Parameters:
+    ///   - _:JXHorizontalView
+    ///   - indexPath: indexPath
+    /// - Returns: Void
     func horizontalView(_ :JXHorizontalView,to indexPath:IndexPath) -> Void
+    /// scrollView delegate
+    ///
+    /// - Parameter scrollView: containerView
+    /// - Returns: Void
     func horizontalViewDidScroll(scrollView:UIScrollView) -> Void
     
 }

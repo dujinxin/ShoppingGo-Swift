@@ -85,7 +85,6 @@ extension JXTabBarController {
     
         return nvc
         
-        
     }
     
 }
@@ -98,9 +97,58 @@ extension JXTabBarController {
             guide.removeFromSuperview()
         }
         view.addSubview(guideView)
+        
+        //1.获取token,首次安装用本地生成的字符串来获取token
+        //2.本地有保存token,则用长token去刷新token
+        if
+            let _ = UserManager.default.userModel.Token,
+            let longToken = UserManager.default.userModel.RefreshToken{
+            
+            JXRequest.request(url: ApiString.refreshToken.rawValue, param: ["RToken":longToken], success: { (data, msg) in
+                //
+                print(data)
+            }, failure: { (msg, code) in
+                //
+                print(msg)
+            })
+            
+        }else{
+            JXRequest.request(url: ApiString.getTokenByKey.rawValue, param: ["Uc":(UIDevice.current.identifierForVendor?.uuidString)!], success: { (data, msg) in
+                
+                guard let data = data as? Dictionary<String, Any> else{
+                    return
+                }
+                let isSuccess = UserManager.default.saveUserInfo(dict: data)
+                print("保存token：\(isSuccess)")
+                
+            }, failure: { (msg, errorCode) in
+                print(msg)
+            })
+        }
     }
     func setAdvertiseView() {
         let adView = JXAdvertiseView(frame: view.bounds)
         view.addSubview(adView)
+        
+        /**
+         * 服务器有问题，游客token不允许刷新，就直接为失效。导致的问题为：游客身份token刷新接口不可用，
+         */
+        //不是首次使用，本地有保存token,所以直接用长token去刷新token即可
+        if
+            let _ = UserManager.default.userModel.Token,
+            let longToken = UserManager.default.userModel.RefreshToken{
+            
+            JXRequest.request(url: ApiString.refreshToken.rawValue, param: ["RToken":longToken], success: { (data, msg) in
+                print(data)
+                guard let data = data as? Dictionary<String, Any> else{
+                    return
+                }
+                let isSuccess = UserManager.default.saveUserInfo(dict: data)
+                print("保存token：\(isSuccess)")
+            }, failure: { (msg, code) in
+                print(msg)
+            })
+        }
+
     }
 }

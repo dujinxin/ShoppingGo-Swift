@@ -189,7 +189,10 @@ class PhotoImageView: UICollectionViewCell,UIScrollViewDelegate {
         iv.addGestureRecognizer(longPress)
         return iv
     }()
+    
+    /// 关闭closure
     var closeBlock : (()->())?
+    /// addtion closure
     var showAddtionBlock : (()->())?
     
     
@@ -230,12 +233,18 @@ class PhotoImageView: UICollectionViewCell,UIScrollViewDelegate {
             //
         }
     }
+    /// 缩放
+    ///
+    /// - Parameter pinch: pinch gesture
     func pinchZoonScale(pinch:UIPinchGestureRecognizer) {
         var size = pinch.view?.frame.size
         size?.width *= pinch.scale
         size?.height *= pinch.scale
         self.scrollView.bounds.size = size!
     }
+    /// 长按
+    ///
+    /// - Parameter press: press gesture
     func pressAction(press:UILongPressGestureRecognizer) {
         //print("long press")
         switch press.state {

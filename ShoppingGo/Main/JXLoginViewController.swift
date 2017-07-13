@@ -121,6 +121,11 @@ extension JXLoginViewController : UITextFieldDelegate{
     func login() {
         JXRequest.request(url: ApiString.userLogin.rawValue, param: ["ua":userTextField.text!,"Up":passwordTextField.text!], success: { (data, msg) in
             print(data)
+            guard let data = data as? Dictionary<String, Any> else{
+                return
+            }
+            let isSuccess = UserManager.default.saveUserInfo(dict: data)
+            print("保存token：\(isSuccess)")
         }) { (msg, errorCode) in
             print(msg)
         }

@@ -62,10 +62,11 @@ class JXAdvertiseView: UIView {
     }
 
     
+    
     func touchDismiss() {
         
         self.adTimer?.invalidate()
-        
+        /// animate 放大动画，消失
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.alpha = 0.0
             self.transform = CGAffineTransform(scaleX: 2, y: 2)

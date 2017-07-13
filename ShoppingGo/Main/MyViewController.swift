@@ -30,19 +30,7 @@ class MyViewController: JXTableViewController {
     
         //dataArray = NSMutableArray.init()
         dataArray.addObjects(from: ["12345","34567","234567","346578","678675645"])
-        
-        
-        JXRequest.request(url: ApiString.getTokenByKey.rawValue, param: ["Uc":(UIDevice.current.identifierForVendor?.uuidString)!], success: { (data, msg) in
-            print(data)
-            guard let data = data as? Dictionary<String, Any> else{
-                return
-            }
-            UserManager.default.saveUserInfo(dict: data)
-            
-        }, failure: { (msg, errorCode) in
-            print(msg)
-        })
- 
+    
     }
     
     

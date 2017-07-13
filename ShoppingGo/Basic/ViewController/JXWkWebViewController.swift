@@ -69,56 +69,56 @@ class JXWkWebViewController: BaseViewController {
     
 }
 
-//extension JXWkWebViewController:WKUIDelegate{
-//    /*! @abstract Creates a new web view.
-//     @param webView The web view invoking the delegate method.
-//     @param configuration The configuration to use when creating the new web
-//     view.
-//     @param navigationAction The navigation action causing the new web view to
-//     be created.
-//     @param windowFeatures Window features requested by the webpage.
-//     @result A new web view or nil.
-//     @discussion The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.
-//     
-//     If you do not implement this method, the web view will cancel the navigation.
-//     */
-////    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-////        return self.wkWebView
-////    }
-//    func webViewDidClose(_ webView: WKWebView) {
-//        print("close")
+extension JXWkWebViewController:WKUIDelegate{
+    /*! @abstract Creates a new web view.
+     @param webView The web view invoking the delegate method.
+     @param configuration The configuration to use when creating the new web
+     view.
+     @param navigationAction The navigation action causing the new web view to
+     be created.
+     @param windowFeatures Window features requested by the webpage.
+     @result A new web view or nil.
+     @discussion The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.
+     
+     If you do not implement this method, the web view will cancel the navigation.
+     */
+//    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+//        return self.wkWebView
 //    }
-//    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-//        print("alert")
-//        let alert = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "确定", style: .destructive, handler: { (action) in
-//            print("确定")
-//        }))
-//        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
-//            print("取消")
-//        }))
-//        self.present(alert, animated: true, completion: nil)
-//        
-//    }
-//    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-//        print("confirm")
-//    }
-//    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-//        print("textInput")
-//    }
-//    //实现该方法，可以弹出自定义视图
-//    func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
-//        return true
-//    }
-//    //实现该方法，可以弹出自定义视图控制器
-//    func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
-//        return nil
-//    }
-//    //实现该方法，关闭自定义视图控制器
-//    func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController) {
-//        
-//    }
-//}
+    func webViewDidClose(_ webView: WKWebView) {
+        print("close")
+    }
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        print("alert")
+        let alert = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .destructive, handler: { (action) in
+            print("确定")
+        }))
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
+            print("取消")
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+        print("confirm")
+    }
+    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+        print("textInput")
+    }
+    //实现该方法，可以弹出自定义视图
+    func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
+        return true
+    }
+    //实现该方法，可以弹出自定义视图控制器
+    func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
+        return nil
+    }
+    //实现该方法，关闭自定义视图控制器
+    func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController) {
+        
+    }
+}
 extension JXWkWebViewController:WKNavigationDelegate{
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

@@ -8,11 +8,20 @@
 
 import UIKit
 
+/// 弹窗风格
+///
+/// - plain: 默认
+/// - list: 列表
+/// - custom: 自定义视图
 enum JXAlertViewStyle : Int {
     case plain
     case list
     case custom
 }
+/// 弹窗位置
+///
+/// - middle: 中部
+/// - bottom: 底部
 enum JXAlertViewShowPosition {
     case middle
     case bottom

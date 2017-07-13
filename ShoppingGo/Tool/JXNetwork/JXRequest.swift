@@ -74,12 +74,12 @@ class JXRequest: JXBaseRequest {
             }
             
             let message = jsonDict["message"] as? String
+            msg = message ?? "失败"
             netCode = code
             
             if (code == .kResponseSuccess){
-                print("请求成功")
                 data = jsonDict["data"]
-                msg = message ?? "请求成功"
+                msg = message ?? "成功"
                 isSuccess = true
             }else if code == .kResponseShortTokenDisabled{
 //                JXNetworkManager.manager.userAccound?.removeAccound()
@@ -99,9 +99,32 @@ class JXRequest: JXBaseRequest {
 //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationLoginStatus), object: false)
             }else if code == .kResponseLongTokenDisabled{
                 
+                JXNetworkManager.manager.cancelRequests()
+                
+                if UserManager.default.userModel.UserID != nil{//用户身份，需弹窗提示信息已过期，重新登录
+                    let alert = UIAlertController(title: "提示", message: "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .destructive, handler: { (action) in
+                        print("确定")
+                    }))
+                    alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
+                        print("取消")
+                    }))
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                }else{//游客身份，不需要提示，直接用本地字符串获取新token即可
+                    JXRequest.request(url: ApiString.getTokenByKey.rawValue, param: ["Uc":(UIDevice.current.identifierForVendor?.uuidString)!], success: { (data, msg) in
+                        
+                        guard let data = data as? Dictionary<String, Any> else{
+                            return
+                        }
+                        let isSuccess = UserManager.default.saveUserInfo(dict: data)
+                        print("保存token：\(isSuccess)")
+                        
+                    }, failure: { (msg, errorCode) in
+                        print(msg)
+                    })
+                }
             }else{
-                print("请求失败")
-                msg = message ?? "请求失败"
+                msg = message ?? "失败"
             }
             
         }else if result is Array<Any>{

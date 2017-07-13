@@ -9,9 +9,11 @@
 import Foundation
 
 extension Bundle {
+    /// 工程名称
     var bundleName: String {
         return (Bundle.main.infoDictionary?["CFBundleName"] as? String) ?? ""
     }
+    /// 版本号
     var version: String {
         return (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
     }
