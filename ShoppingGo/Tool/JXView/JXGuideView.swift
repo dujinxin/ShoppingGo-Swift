@@ -17,8 +17,6 @@ enum GuidePageStyle {
 
 class JXGuideView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     
-    
-    
     ///图片数组
     var images = Array<String>()
     ///当前页码
@@ -26,6 +24,23 @@ class JXGuideView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     var style : GuidePageStyle = .point
     typealias DismissBlock =  ((_ guide:JXGuideView)->())?
     var dismissBlock : DismissBlock
+    
+    /// 首次安装和升级安装要显示引导页
+    static var isShowGuideView: Bool {
+        let version = Bundle.main.version
+        
+        if  ///非首次安装且不是升级那么不显示
+            let oldVersion = UserDefaults.standard.string(forKey: "version"),
+            oldVersion == version {
+            
+            return false
+        }else{
+            UserDefaults.standard.set(version, forKey: "version")
+            UserDefaults.standard.synchronize()
+            
+            return true
+        }
+    }
     
     
     lazy var collectionView : UICollectionView = {
@@ -139,7 +154,12 @@ class JXGuideView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
             urlStr.hasPrefix("http"){
             cell.imageView.setImageWith(url, placeholderImage: nil)
         }else{
-            cell.imageView.image = UIImage(named: urlStr)
+            if let path = Bundle.main.path(forResource: urlStr, ofType: nil) {//这种方式不能获取到images.xcassets中的图片
+                cell.imageView.image = UIImage(contentsOfFile: path)
+            }else{
+                cell.imageView.image = UIImage(named: urlStr)
+            }
+            
         }
 //
         return cell

@@ -25,6 +25,10 @@
 		351DD3181F14E70200E90170 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD3141F14E70200E90170 /* ViewManager.swift */; };
 		351DD31F1F161A7E00E90170 /* JXPhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD31E1F161A7E00E90170 /* JXPhotoBrowserController.swift */; };
 		351DD3231F1634B100E90170 /* JXGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD3221F1634B100E90170 /* JXGuideView.swift */; };
+		351DD3251F17104B00E90170 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD3241F17104B00E90170 /* Bundle+Extension.swift */; };
+		351DD3271F171F0C00E90170 /* JXAdvertiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD3261F171F0C00E90170 /* JXAdvertiseView.swift */; };
+		351DD3291F1756F400E90170 /* JXUIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD3281F1756F400E90170 /* JXUIWebViewController.swift */; };
+		351DD32B1F17602300E90170 /* JXWkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DD32A1F17602300E90170 /* JXWkWebViewController.swift */; };
 		35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D2B1EE696EF001B31A1 /* AppDelegate.swift */; };
 		35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D2D1EE696EF001B31A1 /* ViewController.swift */; };
 		35260D331EE696EF001B31A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35260D321EE696EF001B31A1 /* Assets.xcassets */; };
@@ -66,6 +70,10 @@
 		351DD3141F14E70200E90170 /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		351DD31E1F161A7E00E90170 /* JXPhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXPhotoBrowserController.swift; sourceTree = "<group>"; };
 		351DD3221F1634B100E90170 /* JXGuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXGuideView.swift; sourceTree = "<group>"; };
+		351DD3241F17104B00E90170 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		351DD3261F171F0C00E90170 /* JXAdvertiseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAdvertiseView.swift; sourceTree = "<group>"; };
+		351DD3281F1756F400E90170 /* JXUIWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXUIWebViewController.swift; sourceTree = "<group>"; };
+		351DD32A1F17602300E90170 /* JXWkWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXWkWebViewController.swift; sourceTree = "<group>"; };
 		35260D281EE696EF001B31A1 /* ShoppingGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35260D2B1EE696EF001B31A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35260D2D1EE696EF001B31A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 				351DD2FB1F14E1AE00E90170 /* UIImage+Extension.swift */,
 				351DD2FC1F14E1AE00E90170 /* UIScreen+Extension.swift */,
 				351DD2FD1F14E1AE00E90170 /* UIView+Extension.swift */,
+				351DD3241F17104B00E90170 /* Bundle+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -137,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				351DD3221F1634B100E90170 /* JXGuideView.swift */,
+				351DD3261F171F0C00E90170 /* JXAdvertiseView.swift */,
 				351DD2FF1F14E1AE00E90170 /* JXAlertView.swift */,
 				351DD3001F14E1AE00E90170 /* JXHorizontalView.swift */,
 				351DD3011F14E1AE00E90170 /* JXNoticeView.swift */,
@@ -219,6 +229,8 @@
 			children = (
 				35260D411EE697AD001B31A1 /* BaseViewController.swift */,
 				3597502A1EE793A300419474 /* JXTableViewController.swift */,
+				351DD3281F1756F400E90170 /* JXUIWebViewController.swift */,
+				351DD32A1F17602300E90170 /* JXWkWebViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -417,8 +429,10 @@
 				35DE9E9D1F14BDAF006F271E /* BaseModel.swift in Sources */,
 				351DD3071F14E1AE00E90170 /* UIColor+Extension.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
+				351DD3291F1756F400E90170 /* JXUIWebViewController.swift in Sources */,
 				351DD3231F1634B100E90170 /* JXGuideView.swift in Sources */,
 				35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */,
+				351DD3251F17104B00E90170 /* Bundle+Extension.swift in Sources */,
 				359750671EEFB68300419474 /* JXLoginViewController.swift in Sources */,
 				351DD30B1F14E1AE00E90170 /* JXAlertView.swift in Sources */,
 				35DE9E971F14A917006F271E /* JXRequest.swift in Sources */,
@@ -432,6 +446,8 @@
 				351DD30C1F14E1AE00E90170 /* JXHorizontalView.swift in Sources */,
 				35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */,
 				351DD3061F14E1AE00E90170 /* UIBarButtonItem+Extension.swift in Sources */,
+				351DD32B1F17602300E90170 /* JXWkWebViewController.swift in Sources */,
+				351DD3271F171F0C00E90170 /* JXAdvertiseView.swift in Sources */,
 				35DE9E9B1F14BD6D006F271E /* UserManager.swift in Sources */,
 				351DD30D1F14E1AE00E90170 /* JXNoticeView.swift in Sources */,
 				35260D4A1EE697AD001B31A1 /* JXNavigationController.swift in Sources */,

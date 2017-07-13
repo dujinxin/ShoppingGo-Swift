@@ -38,9 +38,10 @@ class MyViewController: JXTableViewController {
                 return
             }
             UserManager.default.saveUserInfo(dict: data)
-            }, failure: { (msg, errorCode) in
-                print(msg)
-            })
+            
+        }, failure: { (msg, errorCode) in
+            print(msg)
+        })
  
     }
     

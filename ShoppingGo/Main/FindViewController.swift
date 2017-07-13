@@ -8,12 +8,16 @@
 
 import UIKit
 
-class FindViewController: BaseViewController {
+class FindViewController: JXWkWebViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setUpMainView()
+        
+        if let url = URL(string: "https://www.baidu.com") {
+            self.webView.load(URLRequest(url: url))
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,11 +39,12 @@ class FindViewController: BaseViewController {
 }
 
 extension FindViewController {
+    override func setUpMainView() {
+        super.setUpMainView()
+    }
     override func setUpDefaultView() {
-        super.setUpDefaultView()
-        
-        self.defaultView.style = .noNetwork
-        //self.defaultView.setSubViewContent(type: .noNetwork)
+//        super.setUpDefaultView()
+//        self.defaultView.style = .noNetwork
     }
     override func requestData() {
         print("重新请求")

@@ -17,7 +17,11 @@ class JXTabBarController: UITabBarController {
         
         setJXViewControllers()
         
-        setGuideView()
+        if JXGuideView.isShowGuideView{
+            setGuideView()
+        }else{
+            setAdvertiseView()
+        }
 
         // Do any additional setup after loading the view.
         
@@ -36,7 +40,13 @@ extension JXTabBarController {
     func setJXViewControllers(){
         
         let infoArray = [
-            ["className":"HomeViewController","title":"首页","imageName":"home","defaultInfo":["imageName":"location_address_none", "content":"生活还很艺术，酷爱艺术而活下去的人，到了晚年就不会太凄凉。"]],
+            ["className":"HomeViewController",
+             "title":"首页",
+             "imageName":"home",
+             "defaultInfo":["imageName":"location_address_none",
+                            "content":"生活还很艺术，酷爱艺术而活下去的人，到了晚年就不会太凄凉。"
+                ]
+            ],
             ["className":"BusinessViewController","title":"商圈","imageName":"businesscircle","defaultInfo":["imageName":"order_none", "content":"为了寻你，我错过了许许许多多的良辰美景，错过了闲看花开花落的心情，可我不后悔，因为你是我今生最美的遇见，寻得你，我就拥有了全世界的花开颜色。你的到来，为我拂去了浪迹天涯的孤独，我漂泊的灵魂再也不用辗转流连于亭台..."]],
             ["className":"FindViewController","title":"发现","imageName":"find","defaultInfo":["imageName":"order_none", "content":"曾经以为，这样的一见如故，会是我今生最美丽的相遇;曾经以为，这样的一诺相许，会是我素色年华里最永恒的风景;曾经以为，这样的心心相印，会是我无怨无悔的追逐。却不知，繁华有时，落寞有时，却怎么也读不懂我心头的一丝缠绵..."]],
             ["className":"MyViewController","title":"我的","imageName":"my","defaultInfo":["imageName":"collection_none", "content":"好久不见，凝望着你那优美的锁骨，追随着你那圆润的弧线，抚摸着你冰冷的肌肤，我就无法抑制内心的冲动，给开锁公司打电话的冲动，因为我忘带钥匙了!"]]
@@ -81,13 +91,16 @@ extension JXTabBarController {
 }
 
 extension JXTabBarController {
+    
     func setGuideView() {
 
-        let vc = JXGuideView(frame: view.bounds) { (guide) in
+        let guideView = JXGuideView(frame: view.bounds) { (guide) in
             guide.removeFromSuperview()
         }
-        
-        view.addSubview(vc)
-        
+        view.addSubview(guideView)
+    }
+    func setAdvertiseView() {
+        let adView = JXAdvertiseView(frame: view.bounds)
+        view.addSubview(adView)
     }
 }
