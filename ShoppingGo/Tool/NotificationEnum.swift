@@ -12,6 +12,7 @@ import Foundation
 let NotificationLocatedStatus = "NotificationLocatedStatus"
 
 let NotificationLoginStatus = "NotificationLoginStatus"
+let NotificationShouldLogin = "NotificationLoginStatus"
 
 let NotificationMainDeliveringNumber = "NotificationMainDeliveringNumber"
 

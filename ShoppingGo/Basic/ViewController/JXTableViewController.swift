@@ -15,13 +15,23 @@ class JXTableViewController: BaseViewController{
     //refreshControl
     var refreshControl : UIRefreshControl?
     //data array
-    var dataArray = NSMutableArray()
+    var dataArray = Array<Any>()
     
+    var style : UITableViewStyle = .plain{
+        didSet{
+            self.setTableView(style: style)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //isLogin ? setUpTableView() : setUpDefaultView()
+        
+        
+        if self.style == .plain {
+            setTableView(style: .plain)
+        }
         
     }
 
@@ -35,25 +45,22 @@ class JXTableViewController: BaseViewController{
 
 extension JXTableViewController : UITableViewDelegate,UITableViewDataSource{
     
-    override func setUpMainView() {
-        setUpTableView()
-    }
-    
-    func setUpTableView(){
-        
-        self.tableView = UITableView(frame: self.view.bounds, style: .plain)
+    func setTableView(style:UITableViewStyle) {
+        if self.tableView != nil && self.tableView?.superview != nil {
+            self.tableView?.removeFromSuperview()
+        }
+        self.tableView = UITableView(frame: self.view.bounds, style: style)
         self.tableView?.backgroundColor = UIColor.groupTableViewBackground
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         
-        self.view.addSubview(self.tableView!)
+        self.view.insertSubview(self.tableView!, at: 0)
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(requestData), for: UIControlEvents.valueChanged)
         
         self.tableView?.addSubview(refreshControl!)
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

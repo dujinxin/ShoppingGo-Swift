@@ -85,43 +85,42 @@ class JXRequest: JXBaseRequest {
 //                JXNetworkManager.manager.userAccound?.removeAccound()
 //                JXNetworkManager.manager.userAccound = nil
 //                
-//                if let rootVc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController,
-//                    let vc = rootVc.topViewController{
-//                    
-//                    if rootVc.viewControllers.count > 1 {
-//                        vc.navigationController?.popToRootViewController(animated: false)
-//                    }
-//                    print("rootVc = \(rootVc)")
-//                    print("rootVc.viewControllers = \(rootVc.viewControllers)")
-//                    print("vc = \(String(describing: vc))")
-//                }
-//                
+                if let rootVc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController,
+                    let vc = rootVc.topViewController{
+                    
+                    if rootVc.viewControllers.count > 1 {
+                        vc.navigationController?.popToRootViewController(animated: false)
+                    }
+                    print("rootVc = \(rootVc)")
+                    print("rootVc.viewControllers = \(rootVc.viewControllers)")
+                    print("vc = \(String(describing: vc))")
+                }
+//
 //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationLoginStatus), object: false)
+                
+                UserManager.default.refreshToken(completion: { (isSuccess) in
+                    if isSuccess{
+                        JXNetworkManager.manager.resumeRequests()
+                    }
+                })
             }else if code == .kResponseLongTokenDisabled{
                 
                 JXNetworkManager.manager.cancelRequests()
                 
-                if UserManager.default.userModel.UserID != nil{//用户身份，需弹窗提示信息已过期，重新登录
-                    let alert = UIAlertController(title: "提示", message: "", preferredStyle: .alert)
+                if UserManager.default.userModel.UserID != 0{//用户身份，需弹窗提示信息已过期，重新登录
+                    let alert = UIAlertController(title: "提示", message: "您的登录信息已过期，请重新登录", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "确定", style: .destructive, handler: { (action) in
                         print("确定")
+                        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationShouldLogin), object: false)
+                        
                     }))
                     alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
                         print("取消")
+                        UserManager.default.fetchToken()
                     }))
                     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
                 }else{//游客身份，不需要提示，直接用本地字符串获取新token即可
-                    JXRequest.request(url: ApiString.getTokenByKey.rawValue, param: ["Uc":(UIDevice.current.identifierForVendor?.uuidString)!], success: { (data, msg) in
-                        
-                        guard let data = data as? Dictionary<String, Any> else{
-                            return
-                        }
-                        let isSuccess = UserManager.default.saveUserInfo(dict: data)
-                        print("保存token：\(isSuccess)")
-                        
-                    }, failure: { (msg, errorCode) in
-                        print(msg)
-                    })
+                    UserManager.default.fetchToken()
                 }
             }else{
                 msg = message ?? "失败"

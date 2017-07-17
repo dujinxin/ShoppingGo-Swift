@@ -197,12 +197,14 @@ extension JXNetworkManager {
     /// 重发所有缓冲中的request
     ///
     /// - Parameter request: 已经包装好含有URL，param的request
-    func resumeRequests(request:JXBaseRequest) {
+    func resumeRequests() {
         for (_,value) in requestCache {
             let request = value as JXBaseRequest
             
             removeRequest(request: request)
-            resumeRequest(request: request)
+            if request.requestUrl != ApiString.getTokenByKey.rawValue && request.requestUrl != ApiString.refreshToken.rawValue{
+                resumeRequest(request: request)
+            }
         }
     }
     
@@ -246,7 +248,7 @@ extension JXNetworkManager {
         let City = "北京市"
         let token = UserManager.default.userModel.Token ?? ""
         
-        parameters = "Version=2.0.1&Package=GjieGo&Channel=\(Channel)&Longitude=\(longitude)&Latitude=\(latitude)&Mac=\(Mac)&IP=\(IP)&City=\(City)&Token=\(token)"
+        parameters = "Version=2.0.6&Package=GjieGo&Channel=\(Channel)&Longitude=\(longitude)&Latitude=\(latitude)&Mac=\(Mac)&IP=\(IP)&City=\(City)&Token=\(token)"
         //let ssss = "https://appc.guangjiego.com/v1/UserLogin/GetTokenByKey?\(parameters)"
         let ssss = "https://appc.guangjiego.com/v1\(url)?\(parameters)"
         let sssss = ssss.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

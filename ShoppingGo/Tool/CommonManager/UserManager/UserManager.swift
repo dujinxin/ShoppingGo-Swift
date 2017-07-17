@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 private let userPath = NSHomeDirectory() + "/Documents/userAccound.json"
 
@@ -31,7 +32,7 @@ class UserManager {
     
     var userModel = UserModel()
     
-    init() {
+    private init() {
         let pathUrl = URL(fileURLWithPath: userPath)
         guard
             let data = try? Data(contentsOf: pathUrl),
@@ -42,6 +43,10 @@ class UserManager {
         }
         self.userModel.setValuesForKeys(dict)
         print("用户地址：\(userPath)")
+    }
+    
+    var isLogin: Bool {
+        return self.userModel.UserID != 0
     }
     
     func saveUserInfo(dict: Dictionary<String,Any>) -> Bool {
@@ -62,5 +67,53 @@ class UserManager {
                 return false
         }
         return true
+    }
+}
+
+extension UserManager {
+    func refreshToken(completion:((_ isSuccess:Bool)->())?) {
+        //1.获取token,首次安装用本地生成的字符串来获取token
+        //2.本地有保存token,则用长token去刷新token
+        if
+            let _ = UserManager.default.userModel.Token,
+            let longToken = UserManager.default.userModel.RefreshToken{
+            
+            JXRequest.request(url: ApiString.refreshToken.rawValue, param: ["RToken":longToken], success: { (data, msg) in
+                print(data)
+                guard let data = data as? Dictionary<String, Any> else{
+                    return
+                }
+                let isSuccess = UserManager.default.saveUserInfo(dict: data)
+                print("刷新token：\(isSuccess)")
+                if let completion = completion {
+                    completion(isSuccess)
+                }
+            }, failure: { (msg, code) in
+                print(msg)
+                if let completion = completion {
+                    completion(false)
+                }
+            })
+            
+        }else{
+            if let completion = completion {
+                completion(false)
+            }
+            fetchToken()
+        }
+        
+    }
+    func fetchToken() {
+        JXRequest.request(url: ApiString.getTokenByKey.rawValue, param: ["Uc":(UIDevice.current.identifierForVendor?.uuidString)!], success: { (data, msg) in
+            
+            guard let data = data as? Dictionary<String, Any> else{
+                return
+            }
+            let isSuccess = UserManager.default.saveUserInfo(dict: data)
+            print("保存token：\(isSuccess)")
+            
+        }, failure: { (msg, errorCode) in
+            print(msg)
+        })
     }
 }

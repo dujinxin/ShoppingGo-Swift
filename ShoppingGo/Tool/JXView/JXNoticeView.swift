@@ -76,7 +76,7 @@ class JXNoticeView: UIView {
     }
     func show(inView view:UIView? ,animate:Bool = true) {
     
-        guard let msg = message,
+        guard let msg = message,msg.isEmpty == false,
               let msgLabel = textLabel else {
             return
         }

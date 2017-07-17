@@ -13,17 +13,18 @@ class BaseViewController: UIViewController {
     //MARK: - custom NavigationBar
     //自定义导航栏
     lazy var customNavigationBar : UINavigationBar = {
-        let navigationBar = UINavigationBar(frame:CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
-        navigationBar.barTintColor = UIColor.cyan//导航条颜色
-        navigationBar.tintColor = UIColor.brown //item图片文字颜色
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.red,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
+        let navigationBar = UINavigationBar(frame:CGRect(x: 0, y: 0, width: kScreenWidth, height: kNavStatusHeight))
+        navigationBar.isTranslucent = true
+        navigationBar.barStyle = .blackTranslucent
+        navigationBar.barTintColor = UIColor.orange//导航条颜色
+        navigationBar.tintColor = UIColor.white //item图片文字颜色
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.red,NSFontAttributeName:UIFont.systemFont(ofSize: 20)]//标题设置
         return navigationBar
     }()
     lazy var customNavigationItem: UINavigationItem = {
         let item = UINavigationItem()
         return item
     }()
-    
     //重写title的setter方法
     override var title: String?{
         didSet {
@@ -39,7 +40,6 @@ class BaseViewController: UIViewController {
         v.backgroundColor = UIColor.randomColor
         return v
     }()
-    
     var defaultInfo : [String:String]?
     
     //log state
@@ -57,7 +57,7 @@ class BaseViewController: UIViewController {
         view.backgroundColor = UIColor.randomColor
         
         
-        isLogin ? setUpMainView() : setUpDefaultView()
+        UserManager.default.isLogin ? setUpMainView() : setUpDefaultView()
         
         setCustomNavigationBar()
         
@@ -79,8 +79,14 @@ extension BaseViewController {
         customNavigationBar.items = [customNavigationItem]
         
     }
-}
+//    func setNavigatioinBar(title:String,backGroundColor:UIColor,leftItem:UIView,rightItem:UIView) -> UIView {
+//        let navightionView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kNavStatusHeight))
+//        navightionView.backgroundColor = UIColor.clear
+////        
+//    }
 
+}
+//MARK: - subviewController need override
 extension BaseViewController {
     
     /// request data
@@ -94,11 +100,9 @@ extension BaseViewController {
     func request(withPage:Int) {
         
     }
-    //MARK: - base view set
     func setUpMainView() {
         //
     }
-    
     /// add default view eg:no data,no network,no login
     func setUpDefaultView() {
         defaultView.frame = view.bounds
@@ -107,6 +111,9 @@ extension BaseViewController {
         defaultView.tapBlock = {()->() in
             self.requestData()
         }
+    }
+    func updateMainView() {
+        
     }
 }
 
