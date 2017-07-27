@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class JXRequest: JXBaseRequest {
     
@@ -26,24 +27,31 @@ class JXRequest: JXBaseRequest {
     
     override func requestSuccess(responseData: Any) {
         super.requestSuccess(responseData: responseData)
+        //afmanager.responseSerializer = AFJSONResponseSerializer.init() json为NSArray or NSDictionary
+        //AFHTTPResponseSerializer 为Data
         
-        let isJson = JSONSerialization.isValidJSONObject(responseData)
-        print(isJson)
-        if responseData is Dictionary<String,Any> {
-            print("responseData is Dictionary")
-        }else if responseData is Data{
-            print("responseData is Data")
-        }else if responseData is String{
-            print("responseData is String")
-        }
-        guard let data = responseData as? Data,
-            let jsonData = try? JSONSerialization.jsonObject(with: data, options: [])
-            else{
-                handleResponseResult(result: nil, message: "数据解析失败", code: JXNetworkError.kResponseUnknow, isSuccess: false)
-                return
+        if type(of: JXNetworkManager.manager.afmanager.responseSerializer) == AFHTTPResponseSerializer.self{
+            guard let data = responseData as? Data,
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: [])
+                else{
+                    handleResponseResult(result: nil, message: "数据解析失败", code: JXNetworkError.kResponseUnknow.rawValue, isSuccess: false)
+                    return
+            }
+            
+            handleResponseResult(result: jsonData)
+        }else if type(of: JXNetworkManager.manager.afmanager.responseSerializer) == AFJSONResponseSerializer.self{
+            let isJson = JSONSerialization.isValidJSONObject(responseData)
+            if  isJson == true {
+                handleResponseResult(result: responseData)
+            }else{
+                print("responseData is not jsonObject")
+                handleResponseResult(result: nil, message: "数据解析失败", code: JXNetworkError.kResponseUnknow.rawValue, isSuccess: false)
+            }
+        }else{
+            print("responseData is unknow")
+            handleResponseResult(result: nil, message: "数据解析失败", code: JXNetworkError.kResponseUnknow.rawValue, isSuccess: false)
         }
         
-        handleResponseResult(result: jsonData)
         
     }
     override func requestFailure(error: Error) {
@@ -53,23 +61,22 @@ class JXRequest: JXBaseRequest {
     func handleResponseResult(result:Any?) {
 
         var msg = "请求失败"
-        var netCode : JXNetworkError = .kResponseUnknow
+        var netCode : Int = -9999
         var data : Any? = nil
         var isSuccess : Bool = false
         
-        print("requestParam = \(String(describing: param))")
-        print("requestUrl = \(String(describing: requestUrl))")
+        print(self)
         
         if result is Dictionary<String, Any> {
-            //print("Dictionary")
-            let jsonDict = result as! Dictionary<String, Any>
-            print("responseData = \(jsonDict)")
             
-            guard let codeNum = jsonDict["status"] as? NSNumber,
-                let code = JXNetworkError(rawValue: codeNum.intValue)
+            let jsonDict = result as! Dictionary<String, Any>
+            print("<<responseInfo>>\n---responseData = \(jsonDict)")
+            
+            
+            guard let code = jsonDict["status"] as? Int
                 else {
                     msg = "状态码未知"
-                    handleResponseResult(result: nil, message: msg, code: .kResponseDataError, isSuccess: isSuccess)
+                    handleResponseResult(result: nil, message: msg, code: JXNetworkError.kResponseUnknow.rawValue, isSuccess: isSuccess)
                     return
             }
             
@@ -77,14 +84,11 @@ class JXRequest: JXBaseRequest {
             msg = message ?? "失败"
             netCode = code
             
-            if (code == .kResponseSuccess){
+            if (code == JXNetworkError.kResponseSuccess.rawValue){
                 data = jsonDict["data"]
                 msg = message ?? "成功"
                 isSuccess = true
-            }else if code == .kResponseShortTokenDisabled{
-//                JXNetworkManager.manager.userAccound?.removeAccound()
-//                JXNetworkManager.manager.userAccound = nil
-//                
+            }else if code == JXNetworkError.kResponseShortTokenDisabled.rawValue{
                 if let rootVc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController,
                     let vc = rootVc.topViewController{
                     
@@ -95,32 +99,28 @@ class JXRequest: JXBaseRequest {
                     print("rootVc.viewControllers = \(rootVc.viewControllers)")
                     print("vc = \(String(describing: vc))")
                 }
-//
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationLoginStatus), object: false)
                 
                 UserManager.default.refreshToken(completion: { (isSuccess) in
                     if isSuccess{
                         JXNetworkManager.manager.resumeRequests()
                     }
                 })
-            }else if code == .kResponseLongTokenDisabled{
+            }else if code == JXNetworkError.kResponseLongTokenDisabled.rawValue{
                 
                 JXNetworkManager.manager.cancelRequests()
-                
-                if UserManager.default.userModel.UserID != 0{//用户身份，需弹窗提示信息已过期，重新登录
+                //只要长token失效，用户登录信息已过期，无论之前是否登录都需清除本地用户信息，客户端重新获取token
+                UserManager.default.fetchToken()
+                if UserManager.default.isLogin{//用户身份，需弹窗提示信息已过期，重新登录
                     let alert = UIAlertController(title: "提示", message: "您的登录信息已过期，请重新登录", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "确定", style: .destructive, handler: { (action) in
                         print("确定")
-                        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationShouldLogin), object: false)
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationShouldLogin), object: false)
                         
                     }))
                     alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
                         print("取消")
-                        UserManager.default.fetchToken()
                     }))
                     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-                }else{//游客身份，不需要提示，直接用本地字符串获取新token即可
-                    UserManager.default.fetchToken()
                 }
             }else{
                 msg = message ?? "失败"
@@ -135,11 +135,10 @@ class JXRequest: JXBaseRequest {
             guard let error = result as? NSError,
                 let code = JXNetworkError(rawValue: error.code)
                 else {
-                    handleResponseResult(result: data, message: "Error", code: .kResponseUnknow, isSuccess: isSuccess)
+                    handleResponseResult(result: data, message: "Error", code: JXNetworkError.kResponseUnknow.rawValue, isSuccess: isSuccess)
                     return
             }
-            netCode = code
-            
+            netCode = code.rawValue
             switch code {
             case .kRequestErrorCannotConnectToHost,
                  .kRequestErrorCannotFindHost,
@@ -167,7 +166,7 @@ class JXRequest: JXBaseRequest {
         }
         handleResponseResult(result: data, message: msg, code: netCode, isSuccess: isSuccess)
     }
-    func handleResponseResult(result:Any?,message:String,code:JXNetworkError,isSuccess:Bool) {
+    func handleResponseResult(result:Any?,message:String,code:Int,isSuccess:Bool) {
         
         
         //        if result is Dictionary<String, Any> {

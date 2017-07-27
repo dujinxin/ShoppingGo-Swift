@@ -24,12 +24,16 @@ class JXTabBarController: UITabBarController {
         }
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(presentLoginViewController(notif:)), name: NSNotification.Name(rawValue: NotificationShouldLogin), object: nil)
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: NotificationShouldLogin), object: nil)
     }
 
 }
@@ -91,6 +95,7 @@ extension JXTabBarController {
 
 extension JXTabBarController {
     
+    /// 设置引导页面
     func setGuideView() {
 
         let guideView = JXGuideView(frame: view.bounds) { (guide) in
@@ -100,6 +105,7 @@ extension JXTabBarController {
         
         UserManager.default.refreshToken(completion: nil)
     }
+    /// 设置广告页面
     func setAdvertiseView() {
         let adView = JXAdvertiseView(frame: view.bounds)
         view.addSubview(adView)
@@ -109,5 +115,8 @@ extension JXTabBarController {
          */
         //不是首次使用，本地有保存token,所以直接用长token去刷新token即可
         UserManager.default.refreshToken(completion: nil)
+    }
+    func presentLoginViewController(notif:Notification) {
+        present(JXLoginViewController(), animated: true) {}
     }
 }

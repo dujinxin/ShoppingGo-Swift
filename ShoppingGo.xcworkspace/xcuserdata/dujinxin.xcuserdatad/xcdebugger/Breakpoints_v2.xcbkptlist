@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Tool/JXNetwork/JXRequest.swift"
-            timestampString = "518950079.354817"
+            timestampString = "522756141.919926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "construct"
             landmarkType = "24">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Tool/JXNetwork/JXNetworkManager.swift"
-            timestampString = "519026721.842719"
+            timestampString = "522757911.334094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "addRequest(request:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,7 +174,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
-            endingLineNumber = "114">
+            endingLineNumber = "114"
+            landmarkName = "webView(_:previewingViewControllerForElement:defaultActions:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -188,7 +190,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
-            endingLineNumber = "110">
+            endingLineNumber = "110"
+            landmarkName = "webView(_:shouldPreviewElement:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,7 +206,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
-            endingLineNumber = "106">
+            endingLineNumber = "106"
+            landmarkName = "webView(_:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -216,7 +222,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
-            endingLineNumber = "103">
+            endingLineNumber = "103"
+            landmarkName = "webView(_:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -230,7 +238,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
-            endingLineNumber = "91">
+            endingLineNumber = "91"
+            landmarkName = "webView(_:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -244,7 +254,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
-            endingLineNumber = "88">
+            endingLineNumber = "88"
+            landmarkName = "webViewDidClose(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -258,7 +270,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
-            endingLineNumber = "118">
+            endingLineNumber = "118"
+            landmarkName = "webView(_:commitPreviewingViewController:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -268,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/MyViewController.swift"
-            timestampString = "521983732.684693"
+            timestampString = "522156181.447528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "setHeadView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -284,12 +298,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/MyViewController.swift"
-            timestampString = "521984143.887148"
+            timestampString = "522128879.148092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
+            timestampString = "522128882.804634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "jx_setImage(with:placeholderImage:radius:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in ShoppingGo):__ObjC.UIImageView.(jx_setImage (with : Swift.String, placeholderImage : Swift.Optional&lt;__ObjC.UIImage&gt;, radius : CoreGraphics.CGFloat) -&gt; ()).(default argument 2)"
+                  moduleName = "ShoppingGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
+                  timestampString = "522760346.887316"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "7">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in ShoppingGo):__ObjC.UIImageView.jx_setImage (with : Swift.String, placeholderImage : Swift.Optional&lt;__ObjC.UIImage&gt;, radius : CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "ShoppingGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
+                  timestampString = "522760346.888595"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/Extension/UIImage+Extension.swift"
+            timestampString = "522128887.221083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "image(originalImage:rect:radius:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -300,12 +378,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/MyViewController.swift"
-            timestampString = "521984143.887148"
+            timestampString = "522156181.447528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "scrollViewDidScroll(_:)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
+            timestampString = "522158229.330626"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "jx_setImage(with:placeholderImage:radius:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/JXNetwork/JXRequest.swift"
+            timestampString = "522756215.69536"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "requestSuccess(responseData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Main/LogRegister/JXLoginViewController.swift"
+            timestampString = "522760344.646194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "dismissVC()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

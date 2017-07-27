@@ -70,10 +70,12 @@ class MyViewController: JXTableViewController {
 
 
         if UserManager.default.isLogin {
-            self.userImageView.setImageWith(URL.init(string: UserManager.default.userModel.UserImage!)!, placeholderImage: UIImage(named: "portrait_storke"))
+//            self.userImageView.setImageWith(URL.init(string: UserManager.default.userModel.UserImage!)!, placeholderImage: UIImage(named: "portrait_storke"))
+            self.userImageView.jx_setImage(with: UserManager.default.userModel.UserImage!, placeholderImage: UIImage(named: "portrait_default"), radius: 68*kPercent/2)
             self.nameLabel.text = UserManager.default.userModel.UserName
         }else{
-            self.userImageView.image = UIImage(named: "portrait_storke")
+            //self.userImageView.image = UIImage(named: "portrait_default")
+            self.userImageView.image = UIImage.image(originalImage: UIImage(named: "portrait_default"), rect: CGRect.init(x: 0, y: 0, width: 68*kPercent/2, height: 68*kPercent/2), radius: 68*kPercent/2)
             self.nameLabel.text = "登录"
         }
         
@@ -92,8 +94,8 @@ class MyViewController: JXTableViewController {
     }
     
     @objc private func nextPage() {
-        let v = ViewController()
-        v.title = "登录"
+        let v = JXBezierViewController()
+        v.title = "bezier"
         navigationController?.pushViewController(v, animated: true)
         
     }
@@ -113,11 +115,11 @@ extension MyViewController {
         
         self.headView.frame = CGRect(x: 0, y: -MyHeadViewHeight - MyHeadItemHeight, width: kScreenWidth, height: MyHeadViewHeight + MyHeadItemHeight)
         self.bgImageView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: MyHeadViewHeight)
-        self.userImageView.frame = CGRect(x: (kScreenWidth-65*kPercent)/2, y: 64, width: 65*kPercent, height: 65*kPercent)
-        self.userImageView.layer.cornerRadius = 65*kPercent/2
-        self.userImageView.layer.masksToBounds = true
-        self.userImageView.layer.borderColor = UIColor.white.cgColor
-        self.userImageView.layer.borderWidth = 3
+        self.userImageView.frame = CGRect(x: (kScreenWidth-68*kPercent)/2, y: 64, width: 68*kPercent, height: 68*kPercent)
+//        self.userImageView.layer.cornerRadius = 65*kPercent/2
+//        self.userImageView.layer.masksToBounds = true
+//        self.userImageView.layer.borderColor = UIColor.white.cgColor
+//        self.userImageView.layer.borderWidth = 3
         
         self.nameLabel.frame = CGRect(x: 0, y: self.userImageView.frame.maxY + 8, width: kScreenWidth, height: 14)
         
@@ -172,51 +174,7 @@ extension MyViewController {
             xLine.frame = CGRect(x:0, y:0, width:kScreenWidth / 4 - 0.5, height:0.5)
             yLine.frame = CGRect(x:kScreenWidth / 4 - 0.5, y:0, width:0.5, height:MyHeadItemHeight)
         }
-//        for (int i = 0; i < titleArray.count ; i ++)
-//        {
-//            UIButton *dmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//            dmBtn.backgroundColor = JXFfffffColor;
-//            dmBtn.tag = 10 + i;
-//            dmBtn.frame = CGRectMake(kScreenWidth /4 * (i%4),(MyHeadViewHeight) + 71*kPercent *(i/4), kScreenWidth /4, 71*kPercent);
-//            [dmBtn.titleLabel setFont:JXFontForNormal(13)];
-//            [dmBtn setTitleColor:JXTextColor forState:UIControlStateNormal];
-//            [dmBtn setTitle:JXLocalizedString(titleArray[i]) forState:UIControlStateNormal];
-//            [dmBtn setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];
-//            [dmBtn setContentEdgeInsets:UIEdgeInsetsMake(0, 0, 8, 0)];
-//            
-//            UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake((kScreenWidth /4 -25*kPercent)/2, 15, 25*kPercent, 25*kPercent)];
-//            [image setImage:JXImageNamed(imageArray[i])];
-//            image.userInteractionEnabled = NO;
-//            [dmBtn addSubview:image];
-//            UILabel * xline = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth /4, 0.5)];
-//            xline.backgroundColor = JXSeparatorColor;
-//            [dmBtn addSubview:xline];
-//            UILabel * yline = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth /4-0.5, 0, 0.5, 71*kPercent)];
-//            yline.backgroundColor = JXSeparatorColor;
-//            if (i != titleArray.count -1) {
-//                [dmBtn addSubview:yline];
-//            }
-//            
-//            [dmBtn setBackgroundImage:JXImageNamed(@"icon_pressed") forState:UIControlStateHighlighted];
-//            [dmBtn setBackgroundImage:JXImageNamed(@"icon_normal") forState:UIControlStateNormal];
-//            [dmBtn addTarget:self action:@selector(speedEntryClick:) forControlEvents:UIControlEventTouchUpInside];
-//            [_headView addSubview:dmBtn];
-//            
-//            if (i == 2){
-//                redLabel = [UILabel new];
-//                redLabel.frame = CGRectMake((kScreenWidth /4 +25*kPercent)/2 -5, 5, 15.f, 15.f);
-//                redLabel.backgroundColor = [UIColor redColor];
-//                //redLabel.backgroundColor = JXff5252Color;
-//                redLabel.textColor = JXFfffffColor;
-//                redLabel.textAlignment = NSTextAlignmentCenter;
-//                redLabel.font = JXFontForNormal(10);
-//                redLabel.layer.cornerRadius = 15.f/2;
-//                //redLabel.clipsToBounds = YES;
-//                redLabel.layer.masksToBounds = YES;
-//                redLabel.hidden = YES;
-//                [dmBtn addSubview:redLabel];
-//            }
-//        }
+
     }
     
     func setNavigationBar(){
@@ -235,11 +193,6 @@ extension MyViewController {
         return 10
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-//        
-//        if cell == nil {
-//            cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
-//        }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         cell.accessoryType = .disclosureIndicator
         if
@@ -247,11 +200,11 @@ extension MyViewController {
             let title = array[indexPath.row]["title"],
             let imageName = array[indexPath.row]["image"]
         {
-            cell.textLabel?.text = title
+            //cell.textLabel?.text = LanguageManager.manager.localizedString(title)
+            cell.textLabel?.text = LanguageManager.localizedString(title)
             cell.imageView?.image = UIImage(named: imageName)
         }
-        
-        
+
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -285,10 +238,10 @@ extension MyViewController {
 extension MyViewController {
     
     
-//    override func setUpDefaultView() {
-//        self.userImageView.image = UIImage(named: "portrait_storke")
-//        self.nameLabel.text = "登录"
-//    }
+    override func setUpDefaultView() {
+        self.userImageView.image = UIImage(named: "portrait_storke")
+        self.nameLabel.text = "登录"
+    }
     override func requestData() {
         
         

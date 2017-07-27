@@ -30,7 +30,7 @@ class UserManager {
     
     static let `default` = UserManager()
     
-    var userModel = UserModel()
+    var userModel : UserModel!
     
     private init() {
         let pathUrl = URL(fileURLWithPath: userPath)
@@ -41,6 +41,7 @@ class UserManager {
             print("用户地址不存在：\(userPath)")
             return
         }
+        self.userModel = UserModel()
         self.userModel.setValuesForKeys(dict)
         print("用户地址：\(userPath)")
     }
@@ -55,6 +56,7 @@ class UserManager {
         else {
             return false
         }
+        self.userModel = UserModel()
         self.userModel.setValuesForKeys(dict)
         print("用户地址：\(userPath)")
         return true
@@ -64,8 +66,9 @@ class UserManager {
               FileManager.default.fileExists(atPath: userPath) == true,
              (try? FileManager.default.removeItem(atPath: userPath)) != nil
         else {
-                return false
+            return false
         }
+        self.userModel = UserModel()
         return true
     }
 }
@@ -79,7 +82,7 @@ extension UserManager {
             let longToken = UserManager.default.userModel.RefreshToken{
             
             JXRequest.request(url: ApiString.refreshToken.rawValue, param: ["RToken":longToken], success: { (data, msg) in
-                print(data)
+                
                 guard let data = data as? Dictionary<String, Any> else{
                     return
                 }

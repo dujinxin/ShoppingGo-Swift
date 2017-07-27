@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  ShoppingGo
+
+  Created by 杜进新 on 2017/7/18.
+  Copyright © 2017年 杜进新. All rights reserved.
+*/
+
+
+CFBundleDisplayName="ShoppingGo-swift";
+CFBundleName="ShoppingGo-swift";
+/*
+ *通用
+ */
+"Home"="Home";
+"Business"="Business";
+"Discover"="Discover";
+"My"="My";
+
+
+"Cancel"="Cancel";
+"Save"="Save";
+"Confirm"="Confirm";
+"Edit"="Edit";
+"done"="Done";
+
+"loginInfomationUnavailble" = "your login information is out of date,please log in again";
+"loginAtOtherDevice1" = "your login account has been logged in other places,please log in again";
+"loginUserRemoveFromServer1" = "your account has been removed from the server side,please register to login";
+
+"Loading"="Loading...";
+"Submit"="Submitting...";
+"Saving"="saving...";

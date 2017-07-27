@@ -59,6 +59,7 @@ class JXLoginViewController: BaseViewController {
         title = "登录"
         
         setUpMainView()
+        self.customNavigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(dismissVC))
         
         userTextField.text = "13121273646"
         passwordTextField.text = "123456"
@@ -118,16 +119,22 @@ extension JXLoginViewController : UITextFieldDelegate{
     func textFieldEditingChanged() {
         
     }
+    func dismissVC() {
+        dismiss(animated: true) { 
+            
+        }
+    }
     func login() {
         JXRequest.request(url: ApiString.userLogin.rawValue, param: ["ua":userTextField.text!,"Up":passwordTextField.text!], success: { (data, msg) in
-            print(data)
+            
             guard let data = data as? Dictionary<String, Any> else{
                 return
             }
             let isSuccess = UserManager.default.saveUserInfo(dict: data)
             print("保存token：\(isSuccess)")
+            self.dismissVC()
         }) { (msg, errorCode) in
-            print(msg)
+            self.showNotice(notice: msg)
         }
     }
 }

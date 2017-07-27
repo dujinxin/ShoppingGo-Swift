@@ -115,6 +115,11 @@ extension BaseViewController {
     func updateMainView() {
         
     }
+    
+    func showNotice(notice:String) {
+        let notice = JXNoticeView(text: notice)
+        notice.show()
+    }
 }
 
 extension BaseViewController {

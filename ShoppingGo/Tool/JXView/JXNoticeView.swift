@@ -60,7 +60,7 @@ class JXNoticeView: UIView {
   
         self.textLabel?.text = self.message
         
-        super.init(frame: CGRect.init())
+        super.init(frame: CGRect())
         self.layer.cornerRadius = 10.0
         self.alpha = 0.8
         self.backgroundColor = UIColor.black
@@ -85,8 +85,8 @@ class JXNoticeView: UIView {
         let attributes = [NSFontAttributeName:font,NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
         let rect = msg.boundingRect(with: CGSize.init(width: UIScreen.main.bounds.width - 60, height: CGFloat.greatestFiniteMagnitude), options: [.usesDeviceMetrics,.usesFontLeading,.usesLineFragmentOrigin], attributes: attributes, context: nil)
         
-        msgLabel.frame = CGRect.init(x: 0, y: 0, width: rect.width + 10, height: rect.height + 5)
-        self.frame = CGRect.init(x: 0, y: 0, width: rect.width + 20, height: rect.height + 20)
+        msgLabel.frame = CGRect(x: 0, y: 0, width: rect.width + 10, height: rect.height + 10)
+        self.frame = CGRect(x: 0, y: 0, width: rect.width + 30, height: rect.height + 30)
         msgLabel.font = font
 
         let bgView : UIView
@@ -100,11 +100,11 @@ class JXNoticeView: UIView {
         
         
         if position == .top {
-            point = CGPoint.init(x: bgView.frame.width / 2, y: 50)
+            point = CGPoint(x: bgView.frame.width / 2, y: 50)
         }else if position == .bottom {
-            point = CGPoint.init(x: bgView.frame.width / 2, y: bgView.frame.height - 60)
+            point = CGPoint(x: bgView.frame.width / 2, y: bgView.frame.height - 60)
         }else if position == .middle {
-            point = CGPoint.init(x: bgView.frame.width / 2, y: bgView.frame.size.height / 2 - 35)
+            point = CGPoint(x: bgView.frame.width / 2, y: bgView.frame.size.height / 2 - 35)
         }else{
             
         }

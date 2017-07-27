@@ -18,15 +18,6 @@ class JXNetworkManager: NSObject {
     
     var networkStatus : AFNetworkReachabilityStatus = .reachableViaWiFi
     
-//    var userAccound : UserModel?
-//    
-//    var isLogin : Bool {
-//        if userAccound == nil {
-//            userAccound = UserModel()
-//        }
-//        return userAccound!.sid != nil
-//    }
-    
     var sid : String? {
         return ""
     }
@@ -66,11 +57,6 @@ class JXNetworkManager: NSObject {
         
         ///获取URL
         let url = buildUrl(url: request.requestUrl)
-        
-//        if isLogin == true,
-//           let sid = userAccound?.sid {
-//            afmanager.requestSerializer.setValue("sid=\(sid)", forHTTPHeaderField: "Cookie")
-//        }
         
         if let customUrlRequest = request.buildCustomUrlRequest() {
             request.sessionTask = afmanager.dataTask(with: customUrlRequest, uploadProgress: nil, downloadProgress: nil, completionHandler: { (response, responseData, error) in

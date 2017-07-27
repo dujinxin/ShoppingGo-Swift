@@ -14,7 +14,7 @@ extension  UIBarButtonItem {
     ///
     /// - Parameters:
     ///   - title:
-    ///   - fontSize: default 13
+    ///   - fontSize: default 17
     ///   - imageName:
     ///   - target:
     ///   - action:

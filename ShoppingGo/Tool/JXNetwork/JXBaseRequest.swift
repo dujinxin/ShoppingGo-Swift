@@ -37,7 +37,7 @@ class JXBaseRequest: NSObject {
     
     typealias constructingBlock = ((_ formData : AFMultipartFormData) -> Void)?
     typealias successCompletion = ((_ data:Any?, _ message:String) -> ())
-    typealias failureCompletion = ((_ message:String,_ code:JXNetworkError) -> ())
+    typealias failureCompletion = ((_ message:String,_ code:Int) -> ())
     
     
     var success : successCompletion?
@@ -129,5 +129,7 @@ extension JXBaseRequest {
             return false
         }
     }
-    
+    override var description: String{
+        return String(format: "<<requestInfo>>\n---requestUrl = %@\n---requestParam = %@\n", requestUrl ?? "null", param ?? [:])
+    }
 }
