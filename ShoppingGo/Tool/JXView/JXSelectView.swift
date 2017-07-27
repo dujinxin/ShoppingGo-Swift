@@ -35,7 +35,7 @@ class JXSelectView: UIView {
     var selectRow : Int = -1
     
     var style : JXSelectViewStyle = .list
-    let position : JXSelectViewShowPosition = .bottom
+    var position : JXSelectViewShowPosition = .bottom
     private var contentView : UIView?
     var isUseTopBar : Bool = false {
         didSet{
