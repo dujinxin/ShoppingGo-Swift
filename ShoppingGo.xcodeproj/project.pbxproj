@@ -50,6 +50,8 @@
 		355947AA1F2B3A74008145BB /* JXBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947A91F2B3A74008145BB /* JXBezierView.swift */; };
 		355947AC1F2B3A95008145BB /* JXImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947AB1F2B3A95008145BB /* JXImageView.swift */; };
 		355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947AD1F2B4C45008145BB /* JXStringView.swift */; };
+		355948221F3415AD008145BB /* MBProgressHUD+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948211F3415AD008145BB /* MBProgressHUD+Addition.swift */; };
+		355948241F3415CF008145BB /* SDWebImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948231F3415CF008145BB /* SDWebImage+Addition.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
 		3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505B1EEA9FF500419474 /* ApiEnum.swift */; };
@@ -108,6 +110,8 @@
 		355947A91F2B3A74008145BB /* JXBezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBezierView.swift; sourceTree = "<group>"; };
 		355947AB1F2B3A95008145BB /* JXImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXImageView.swift; sourceTree = "<group>"; };
 		355947AD1F2B4C45008145BB /* JXStringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXStringView.swift; sourceTree = "<group>"; };
+		355948211F3415AD008145BB /* MBProgressHUD+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Addition.swift"; sourceTree = "<group>"; };
+		355948231F3415CF008145BB /* SDWebImage+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDWebImage+Addition.swift"; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
 		3597505B1EEA9FF500419474 /* ApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEnum.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		351DD2F61F14E1AE00E90170 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				355948211F3415AD008145BB /* MBProgressHUD+Addition.swift */,
+				355948231F3415CF008145BB /* SDWebImage+Addition.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -485,11 +491,13 @@
 				35DE9E9D1F14BDAF006F271E /* BaseModel.swift in Sources */,
 				351DD3071F14E1AE00E90170 /* UIColor+Extension.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
+				355948241F3415CF008145BB /* SDWebImage+Addition.swift in Sources */,
 				355947AA1F2B3A74008145BB /* JXBezierView.swift in Sources */,
 				351DD3291F1756F400E90170 /* JXUIWebViewController.swift in Sources */,
 				3514D72F1F204E59001744DD /* JXNavigationController.swift in Sources */,
 				351DD3231F1634B100E90170 /* JXGuideView.swift in Sources */,
 				35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */,
+				355948221F3415AD008145BB /* MBProgressHUD+Addition.swift in Sources */,
 				351DD3251F17104B00E90170 /* Bundle+Extension.swift in Sources */,
 				351DD30B1F14E1AE00E90170 /* JXAlertView.swift in Sources */,
 				35DE9E971F14A917006F271E /* JXRequest.swift in Sources */,

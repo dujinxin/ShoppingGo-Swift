@@ -7,6 +7,7 @@ target 'ShoppingGo' do
   pod "SDWebImage"
   pod "MJExtension"
   pod "MJRefresh"
+  pod "MBProgressHUD"
   pod "FMDB"
   pod "SnapKit"
 end

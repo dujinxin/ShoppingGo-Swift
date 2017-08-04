@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import Social
 
 private let cellId = "cellId"
 private let MyHeadViewHeight : CGFloat = 225
@@ -209,6 +210,8 @@ extension MyViewController {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        //SLComposeViewController
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y
