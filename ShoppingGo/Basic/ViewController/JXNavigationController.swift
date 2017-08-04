@@ -45,7 +45,7 @@ extension JXNavigationController {
                     titleName = viewControllers.first?.title ?? titleName
                 }
                 //vc.customNavigationItem.leftBarButtonItem = UIBarButtonItem(title: titleName, style: .plain, target: self, action: #selector(pop))
-                vc.customNavigationItem.leftBarButtonItem = UIBarButtonItem(title: titleName, target: self, action: #selector(pop))
+                vc.customNavigationItem.leftBarButtonItem = UIBarButtonItem(title: titleName, imageName: "back", target: self, action: #selector(pop))
             }
         }
         super.pushViewController(viewController, animated: true)

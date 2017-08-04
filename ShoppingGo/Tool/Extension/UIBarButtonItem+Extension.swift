@@ -21,13 +21,33 @@ extension  UIBarButtonItem {
     convenience init(title:String = "",fontSize:CGFloat = 17, imageName:String = "",target:Any,action:Selector) {
         
         let btn = UIButton()
-        btn.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30)
-        btn.setTitle(title, for: UIControlState.normal)
-        btn.setImage(UIImage.init(named: imageName), for: UIControlState.normal)
+        var width : CGFloat = 30
+        
+        if title.isEmpty == false {
+            let size = title.calculate(width: kScreenWidth, fontSize: fontSize)
+            if size.width > 30 {
+                width = size.width
+            }
+            btn.setTitle(title, for: .normal)
+            btn.setTitleColor(UIColor.white, for: .normal)
+            btn.setTitleColor(UIColor.lightText, for: .highlighted)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        }
+        if imageName.isEmpty == false{
+            
+            let image = UIImage(named: imageName)
+            width += (image?.size.width ?? 0)
+            
+            btn.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
+            btn.tintColor = UIColor.white
+           
+            //btn.setImage(image?.withRenderingMode(.alwaysTemplate), for: .highlighted)
+        }
+        width = width > 30 ? width : 30
+        btn.frame = CGRect(x: 0, y: 0, width: width, height: 30)
+
         btn.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
-        
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        
+
         self.init(customView: btn)
     }
 

@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShoppingGo/Tool/JXNetwork/JXRequest.swift"
-            timestampString = "522756141.919926"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "construct"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -282,22 +266,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/MyViewController.swift"
-            timestampString = "522156181.447528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "setHeadView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShoppingGo/Main/MyViewController.swift"
             timestampString = "522128879.148092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -330,7 +298,7 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
-                  timestampString = "522760346.887316"
+                  timestampString = "522927837.399918"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -345,7 +313,7 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
-                  timestampString = "522760346.888595"
+                  timestampString = "522927837.401297"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -409,13 +377,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShoppingGo/Tool/JXNetwork/JXRequest.swift"
-            timestampString = "522756215.69536"
+            filePath = "ShoppingGo/Main/LogRegister/JXLoginViewController.swift"
+            timestampString = "522760344.646194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "requestSuccess(responseData:)"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "dismissVC()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -425,13 +393,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShoppingGo/Main/LogRegister/JXLoginViewController.swift"
-            timestampString = "522760344.646194"
+            filePath = "ShoppingGo/Main/My/JXDrawViewController.swift"
+            timestampString = "522926236.671849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "dismissVC()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

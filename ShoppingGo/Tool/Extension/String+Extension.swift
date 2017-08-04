@@ -66,16 +66,19 @@ extension String {
         }else{
             attributes = [NSFontAttributeName:UIFont.systemFont(ofSize: fontSize),NSParagraphStyleAttributeName:paragraph]
         }
-        
-        let rect = ocText.boundingRect(with: CGSize.init(width: width, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin,.usesFontLeading,.usesDeviceMetrics], attributes: attributes, context: nil)
+        //usesLineFragmentOrigin 绘制文本时使用 line fragement origin 而不是 baseline origin
+        //usesFontLeading 根据字体计算高度
+        //使用以上这两属性来组合，一定要加，不然计算不准确，
+        //usesDeviceMetrics使用象形文字计算高度，这个不要加，加了计算也不准确
+        let rect = ocText.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin,.usesFontLeading], attributes: attributes, context: nil)
         
         let height : CGFloat
-        if rect.origin.x < 0 {
-            height = abs(rect.origin.x) + rect.height
+        if rect.origin.y < 0 {
+            height = abs(rect.origin.y) + rect.height
         }else{
             height = rect.height
         }
         
-        return CGSize(width: width, height: height)
+        return CGSize(width: rect.width, height: height)
     }
 }

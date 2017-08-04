@@ -45,7 +45,11 @@
 		35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D461EE697AD001B31A1 /* FindViewController.swift */; };
 		35260D4E1EE697AD001B31A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D471EE697AD001B31A1 /* HomeViewController.swift */; };
 		35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D481EE697AD001B31A1 /* MyViewController.swift */; };
-		355947A31F297F7F008145BB /* JXBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947A21F297F7F008145BB /* JXBezierView.swift */; };
+		355947A51F2B2836008145BB /* JXDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947A41F2B2836008145BB /* JXDrawViewController.swift */; };
+		355947A71F2B38C5008145BB /* JXUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947A61F2B38C5008145BB /* JXUIKitViewController.swift */; };
+		355947AA1F2B3A74008145BB /* JXBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947A91F2B3A74008145BB /* JXBezierView.swift */; };
+		355947AC1F2B3A95008145BB /* JXImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947AB1F2B3A95008145BB /* JXImageView.swift */; };
+		355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947AD1F2B4C45008145BB /* JXStringView.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
 		3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505B1EEA9FF500419474 /* ApiEnum.swift */; };
@@ -99,7 +103,11 @@
 		35260D461EE697AD001B31A1 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		35260D471EE697AD001B31A1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		35260D481EE697AD001B31A1 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		355947A21F297F7F008145BB /* JXBezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBezierView.swift; sourceTree = "<group>"; };
+		355947A41F2B2836008145BB /* JXDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDrawViewController.swift; sourceTree = "<group>"; };
+		355947A61F2B38C5008145BB /* JXUIKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXUIKitViewController.swift; sourceTree = "<group>"; };
+		355947A91F2B3A74008145BB /* JXBezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBezierView.swift; sourceTree = "<group>"; };
+		355947AB1F2B3A95008145BB /* JXImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXImageView.swift; sourceTree = "<group>"; };
+		355947AD1F2B4C45008145BB /* JXStringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXStringView.swift; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
 		3597505B1EEA9FF500419474 /* ApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEnum.swift; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				3514D72A1F204DCC001744DD /* JXBezierViewController.swift */,
+				355947A41F2B2836008145BB /* JXDrawViewController.swift */,
+				355947A61F2B38C5008145BB /* JXUIKitViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -176,7 +186,7 @@
 		351DD2FE1F14E1AE00E90170 /* JXView */ = {
 			isa = PBXGroup;
 			children = (
-				3559479F1F297E0E008145BB /* BezierView */,
+				355947A81F2B3A74008145BB /* DrawView */,
 				351DD3221F1634B100E90170 /* JXGuideView.swift */,
 				351DD3261F171F0C00E90170 /* JXAdvertiseView.swift */,
 				351DD2FF1F14E1AE00E90170 /* JXAlertView.swift */,
@@ -299,12 +309,14 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		3559479F1F297E0E008145BB /* BezierView */ = {
+		355947A81F2B3A74008145BB /* DrawView */ = {
 			isa = PBXGroup;
 			children = (
-				355947A21F297F7F008145BB /* JXBezierView.swift */,
+				355947A91F2B3A74008145BB /* JXBezierView.swift */,
+				355947AB1F2B3A95008145BB /* JXImageView.swift */,
+				355947AD1F2B4C45008145BB /* JXStringView.swift */,
 			);
-			path = BezierView;
+			path = DrawView;
 			sourceTree = "<group>";
 		};
 		3597505D1EEBCF5000419474 /* JXNetwork */ = {
@@ -473,6 +485,7 @@
 				35DE9E9D1F14BDAF006F271E /* BaseModel.swift in Sources */,
 				351DD3071F14E1AE00E90170 /* UIColor+Extension.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
+				355947AA1F2B3A74008145BB /* JXBezierView.swift in Sources */,
 				351DD3291F1756F400E90170 /* JXUIWebViewController.swift in Sources */,
 				3514D72F1F204E59001744DD /* JXNavigationController.swift in Sources */,
 				351DD3231F1634B100E90170 /* JXGuideView.swift in Sources */,
@@ -481,6 +494,8 @@
 				351DD30B1F14E1AE00E90170 /* JXAlertView.swift in Sources */,
 				35DE9E971F14A917006F271E /* JXRequest.swift in Sources */,
 				35DE9E951F14A917006F271E /* JXNetworkManager.swift in Sources */,
+				355947A51F2B2836008145BB /* JXDrawViewController.swift in Sources */,
+				355947A71F2B38C5008145BB /* JXUIKitViewController.swift in Sources */,
 				351DD3081F14E1AE00E90170 /* UIImage+Extension.swift in Sources */,
 				3514D72B1F204DCC001744DD /* JXLoginViewController.swift in Sources */,
 				3514D6861F1DADA9001744DD /* LanguageManager.swift in Sources */,
@@ -492,6 +507,7 @@
 				351DD30C1F14E1AE00E90170 /* JXHorizontalView.swift in Sources */,
 				35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */,
 				351DD3061F14E1AE00E90170 /* UIBarButtonItem+Extension.swift in Sources */,
+				355947AC1F2B3A95008145BB /* JXImageView.swift in Sources */,
 				351DD32B1F17602300E90170 /* JXWkWebViewController.swift in Sources */,
 				351DD3271F171F0C00E90170 /* JXAdvertiseView.swift in Sources */,
 				35DE9E9B1F14BD6D006F271E /* UserManager.swift in Sources */,
@@ -510,8 +526,8 @@
 				35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */,
 				3514D7301F204E59001744DD /* JXTabBarController.swift in Sources */,
 				351DD30A1F14E1AE00E90170 /* UIView+Extension.swift in Sources */,
-				355947A31F297F7F008145BB /* JXBezierView.swift in Sources */,
 				35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */,
+				355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

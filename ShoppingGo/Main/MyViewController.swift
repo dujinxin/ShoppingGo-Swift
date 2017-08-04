@@ -90,17 +90,17 @@ class MyViewController: JXTableViewController {
     
 
     func login() {
-        navigationController?.pushViewController(JXLoginViewController(), animated: true)
+        present(JXLoginViewController(), animated: true, completion: nil)
     }
     
     @objc private func nextPage() {
-        let v = JXBezierViewController()
-        v.title = "bezier"
-        navigationController?.pushViewController(v, animated: true)
-        
+  
     }
     func buttonAction(button:UIButton) {
         print(button.tag)
+        let v = JXDrawViewController()
+        v.title = "绘图"
+        navigationController?.pushViewController(v, animated: true)
     }
 
 }
