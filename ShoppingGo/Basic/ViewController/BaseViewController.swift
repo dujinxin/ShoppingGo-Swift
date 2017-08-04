@@ -115,15 +115,17 @@ extension BaseViewController {
     func updateMainView() {
         
     }
+    
+    /// loading view
     func showLoadView() {
-        
+        JXViewManager.manager.showMBProgressHUD(view: self.view)
     }
     func hideLoadView() {
-        
+        JXViewManager.manager.hideMBProgressHUD(view: self.view)
     }
+    /// notice view
     func showNotice(notice:String) {
-        let notice = JXNoticeView(text: notice)
-        notice.show()
+        JXViewManager.manager.showJXNoticeView(notice: notice)
     }
 }
 

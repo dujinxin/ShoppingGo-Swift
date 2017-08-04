@@ -52,6 +52,10 @@
 		355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355947AD1F2B4C45008145BB /* JXStringView.swift */; };
 		355948221F3415AD008145BB /* MBProgressHUD+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948211F3415AD008145BB /* MBProgressHUD+Addition.swift */; };
 		355948241F3415CF008145BB /* SDWebImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948231F3415CF008145BB /* SDWebImage+Addition.swift */; };
+		355948261F3455C9008145BB /* JXViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948251F3455C9008145BB /* JXViewManager.swift */; };
+		355948281F346751008145BB /* JXColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948271F346751008145BB /* JXColorView.swift */; };
+		3559482A1F347701008145BB /* JXPlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948291F347701008145BB /* JXPlaceHolderTextView.swift */; };
+		3559482C1F34782E008145BB /* JXSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3559482B1F34782E008145BB /* JXSettingViewController.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
 		3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505B1EEA9FF500419474 /* ApiEnum.swift */; };
@@ -112,6 +116,10 @@
 		355947AD1F2B4C45008145BB /* JXStringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXStringView.swift; sourceTree = "<group>"; };
 		355948211F3415AD008145BB /* MBProgressHUD+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Addition.swift"; sourceTree = "<group>"; };
 		355948231F3415CF008145BB /* SDWebImage+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDWebImage+Addition.swift"; sourceTree = "<group>"; };
+		355948251F3455C9008145BB /* JXViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXViewManager.swift; sourceTree = "<group>"; };
+		355948271F346751008145BB /* JXColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXColorView.swift; sourceTree = "<group>"; };
+		355948291F347701008145BB /* JXPlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXPlaceHolderTextView.swift; sourceTree = "<group>"; };
+		3559482B1F34782E008145BB /* JXSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXSettingViewController.swift; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
 		3597505B1EEA9FF500419474 /* ApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEnum.swift; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 				3514D72A1F204DCC001744DD /* JXBezierViewController.swift */,
 				355947A41F2B2836008145BB /* JXDrawViewController.swift */,
 				355947A61F2B38C5008145BB /* JXUIKitViewController.swift */,
+				3559482B1F34782E008145BB /* JXSettingViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 				351DD3011F14E1AE00E90170 /* JXNoticeView.swift */,
 				351DD3031F14E1AE00E90170 /* JXSelectView.swift */,
 				351DD3041F14E1AE00E90170 /* JXTopBarView.swift */,
+				355948291F347701008145BB /* JXPlaceHolderTextView.swift */,
 			);
 			path = JXView;
 			sourceTree = "<group>";
@@ -321,6 +331,7 @@
 				355947A91F2B3A74008145BB /* JXBezierView.swift */,
 				355947AB1F2B3A95008145BB /* JXImageView.swift */,
 				355947AD1F2B4C45008145BB /* JXStringView.swift */,
+				355948271F346751008145BB /* JXColorView.swift */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -341,6 +352,7 @@
 			children = (
 				35DE9E991F14BD4C006F271E /* UserManager */,
 				3514D6851F1DADA9001744DD /* LanguageManager.swift */,
+				355948251F3455C9008145BB /* JXViewManager.swift */,
 			);
 			path = CommonManager;
 			sourceTree = "<group>";
@@ -488,7 +500,9 @@
 				35DE9E931F14A917006F271E /* JXBaseRequest.swift in Sources */,
 				35260D4C1EE697AD001B31A1 /* BusinessViewController.swift in Sources */,
 				351DD3151F14E70200E90170 /* ConstantHeader.swift in Sources */,
+				3559482A1F347701008145BB /* JXPlaceHolderTextView.swift in Sources */,
 				35DE9E9D1F14BDAF006F271E /* BaseModel.swift in Sources */,
+				3559482C1F34782E008145BB /* JXSettingViewController.swift in Sources */,
 				351DD3071F14E1AE00E90170 /* UIColor+Extension.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
 				355948241F3415CF008145BB /* SDWebImage+Addition.swift in Sources */,
@@ -511,6 +525,7 @@
 				351DD3181F14E70200E90170 /* ViewManager.swift in Sources */,
 				351DD3171F14E70200E90170 /* ProjectHeader.swift in Sources */,
 				351DD3051F14E1AE00E90170 /* String+Extension.swift in Sources */,
+				355948281F346751008145BB /* JXColorView.swift in Sources */,
 				351DD30F1F14E1AE00E90170 /* JXSelectView.swift in Sources */,
 				351DD30C1F14E1AE00E90170 /* JXHorizontalView.swift in Sources */,
 				35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */,
@@ -535,6 +550,7 @@
 				3514D7301F204E59001744DD /* JXTabBarController.swift in Sources */,
 				351DD30A1F14E1AE00E90170 /* UIView+Extension.swift in Sources */,
 				35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */,
+				355948261F3455C9008145BB /* JXViewManager.swift in Sources */,
 				355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

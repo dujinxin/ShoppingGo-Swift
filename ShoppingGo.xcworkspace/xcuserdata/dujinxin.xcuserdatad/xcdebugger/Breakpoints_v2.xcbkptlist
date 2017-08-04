@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/MyViewController.swift"
-            timestampString = "522128879.148092"
+            timestampString = "523524198.748992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,7 +298,7 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
-                  timestampString = "522927837.399918"
+                  timestampString = "523536706.825281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -313,7 +313,7 @@
                   moduleName = "ShoppingGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dujinxin/github/ShoppingGo-Swift/ShoppingGo/Tool/Extension/UIImageView+Extension.swift"
-                  timestampString = "522927837.401297"
+                  timestampString = "523536706.826899"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/MyViewController.swift"
-            timestampString = "522156181.447528"
+            timestampString = "523524198.748992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,6 +400,22 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingGo/Tool/JXView/JXPlaceHolderTextView.swift"
+            timestampString = "523540370.693367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "placeHolderTextChange(nofiy:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

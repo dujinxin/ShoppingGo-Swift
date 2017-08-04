@@ -125,16 +125,6 @@ extension MyViewController {
         self.nameLabel.frame = CGRect(x: 0, y: self.userImageView.frame.maxY + 8, width: kScreenWidth, height: 14)
         
         
-//        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(modifyPersonalInformation)];
-//        [_userImageView addGestureRecognizer:tap];
-//        [_headView addSubview:_userImageView];
-        
-        //
-        //    _levelView = [[LevelView alloc ]initWithFrame:CGRectMake(0, CGRectGetMaxY(_userBgImageView.frame)+11, kScreenWidth, 12) num:@"V21" title:@"导购大神"];
-//        _levelView = [[LevelView alloc ]initWithFrame:CGRectMake(0, CGRectGetMaxY(_userBgImageView.frame)+14, kScreenWidth, 12)];
-//        _levelView.titleLabel.textColor = JXFfffffColor;
-//        [_headView addSubview:_levelView];
-        
 
         let titleArray = ["Coupon","Follow","Chat","Order"]
         let imageArray = ["icon_coupons","icon_follower","icon_chat","icon_consumption"]
@@ -212,6 +202,16 @@ extension MyViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         //SLComposeViewController
+        if indexPath.section == 0 {
+            self.showLoadView()
+            self.hideLoadView()
+        }else if indexPath.section == 1{
+            self.showNotice(notice: "测试显示文字")
+        }else if indexPath.section == 2 {
+            self.navigationController?.pushViewController(JXSettingViewController(), animated: true)
+        } else {
+            
+        }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y

@@ -125,8 +125,9 @@ extension JXLoginViewController : UITextFieldDelegate{
         }
     }
     func login() {
+        self.showLoadView()
         JXRequest.request(url: ApiString.userLogin.rawValue, param: ["ua":userTextField.text!,"Up":passwordTextField.text!], success: { (data, msg) in
-            
+            self.hideLoadView()
             guard let data = data as? Dictionary<String, Any> else{
                 return
             }
@@ -134,6 +135,7 @@ extension JXLoginViewController : UITextFieldDelegate{
             print("保存token：\(isSuccess)")
             self.dismissVC()
         }) { (msg, errorCode) in
+            self.hideLoadView()
             self.showNotice(notice: msg)
         }
     }
