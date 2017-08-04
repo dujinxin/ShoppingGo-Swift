@@ -115,7 +115,12 @@ extension BaseViewController {
     func updateMainView() {
         
     }
-    
+    func showLoadView() {
+        
+    }
+    func hideLoadView() {
+        
+    }
     func showNotice(notice:String) {
         let notice = JXNoticeView(text: notice)
         notice.show()
