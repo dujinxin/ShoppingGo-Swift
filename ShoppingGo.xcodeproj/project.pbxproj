@@ -62,8 +62,6 @@
 		355948631F3C00B4008145BB /* JXAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355948611F3C00B4008145BB /* JXAddressCell.xib */; };
 		355948651F3C0CF2008145BB /* JXAddressEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948641F3C0CF2008145BB /* JXAddressEntity.swift */; };
 		355948671F3C2082008145BB /* JXEditAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948661F3C2082008145BB /* JXEditAddressController.swift */; };
-		3559486F1F3C4CCC008145BB /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3559486E1F3C4CCC008145BB /* Address.plist */; };
-		355948711F3C52D6008145BB /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 355948701F3C52D6008145BB /* Property List.plist */; };
 		355948731F3C6C28008145BB /* JXAdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948721F3C6C28008145BB /* JXAdditionView.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
@@ -143,8 +141,6 @@
 		355948611F3C00B4008145BB /* JXAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXAddressCell.xib; sourceTree = "<group>"; };
 		355948641F3C0CF2008145BB /* JXAddressEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAddressEntity.swift; sourceTree = "<group>"; };
 		355948661F3C2082008145BB /* JXEditAddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXEditAddressController.swift; sourceTree = "<group>"; };
-		3559486E1F3C4CCC008145BB /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
-		355948701F3C52D6008145BB /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		355948721F3C6C28008145BB /* JXAdditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAdditionView.swift; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
@@ -385,8 +381,6 @@
 				355948601F3C00B4008145BB /* JXAddressCell.swift */,
 				355948611F3C00B4008145BB /* JXAddressCell.xib */,
 				355948641F3C0CF2008145BB /* JXAddressEntity.swift */,
-				3559486E1F3C4CCC008145BB /* Address.plist */,
-				355948701F3C52D6008145BB /* Property List.plist */,
 			);
 			path = address;
 			sourceTree = "<group>";
@@ -530,10 +524,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				355948631F3C00B4008145BB /* JXAddressCell.xib in Resources */,
-				3559486F1F3C4CCC008145BB /* Address.plist in Resources */,
 				35260D331EE696EF001B31A1 /* Assets.xcassets in Resources */,
 				35BF03921F442221004A77E9 /* JXDBListCell.xib in Resources */,
-				355948711F3C52D6008145BB /* Property List.plist in Resources */,
 				3514D6801F1D9E17001744DD /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
