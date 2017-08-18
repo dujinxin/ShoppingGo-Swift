@@ -68,6 +68,8 @@ extension JXBezierViewController {
             v = JXBezierTwiceBezierCurveView()
         case 8:
             v = JXBezierThreeBezierCurveView()
+        case 9:
+            v = JXTestView()
         default:
             break
         }
@@ -95,8 +97,8 @@ extension JXBezierViewController {
         self.dataArray.removeAll()
         
         
-        let titleArray = ["单线","多边形","矩形","圆形&椭圆","圆形&扇形&圆弧","圆角矩形","圆角矩形&自由指定圆角位置","二次贝塞尔曲线","三次贝塞尔曲线"]
-        let imageArray = [JXBezierSingleLineView(),JXBezierPolygonView(),JXBezierRectangleView(),JXBezierCircleEllipseView(),JXBezierCircleAngleView(),JXBezierRoundRectView(),JXBezierRoundRectCustomView(),JXBezierTwiceBezierCurveView(),JXBezierThreeBezierCurveView()]
+        let titleArray = ["单线","多边形","矩形","圆形&椭圆","圆形&扇形&圆弧","圆角矩形","圆角矩形&自由指定圆角位置","二次贝塞尔曲线","三次贝塞尔曲线","测试"]
+        let imageArray = [JXBezierSingleLineView(),JXBezierPolygonView(),JXBezierRectangleView(),JXBezierCircleEllipseView(),JXBezierCircleAngleView(),JXBezierRoundRectView(),JXBezierRoundRectCustomView(),JXBezierTwiceBezierCurveView(),JXBezierThreeBezierCurveView(),JXTestView()]
         
         
         for i in 0..<titleArray.count {

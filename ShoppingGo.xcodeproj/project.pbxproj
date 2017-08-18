@@ -56,9 +56,26 @@
 		355948281F346751008145BB /* JXColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948271F346751008145BB /* JXColorView.swift */; };
 		3559482A1F347701008145BB /* JXPlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948291F347701008145BB /* JXPlaceHolderTextView.swift */; };
 		3559482C1F34782E008145BB /* JXSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3559482B1F34782E008145BB /* JXSettingViewController.swift */; };
+		355948591F3BF9F5008145BB /* JXFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948581F3BF9F5008145BB /* JXFeedbackViewController.swift */; };
+		3559485F1F3BFEE6008145BB /* JXAddressListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3559485E1F3BFEE6008145BB /* JXAddressListController.swift */; };
+		355948621F3C00B4008145BB /* JXAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948601F3C00B4008145BB /* JXAddressCell.swift */; };
+		355948631F3C00B4008145BB /* JXAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355948611F3C00B4008145BB /* JXAddressCell.xib */; };
+		355948651F3C0CF2008145BB /* JXAddressEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948641F3C0CF2008145BB /* JXAddressEntity.swift */; };
+		355948671F3C2082008145BB /* JXEditAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948661F3C2082008145BB /* JXEditAddressController.swift */; };
+		3559486F1F3C4CCC008145BB /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3559486E1F3C4CCC008145BB /* Address.plist */; };
+		355948711F3C52D6008145BB /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 355948701F3C52D6008145BB /* Property List.plist */; };
+		355948731F3C6C28008145BB /* JXAdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355948721F3C6C28008145BB /* JXAdditionView.swift */; };
 		3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597502A1EE793A300419474 /* JXTableViewController.swift */; };
 		359750561EE7FB6E00419474 /* JXDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359750551EE7FB6E00419474 /* JXDefaultView.swift */; };
 		3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597505B1EEA9FF500419474 /* ApiEnum.swift */; };
+		35BF038C1F42CD08004A77E9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF038B1F42CD08004A77E9 /* DBManager.swift */; };
+		35BF038E1F4421FC004A77E9 /* JXDBListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF038D1F4421FC004A77E9 /* JXDBListViewController.swift */; };
+		35BF03911F442221004A77E9 /* JXDBListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF038F1F442221004A77E9 /* JXDBListCell.swift */; };
+		35BF03921F442221004A77E9 /* JXDBListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35BF03901F442221004A77E9 /* JXDBListCell.xib */; };
+		35BF03941F442CB8004A77E9 /* JXEditDBUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF03931F442CB8004A77E9 /* JXEditDBUserController.swift */; };
+		35BF03961F45A364004A77E9 /* JXUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF03951F45A364004A77E9 /* JXUserInfoViewController.swift */; };
+		35BF039B1F468C89004A77E9 /* JXBaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF03991F468C89004A77E9 /* JXBaseDB.swift */; };
+		35BF039C1F468C89004A77E9 /* JXUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF039A1F468C89004A77E9 /* JXUserDB.swift */; };
 		35DE9E931F14A917006F271E /* JXBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E8E1F14A917006F271E /* JXBaseRequest.swift */; };
 		35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E8F1F14A917006F271E /* JXNetworkError.swift */; };
 		35DE9E951F14A917006F271E /* JXNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E901F14A917006F271E /* JXNetworkManager.swift */; };
@@ -120,9 +137,26 @@
 		355948271F346751008145BB /* JXColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXColorView.swift; sourceTree = "<group>"; };
 		355948291F347701008145BB /* JXPlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXPlaceHolderTextView.swift; sourceTree = "<group>"; };
 		3559482B1F34782E008145BB /* JXSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXSettingViewController.swift; sourceTree = "<group>"; };
+		355948581F3BF9F5008145BB /* JXFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFeedbackViewController.swift; sourceTree = "<group>"; };
+		3559485E1F3BFEE6008145BB /* JXAddressListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAddressListController.swift; sourceTree = "<group>"; };
+		355948601F3C00B4008145BB /* JXAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAddressCell.swift; sourceTree = "<group>"; };
+		355948611F3C00B4008145BB /* JXAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXAddressCell.xib; sourceTree = "<group>"; };
+		355948641F3C0CF2008145BB /* JXAddressEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAddressEntity.swift; sourceTree = "<group>"; };
+		355948661F3C2082008145BB /* JXEditAddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXEditAddressController.swift; sourceTree = "<group>"; };
+		3559486E1F3C4CCC008145BB /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		355948701F3C52D6008145BB /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		355948721F3C6C28008145BB /* JXAdditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAdditionView.swift; sourceTree = "<group>"; };
 		3597502A1EE793A300419474 /* JXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewController.swift; sourceTree = "<group>"; };
 		359750551EE7FB6E00419474 /* JXDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDefaultView.swift; sourceTree = "<group>"; };
 		3597505B1EEA9FF500419474 /* ApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEnum.swift; sourceTree = "<group>"; };
+		35BF038B1F42CD08004A77E9 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		35BF038D1F4421FC004A77E9 /* JXDBListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDBListViewController.swift; sourceTree = "<group>"; };
+		35BF038F1F442221004A77E9 /* JXDBListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDBListCell.swift; sourceTree = "<group>"; };
+		35BF03901F442221004A77E9 /* JXDBListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXDBListCell.xib; sourceTree = "<group>"; };
+		35BF03931F442CB8004A77E9 /* JXEditDBUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXEditDBUserController.swift; sourceTree = "<group>"; };
+		35BF03951F45A364004A77E9 /* JXUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXUserInfoViewController.swift; sourceTree = "<group>"; };
+		35BF03991F468C89004A77E9 /* JXBaseDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseDB.swift; sourceTree = "<group>"; };
+		35BF039A1F468C89004A77E9 /* JXUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXUserDB.swift; sourceTree = "<group>"; };
 		35DE9E8E1F14A917006F271E /* JXBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseRequest.swift; sourceTree = "<group>"; };
 		35DE9E8F1F14A917006F271E /* JXNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkError.swift; sourceTree = "<group>"; };
 		35DE9E901F14A917006F271E /* JXNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkManager.swift; sourceTree = "<group>"; };
@@ -165,10 +199,16 @@
 		3514D7291F204DCC001744DD /* My */ = {
 			isa = PBXGroup;
 			children = (
+				3559485A1F3BFEBF008145BB /* address */,
+				3559485B1F3BFEBF008145BB /* collection */,
+				3559485C1F3BFEBF008145BB /* friend */,
+				3559485D1F3BFEBF008145BB /* order */,
 				3514D72A1F204DCC001744DD /* JXBezierViewController.swift */,
 				355947A41F2B2836008145BB /* JXDrawViewController.swift */,
 				355947A61F2B38C5008145BB /* JXUIKitViewController.swift */,
 				3559482B1F34782E008145BB /* JXSettingViewController.swift */,
+				355948581F3BF9F5008145BB /* JXFeedbackViewController.swift */,
+				35BF03951F45A364004A77E9 /* JXUserInfoViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -205,6 +245,7 @@
 				351DD3221F1634B100E90170 /* JXGuideView.swift */,
 				351DD3261F171F0C00E90170 /* JXAdvertiseView.swift */,
 				351DD2FF1F14E1AE00E90170 /* JXAlertView.swift */,
+				355948721F3C6C28008145BB /* JXAdditionView.swift */,
 				351DD3001F14E1AE00E90170 /* JXHorizontalView.swift */,
 				351DD3011F14E1AE00E90170 /* JXNoticeView.swift */,
 				351DD3031F14E1AE00E90170 /* JXSelectView.swift */,
@@ -336,6 +377,45 @@
 			path = DrawView;
 			sourceTree = "<group>";
 		};
+		3559485A1F3BFEBF008145BB /* address */ = {
+			isa = PBXGroup;
+			children = (
+				3559485E1F3BFEE6008145BB /* JXAddressListController.swift */,
+				355948661F3C2082008145BB /* JXEditAddressController.swift */,
+				355948601F3C00B4008145BB /* JXAddressCell.swift */,
+				355948611F3C00B4008145BB /* JXAddressCell.xib */,
+				355948641F3C0CF2008145BB /* JXAddressEntity.swift */,
+				3559486E1F3C4CCC008145BB /* Address.plist */,
+				355948701F3C52D6008145BB /* Property List.plist */,
+			);
+			path = address;
+			sourceTree = "<group>";
+		};
+		3559485B1F3BFEBF008145BB /* collection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
+		3559485C1F3BFEBF008145BB /* friend */ = {
+			isa = PBXGroup;
+			children = (
+				35BF038D1F4421FC004A77E9 /* JXDBListViewController.swift */,
+				35BF03931F442CB8004A77E9 /* JXEditDBUserController.swift */,
+				35BF038F1F442221004A77E9 /* JXDBListCell.swift */,
+				35BF03901F442221004A77E9 /* JXDBListCell.xib */,
+			);
+			path = friend;
+			sourceTree = "<group>";
+		};
+		3559485D1F3BFEBF008145BB /* order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = order;
+			sourceTree = "<group>";
+		};
 		3597505D1EEBCF5000419474 /* JXNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,9 +427,20 @@
 			path = JXNetwork;
 			sourceTree = "<group>";
 		};
+		35BF038A1F42CC8B004A77E9 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				35BF03991F468C89004A77E9 /* JXBaseDB.swift */,
+				35BF039A1F468C89004A77E9 /* JXUserDB.swift */,
+				35BF038B1F42CD08004A77E9 /* DBManager.swift */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
 		35DE9E981F14BD4C006F271E /* CommonManager */ = {
 			isa = PBXGroup;
 			children = (
+				35BF038A1F42CC8B004A77E9 /* DBManager */,
 				35DE9E991F14BD4C006F271E /* UserManager */,
 				3514D6851F1DADA9001744DD /* LanguageManager.swift */,
 				355948251F3455C9008145BB /* JXViewManager.swift */,
@@ -409,6 +500,7 @@
 				TargetAttributes = {
 					35260D271EE696EF001B31A1 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = JD78BK6EHC;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -437,7 +529,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355948631F3C00B4008145BB /* JXAddressCell.xib in Resources */,
+				3559486F1F3C4CCC008145BB /* Address.plist in Resources */,
 				35260D331EE696EF001B31A1 /* Assets.xcassets in Resources */,
+				35BF03921F442221004A77E9 /* JXDBListCell.xib in Resources */,
+				355948711F3C52D6008145BB /* Property List.plist in Resources */,
 				3514D6801F1D9E17001744DD /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,15 +600,19 @@
 				35DE9E9D1F14BDAF006F271E /* BaseModel.swift in Sources */,
 				3559482C1F34782E008145BB /* JXSettingViewController.swift in Sources */,
 				351DD3071F14E1AE00E90170 /* UIColor+Extension.swift in Sources */,
+				35BF038C1F42CD08004A77E9 /* DBManager.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
+				35BF039B1F468C89004A77E9 /* JXBaseDB.swift in Sources */,
 				355948241F3415CF008145BB /* SDWebImage+Addition.swift in Sources */,
 				355947AA1F2B3A74008145BB /* JXBezierView.swift in Sources */,
 				351DD3291F1756F400E90170 /* JXUIWebViewController.swift in Sources */,
 				3514D72F1F204E59001744DD /* JXNavigationController.swift in Sources */,
 				351DD3231F1634B100E90170 /* JXGuideView.swift in Sources */,
 				35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */,
+				35BF03941F442CB8004A77E9 /* JXEditDBUserController.swift in Sources */,
 				355948221F3415AD008145BB /* MBProgressHUD+Addition.swift in Sources */,
 				351DD3251F17104B00E90170 /* Bundle+Extension.swift in Sources */,
+				3559485F1F3BFEE6008145BB /* JXAddressListController.swift in Sources */,
 				351DD30B1F14E1AE00E90170 /* JXAlertView.swift in Sources */,
 				35DE9E971F14A917006F271E /* JXRequest.swift in Sources */,
 				35DE9E951F14A917006F271E /* JXNetworkManager.swift in Sources */,
@@ -522,14 +622,19 @@
 				3514D72B1F204DCC001744DD /* JXLoginViewController.swift in Sources */,
 				3514D6861F1DADA9001744DD /* LanguageManager.swift in Sources */,
 				351DD31F1F161A7E00E90170 /* JXPhotoBrowserController.swift in Sources */,
+				355948671F3C2082008145BB /* JXEditAddressController.swift in Sources */,
 				351DD3181F14E70200E90170 /* ViewManager.swift in Sources */,
 				351DD3171F14E70200E90170 /* ProjectHeader.swift in Sources */,
 				351DD3051F14E1AE00E90170 /* String+Extension.swift in Sources */,
 				355948281F346751008145BB /* JXColorView.swift in Sources */,
+				35BF03961F45A364004A77E9 /* JXUserInfoViewController.swift in Sources */,
 				351DD30F1F14E1AE00E90170 /* JXSelectView.swift in Sources */,
 				351DD30C1F14E1AE00E90170 /* JXHorizontalView.swift in Sources */,
+				355948651F3C0CF2008145BB /* JXAddressEntity.swift in Sources */,
 				35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */,
 				351DD3061F14E1AE00E90170 /* UIBarButtonItem+Extension.swift in Sources */,
+				35BF039C1F468C89004A77E9 /* JXUserDB.swift in Sources */,
+				35BF038E1F4421FC004A77E9 /* JXDBListViewController.swift in Sources */,
 				355947AC1F2B3A95008145BB /* JXImageView.swift in Sources */,
 				351DD32B1F17602300E90170 /* JXWkWebViewController.swift in Sources */,
 				351DD3271F171F0C00E90170 /* JXAdvertiseView.swift in Sources */,
@@ -541,12 +646,16 @@
 				351DD3161F14E70200E90170 /* NotificationEnum.swift in Sources */,
 				35260D4E1EE697AD001B31A1 /* HomeViewController.swift in Sources */,
 				3514D7201F1F0C21001744DD /* UIImageView+Extension.swift in Sources */,
+				35BF03911F442221004A77E9 /* JXDBListCell.swift in Sources */,
 				351DD3091F14E1AE00E90170 /* UIScreen+Extension.swift in Sources */,
 				35260D4F1EE697AD001B31A1 /* MyViewController.swift in Sources */,
 				35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */,
+				355948591F3BF9F5008145BB /* JXFeedbackViewController.swift in Sources */,
 				351DD3101F14E1AE00E90170 /* JXTopBarView.swift in Sources */,
+				355948621F3C00B4008145BB /* JXAddressCell.swift in Sources */,
 				3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */,
 				35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */,
+				355948731F3C6C28008145BB /* JXAdditionView.swift in Sources */,
 				3514D7301F204E59001744DD /* JXTabBarController.swift in Sources */,
 				351DD30A1F14E1AE00E90170 /* UIView+Extension.swift in Sources */,
 				35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */,
@@ -672,7 +781,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = JD78BK6EHC;
 				INFOPLIST_FILE = ShoppingGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MySelf.ShoppingGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -689,7 +800,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = JD78BK6EHC;
 				INFOPLIST_FILE = ShoppingGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MySelf.ShoppingGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

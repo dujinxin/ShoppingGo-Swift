@@ -30,6 +30,9 @@ let JXEeeeeeColor = UIColor.rgbColor(rgbValue: 0xeeeeee)
 let JXFfffffColor = UIColor.rgbColor(rgbValue: 0xffffff)
 let JXF1f1f1Color = UIColor.rgbColor(rgbValue: 0xf1f1f1)
 
+let JXDebugColor = UIColor.randomColor
+
+
 //MARK:字体
 //let JXFontNormarl
 

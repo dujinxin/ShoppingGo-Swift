@@ -11,6 +11,27 @@ import SDWebImage
 
 extension UIImageView {
     
+    func jx_setImage(obj:Any?) {
+        guard let obj = obj else {
+            return
+        }
+        if obj is UIImage {
+            self.image = obj as? UIImage
+        }
+        
+        if obj is String {
+            let objStr = obj as! String
+            if objStr.isEmpty == true {
+                return
+            }
+            if objStr.hasPrefix("http") {
+                jx_setImage(with: objStr, placeholderImage: nil)
+            }else{
+                self.image = UIImage(named: objStr)
+            }
+        }
+    }
+    
     func jx_setImage(with urlStr:String, placeholderImage: UIImage?,radius:CGFloat = 0){
         
         guard let url = URL(string: urlStr) else {

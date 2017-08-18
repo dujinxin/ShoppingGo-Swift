@@ -43,17 +43,21 @@ class JXAdvertiseView: UIView {
         
         self.imageView.image = UIImage(named: "guide_2")
         
-        self.adTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-            if
-                let numberStr = self.enterButton.currentTitle,
-                var number = Int(numberStr),
-                number > 1
+        if #available(iOS 10.0, *) {
+            self.adTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+                if
+                    let numberStr = self.enterButton.currentTitle,
+                    var number = Int(numberStr),
+                    number > 1
                 {
-                number -= 1
-                self.enterButton.setTitle("\(number)", for: .normal)
-            }else{
-                self.touchDismiss()
+                    number -= 1
+                    self.enterButton.setTitle("\(number)", for: .normal)
+                }else{
+                    self.touchDismiss()
+                }
             }
+        } else {
+            // Fallback on earlier versions
         }
     }
     

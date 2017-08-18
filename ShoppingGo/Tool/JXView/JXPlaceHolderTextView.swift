@@ -75,7 +75,9 @@ class JXPlaceHolderTextView: UITextView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.placeHolderView.frame = CGRect(origin: CGPoint(x: 8, y: 8), size: CGSize(width:frame.width - 8*2,height:0))
+        //光标的frame为（4，7，2，15.5）
+        //输入框 textContainer 不设置的话起始为（0，0），大小根据内容自动调整
+        self.placeHolderView.frame = CGRect(origin: CGPoint(x: 6, y: 7), size: CGSize(width:frame.width - 6*2,height:0))
         self.placeHolderView.sizeToFit()
     }
     deinit {

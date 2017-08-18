@@ -42,8 +42,8 @@ class JXSelectView: UIView {
             if isUseTopBar == true {
                 selectViewTop = topBarHeight
                 self.addSubview(self.topBarView)
-                //self.topBarView.addSubview(self.cancelButton)
-                //self.topBarView.addSubview(self.confirmButton)
+                self.topBarView.addSubview(self.cancelButton)
+                self.topBarView.addSubview(self.confirmButton)
             }
             self.resetFrame()
         }
@@ -82,6 +82,7 @@ class JXSelectView: UIView {
         let btn = UIButton()
         btn.setTitle("取消", for: UIControlState.normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        btn.setTitleColor(UIColor.blue, for: .normal)
         btn.addTarget(self, action: #selector(tapClick), for: UIControlEvents.touchUpInside)
         return btn
     }()
@@ -89,12 +90,13 @@ class JXSelectView: UIView {
         let btn = UIButton()
         btn.setTitle("确定", for: UIControlState.normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        btn.setTitleColor(UIColor.blue, for: .normal)
         btn.addTarget(self, action: #selector(tapClick), for: UIControlEvents.touchUpInside)
         return btn
     }()
    
     lazy var tableView : UITableView = {
-        let table = UITableView.init(frame: CGRect.init(), style: .plain)
+        let table = UITableView(frame: CGRect(), style: .plain)
         table.delegate = self
         table.dataSource = self
         table.isScrollEnabled = false
@@ -105,9 +107,11 @@ class JXSelectView: UIView {
         return table
     }()
     lazy var pickView: UIPickerView = {
-        let pick = UIPickerView.init(frame: CGRect.init())
+        let pick = UIPickerView.init(frame: CGRect())
         pick.delegate = self
         pick.dataSource = self
+        pick.showsSelectionIndicator = true
+        pick.backgroundColor = UIColor.groupTableViewBackground
         return pick
     }()
 
@@ -301,9 +305,9 @@ class JXSelectView: UIView {
     @objc private func tapClick() {
         self.dismiss()
     }
-    fileprivate func viewDisAppear(row:Int) {
+    fileprivate func viewDisAppear(row:Int,section:Int) {
         if self.delegate != nil && selectRow >= 0{
-            self.delegate?.jxSelectView(self, didSelectRowAt: row)
+            self.delegate?.jxSelectView(self, didSelectRowAt: row, inSection: section)
         }
         self.dismiss()
     }
@@ -360,7 +364,7 @@ extension JXSelectView : UITableViewDelegate,UITableViewDataSource{
             if isUseTopBar {
                 selectRow = indexPath.row
             }else{
-                self.viewDisAppear(row: indexPath.row)
+                self.viewDisAppear(row: indexPath.row,section: indexPath.section)
                 self.dismiss(animate: true)
             }
         }else{
@@ -371,6 +375,9 @@ extension JXSelectView : UITableViewDelegate,UITableViewDataSource{
 }
 extension JXSelectView : UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if let dataSource = self.dataSource {
+            return dataSource.numberOfComponents(self) 
+        }
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -388,17 +395,27 @@ extension JXSelectView : UIPickerViewDelegate, UIPickerViewDataSource{
         return nil
     }
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if self.dataSource != nil {
+            return self.dataSource?.jxSelectView(self, widthForComponent: component) ?? selectViewWidth
+        }
         return selectViewWidth
     }
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        if self.dataSource != nil {
+            return self.dataSource?.jxSelectView(self, heightForRowAt: component) ?? pickViewCellHeight
+        }
         return pickViewCellHeight
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if isUseTopBar {
             selectRow = row
+            if self.delegate != nil {
+                self.delegate?.jxSelectView(self, didSelectRowAt: row, inSection: component)
+            }
+            self.pickView.reloadAllComponents()
         }else{
-            self.viewDisAppear(row: row)
+            self.viewDisAppear(row: row,section: component)
         }
     }
     
@@ -410,11 +427,14 @@ extension JXSelectView : UIPickerViewDelegate, UIPickerViewDataSource{
     func jxSelectView(_ :JXSelectView, heightForRowAt row:Int) -> CGFloat
     func jxSelectView(_ :JXSelectView, contentForRow row:Int, InSection section:Int) -> String
     
+    func numberOfComponents(_ :JXSelectView) -> Int
+    func jxSelectView(_ :JXSelectView, widthForComponent component: Int) -> CGFloat
+    
     @objc optional func jxSelectView(_ :JXSelectView, viewForRow row:Int) -> UIView?
     
 }
 protocol JXSelectViewDelegate {
     
-    func jxSelectView(_ :JXSelectView, didSelectRowAt row:Int)
+    func jxSelectView(_ :JXSelectView, didSelectRowAt row:Int, inSection section:Int)
 }
 

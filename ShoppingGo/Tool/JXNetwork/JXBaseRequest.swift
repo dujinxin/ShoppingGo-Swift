@@ -130,6 +130,6 @@ extension JXBaseRequest {
         }
     }
     override var description: String{
-        return String(format: "<<requestInfo>>\n---requestUrl = %@\n---requestParam = %@\n", requestUrl ?? "null", param ?? [:])
+        return String(format: "\(type(of: self)):\n  requestUrl = %@\n  requestParam = %@\n", requestUrl ?? "null", param ?? [:])
     }
 }

@@ -70,7 +70,7 @@ class JXRequest: JXBaseRequest {
         if result is Dictionary<String, Any> {
             
             let jsonDict = result as! Dictionary<String, Any>
-            print("<<responseInfo>>\n---responseData = \(jsonDict)")
+            print("\(type(of: self)):\n  responseData = \(jsonDict)")
             
             
             guard let code = jsonDict["status"] as? Int

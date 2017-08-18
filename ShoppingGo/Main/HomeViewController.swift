@@ -10,26 +10,47 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    lazy var additionView: JXAdditionView = {
+        let addition = JXAdditionView(frame: CGRect())
+        addition.arrowPoint = CGPoint(x: kScreenWidth - 25, y: 67)
+        addition.dataSource = self
+        
+        return addition
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.customNavigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(additionClick))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func additionClick() {
+        let addition = JXAdditionView(frame: CGRect())
+        addition.arrowPoint = CGPoint(x: kScreenWidth - 25, y: 67)
+        addition.dataSource = self
+        addition.delegate = self
+        addition.show()
     }
-    */
-
+}
+extension HomeViewController:JXAdditionViewDataSource,JXAdditionViewDelegate{
+    func jxAdditionView(_: JXAdditionView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    func jxAdditionView(_: JXAdditionView, contentForRow row: Int, InSection section: Int) -> String {
+        return "\(row)"
+    }
+    func jxAdditionView(_: JXAdditionView, widthForComponent component: Int) -> CGFloat {
+        return 200
+    }
+    func jxAdditionView(_: JXAdditionView, heightForRowAt row: Int) -> CGFloat {
+        return 44
+    }
+    func jxAdditionView(_: JXAdditionView, didSelectRowAt row: Int) {
+        print("click:\(row)")
+    }
+    
 }

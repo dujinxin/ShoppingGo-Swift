@@ -61,6 +61,11 @@ class JXBezierView: UIView {
         path.lineJoinStyle = .miter//连接点样式
         UIColor.red.setStroke()//线条颜色
         
+        var rect1 = rect
+        rect1.size.height -= 10
+        rect1.origin.y += 10
+    
+        
         path.stroke()
         
     }
@@ -213,5 +218,41 @@ class JXBezierThreeBezierCurveView: UIView {
         UIColor.red.setStroke()//线条颜色
         
         path.stroke()
+    }
+}
+
+class JXTestView: UIView {
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        // Drawing code
+//        let path = UIBezierPath()
+//        //path.move(to: CGPoint(x: 0, y: 0))//设置起始点
+//        //path.addLine(to: CGPoint(x: rect.size.width, y: rect.size.height))//终点
+//        
+//        path.lineWidth = 2;//线宽
+//        path.lineCapStyle = .butt//端点样式
+//        path.lineJoinStyle = .miter//连接点样式
+//        UIColor.red.setStroke()//线条颜色
+        
+        var rect1 = rect
+        rect1.size.height -= 10
+        rect1.origin.y += 10
+        
+        UIColor.red.setFill()
+        
+        
+        let bezier2 = UIBezierPath()
+        
+        bezier2.move(to: CGPoint(x: rect.width - (20 + 10), y: 10))
+        bezier2.addLine(to: CGPoint(x: rect.width - 20, y: 0))
+        bezier2.addLine(to: CGPoint(x: rect.width - (20 - 10), y: 10))
+        bezier2.close()
+        //bezier2.fill()
+
+        let bezier1 = UIBezierPath(roundedRect: rect1, cornerRadius: 5)
+        bezier1.append(bezier2)
+        bezier1.fill()
+        
     }
 }

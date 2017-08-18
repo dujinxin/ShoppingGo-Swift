@@ -30,7 +30,7 @@ class UserManager {
     
     static let `default` = UserManager()
     
-    var userModel : UserModel!
+    var userModel : UserModel = UserModel()
     
     private init() {
         let pathUrl = URL(fileURLWithPath: userPath)
@@ -41,8 +41,9 @@ class UserManager {
             print("用户地址不存在：\(userPath)")
             return
         }
-        self.userModel = UserModel()
+        //self.userModel = UserModel()
         self.userModel.setValuesForKeys(dict)
+        
         print("用户地址：\(userPath)")
     }
     
@@ -74,6 +75,9 @@ class UserManager {
 }
 
 extension UserManager {
+    /// 刷新token
+    ///
+    /// - Parameter completion: 回调闭包
     func refreshToken(completion:((_ isSuccess:Bool)->())?) {
         //1.获取token,首次安装用本地生成的字符串来获取token
         //2.本地有保存token,则用长token去刷新token
@@ -87,6 +91,8 @@ extension UserManager {
                     return
                 }
                 let isSuccess = UserManager.default.saveUserInfo(dict: data)
+                let _ = JXUserDB.shareInstance.createTable(keys: Array(data.keys))
+                let _ = JXUserDB.shareInstance.saveUserInfo(data: data)
                 print("刷新token：\(isSuccess)")
                 if let completion = completion {
                     completion(isSuccess)
@@ -106,6 +112,7 @@ extension UserManager {
         }
         
     }
+    /// 获取token
     func fetchToken() {
         JXRequest.request(url: ApiString.getTokenByKey.rawValue, param: ["Uc":(UIDevice.current.identifierForVendor?.uuidString)!], success: { (data, msg) in
             

@@ -132,6 +132,8 @@ extension JXLoginViewController : UITextFieldDelegate{
                 return
             }
             let isSuccess = UserManager.default.saveUserInfo(dict: data)
+            let _ = JXUserDB.shareInstance.createTable(keys: Array(data.keys))
+            let _ = JXUserDB.shareInstance.saveUserInfo(data: data)
             print("保存token：\(isSuccess)")
             self.dismissVC()
         }) { (msg, errorCode) in

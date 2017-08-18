@@ -17,4 +17,17 @@ let getTokenUrl  = "https://app.izheng.org/genuine/user/getUploadToken"
 
 let isShowLog : Bool = true
 let isDebug : Bool = true
-		
+
+
+/// 打印信息
+///
+/// - Parameters:
+///   - msg: 要输出的信息
+///   - file: 文件名
+///   - line: 方法所在行数
+///   - function: 方法名称
+func print<T>(_ msg:T,file:String = #file,line:Int = #line,function:String = #function) {
+    
+    let fileName = (file as NSString).lastPathComponent
+    print("[\(Date(timeIntervalSinceNow: 0))]",fileName,line,function,"\n",msg, separator: " ", terminator: "\n")
+}

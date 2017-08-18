@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AFNetworking
 import Social
 
 private let cellId = "cellId"
@@ -93,7 +92,9 @@ class MyViewController: JXTableViewController {
     func login() {
         present(JXLoginViewController(), animated: true, completion: nil)
     }
-    
+    func userInfo() {
+        self.navigationController?.pushViewController(JXUserInfoViewController(), animated: true)
+    }
     @objc private func nextPage() {
   
     }
@@ -122,6 +123,8 @@ extension MyViewController {
 //        self.userImageView.layer.borderColor = UIColor.white.cgColor
 //        self.userImageView.layer.borderWidth = 3
         
+        self.userImageView.isUserInteractionEnabled = true
+        self.userImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userInfo)))
         self.nameLabel.frame = CGRect(x: 0, y: self.userImageView.frame.maxY + 8, width: kScreenWidth, height: 14)
         
         
@@ -200,13 +203,23 @@ extension MyViewController {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         //SLComposeViewController
         if indexPath.section == 0 {
-            self.showLoadView()
-            self.hideLoadView()
+            if indexPath.row == 0 {
+                print(DBManager.default.selectData(name: "DBManager"))
+            }else if indexPath.row == 1 {
+                print(DBManager.default.selectData(name: "DBManager", keys: ["UserName","UserImage"]))
+            }else{
+                print(DBManager.default.selectData(name: "DBManager", keys: ["UserName","UserImage"],condition: ["id= \(3)"]))
+            }
         }else if indexPath.section == 1{
-            self.showNotice(notice: "测试显示文字")
+            if indexPath.row == 0 {
+                print(DBManager.default.selectData(name: "DBManager", keys: [],condition: ["id = \(1)"]))
+            }else{
+                print(DBManager.default.updateData(name: "DBManager", keyValues: ["UserName":"ABC"], condition: ["id = \(1)"]))
+            }
+            
+            
         }else if indexPath.section == 2 {
             self.navigationController?.pushViewController(JXSettingViewController(), animated: true)
         } else {

@@ -107,10 +107,12 @@ extension JXWkWebViewController:WKUIDelegate{
         print("textInput")
     }
     //实现该方法，可以弹出自定义视图
+    @available(iOS 10.0, *)
     func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
         return true
     }
     //实现该方法，可以弹出自定义视图控制器
+    @available(iOS 10.0, *)
     func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
         return nil
     }
