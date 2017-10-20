@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let timeInterval : Int = 5
+
 class JXAdvertiseView: UIView {
 
     lazy var imageView: UIImageView = {
@@ -19,7 +21,7 @@ class JXAdvertiseView: UIView {
     
     lazy var enterButton: UIButton = {
         let button = UIButton()
-        button.setTitle("5", for: .normal)
+        button.setTitle( "\(timeInterval)", for: .normal)
         button.frame = CGRect(origin: CGPoint(), size: CGSize(width: 40, height: 40))
         //button.sizeToFit()
         button.setTitleColor(UIColor.white, for: .normal)
@@ -45,19 +47,10 @@ class JXAdvertiseView: UIView {
         
         if #available(iOS 10.0, *) {
             self.adTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-                if
-                    let numberStr = self.enterButton.currentTitle,
-                    var number = Int(numberStr),
-                    number > 1
-                {
-                    number -= 1
-                    self.enterButton.setTitle("\(number)", for: .normal)
-                }else{
-                    self.touchDismiss()
-                }
+                self.autoChangeNumber(timer: timer)
             }
         } else {
-            // Fallback on earlier versions
+            self.adTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoChangeNumber(timer:)), userInfo: self.adTimer, repeats: true)
         }
     }
     
@@ -65,7 +58,18 @@ class JXAdvertiseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
+    func autoChangeNumber(timer:Timer) {
+        if
+            let numberStr = self.enterButton.currentTitle,
+            var number = Int(numberStr),
+            number > 1
+        {
+            number -= 1
+            self.enterButton.setTitle("\(number)", for: .normal)
+        }else{
+            self.touchDismiss()
+        }
+    }
     
     func touchDismiss() {
         

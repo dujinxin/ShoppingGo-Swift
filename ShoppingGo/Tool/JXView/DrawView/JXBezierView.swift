@@ -168,8 +168,10 @@ class JXBezierRoundRectView: UIView {
         path.lineCapStyle = .butt//端点样式
         path.lineJoinStyle = .miter//连接点样式
         UIColor.red.setStroke()//线条颜色
-        
         path.stroke()
+        
+        //UIColor.red.setFill()//填充颜色
+        //path.fill()
     }
 }
 /// roundRect 圆角矩形,可以自由指定圆角位置
@@ -181,9 +183,12 @@ class JXBezierRoundRectCustomView: UIView {
         path.lineWidth = 2;//线宽
         path.lineCapStyle = .butt//端点样式
         path.lineJoinStyle = .miter//连接点样式
-        UIColor.red.setStroke()//线条颜色
         
-        path.stroke()
+//        UIColor.red.setStroke()//线条颜色
+//        path.stroke()
+        
+        UIColor.red.setFill()//填充颜色
+        path.fill()
     }
 }
 

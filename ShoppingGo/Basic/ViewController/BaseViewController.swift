@@ -12,8 +12,8 @@ class BaseViewController: UIViewController {
     
     //MARK: - custom NavigationBar
     //自定义导航栏
-    lazy var customNavigationBar : UINavigationBar = {
-        let navigationBar = UINavigationBar(frame:CGRect(x: 0, y: 0, width: kScreenWidth, height: kNavStatusHeight))
+    lazy var customNavigationBar : JXNavigationBar = {
+        let navigationBar = JXNavigationBar(frame:CGRect(x: 0, y: 0, width: kScreenWidth, height: kNavStatusHeight))
         navigationBar.isTranslucent = true
         navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.orange//导航条颜色
@@ -59,8 +59,9 @@ class BaseViewController: UIViewController {
         
         UserManager.default.isLogin ? setUpMainView() : setUpDefaultView()
         
+        //FIXME:iOS11,这种方法有问题，navigationbar 的backgroundview， contentview默认为44,且y位于0处，
         setCustomNavigationBar()
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +78,6 @@ extension BaseViewController {
         //2.自定义navigatioBar代替系统的，手势返回不用自己实现
         view.addSubview(customNavigationBar)
         customNavigationBar.items = [customNavigationItem]
-        
     }
 //    func setNavigatioinBar(title:String,backGroundColor:UIColor,leftItem:UIView,rightItem:UIView) -> UIView {
 //        let navightionView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kNavStatusHeight))

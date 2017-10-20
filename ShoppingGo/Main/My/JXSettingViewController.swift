@@ -92,7 +92,7 @@ extension JXSettingViewController {
                 ["title":"CoreData","image":"list_icon_friends_share"]
             ],
             [
-                ["title":"Settings","image":"list_icon_setting"],
+                ["title":"隐私","image":"list_icon_setting"],
                 ["title":"Help","image":"list_icon_help"]
             ],
             [

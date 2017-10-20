@@ -263,7 +263,9 @@ extension MyViewController {
         
         DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 4) {
             
-            self.refreshControl?.endRefreshing()
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+            }
         }
         updateMainView()
     }

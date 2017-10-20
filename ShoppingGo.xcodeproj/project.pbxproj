@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CE2BBEE9D969C72D5CCFD28 /* Pods_ShoppingGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */; };
+		351296EF1F9990A5003A08F2 /* JXNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351296EE1F9990A5003A08F2 /* JXNavigationBar.swift */; };
 		3514D65B1F187117001744DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3514D65A1F187117001744DD /* UIViewController+Extension.swift */; };
 		3514D6801F1D9E17001744DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3514D6821F1D9E17001744DD /* Localizable.strings */; };
 		3514D6861F1DADA9001744DD /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3514D6851F1DADA9001744DD /* LanguageManager.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.debug.xcconfig"; sourceTree = "<group>"; };
+		351296EE1F9990A5003A08F2 /* JXNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXNavigationBar.swift; sourceTree = "<group>"; };
 		3514D65A1F187117001744DD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3514D6811F1D9E17001744DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3514D6841F1D9E8A001744DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		351296ED1F99907F003A08F2 /* UIView+Inherit */ = {
+			isa = PBXGroup;
+			children = (
+				351296EE1F9990A5003A08F2 /* JXNavigationBar.swift */,
+			);
+			path = "UIView+Inherit";
+			sourceTree = "<group>";
+		};
 		3514D7271F204DCC001744DD /* LogRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		3514D7291F204DCC001744DD /* My */ = {
 			isa = PBXGroup;
 			children = (
+				35BF039D1F46C9E9004A77E9 /* privacy */,
 				3559485A1F3BFEBF008145BB /* address */,
 				3559485B1F3BFEBF008145BB /* collection */,
 				3559485C1F3BFEBF008145BB /* friend */,
@@ -347,6 +358,7 @@
 		35260D501EE6BB6C001B31A1 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				351296ED1F99907F003A08F2 /* UIView+Inherit */,
 				351DD3191F15BC3D00E90170 /* JXViewController */,
 				351DD2F61F14E1AE00E90170 /* Additions */,
 				351DD2F71F14E1AE00E90170 /* Extension */,
@@ -429,6 +441,45 @@
 				35BF038B1F42CD08004A77E9 /* DBManager.swift */,
 			);
 			path = DBManager;
+			sourceTree = "<group>";
+		};
+		35BF039D1F46C9E9004A77E9 /* privacy */ = {
+			isa = PBXGroup;
+			children = (
+				35BF039E1F46C9E9004A77E9 /* AddressBook */,
+				35BF039F1F46C9E9004A77E9 /* Location */,
+				35BF03A01F46C9E9004A77E9 /* Motion */,
+				35BF03A11F46C9E9004A77E9 /* Photo */,
+			);
+			path = privacy;
+			sourceTree = "<group>";
+		};
+		35BF039E1F46C9E9004A77E9 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		35BF039F1F46C9E9004A77E9 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		35BF03A01F46C9E9004A77E9 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Motion;
+			sourceTree = "<group>";
+		};
+		35BF03A11F46C9E9004A77E9 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		35DE9E981F14BD4C006F271E /* CommonManager */ = {
@@ -618,6 +669,7 @@
 				351DD3181F14E70200E90170 /* ViewManager.swift in Sources */,
 				351DD3171F14E70200E90170 /* ProjectHeader.swift in Sources */,
 				351DD3051F14E1AE00E90170 /* String+Extension.swift in Sources */,
+				351296EF1F9990A5003A08F2 /* JXNavigationBar.swift in Sources */,
 				355948281F346751008145BB /* JXColorView.swift in Sources */,
 				35BF03961F45A364004A77E9 /* JXUserInfoViewController.swift in Sources */,
 				351DD30F1F14E1AE00E90170 /* JXSelectView.swift in Sources */,

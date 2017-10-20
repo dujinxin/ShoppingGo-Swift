@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     /**
      * Shortcut for frame.origin.x.
@@ -127,8 +127,8 @@ extension UIView {
     
 }
 
-extension UIView {
-    func removeAllSubView() {
+public extension UIView {
+    public func removeAllSubView() {
         
         for view in subviews {
             let v = view

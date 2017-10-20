@@ -75,7 +75,8 @@ extension JXBezierViewController {
         }
         
         v?.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth / 2)
-        v?.backgroundColor = UIColor.white
+        v?.backgroundColor = UIColor.clear
+        v?.alpha = 0.25
         let select = JXSelectView(frame: CGRect(), customView: v!)
 
         //let alert = JXAlertView(frame: CGRect.init(x: 0, y: 0, width: 300, height: 300), style: .custom)
