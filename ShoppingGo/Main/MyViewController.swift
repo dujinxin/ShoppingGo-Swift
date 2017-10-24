@@ -205,20 +205,8 @@ extension MyViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         //SLComposeViewController
         if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                print(DBManager.default.selectData(name: "DBManager"))
-            }else if indexPath.row == 1 {
-                print(DBManager.default.selectData(name: "DBManager", keys: ["UserName","UserImage"]))
-            }else{
-                print(DBManager.default.selectData(name: "DBManager", keys: ["UserName","UserImage"],condition: ["id= \(3)"]))
-            }
-        }else if indexPath.section == 1{
-            if indexPath.row == 0 {
-                print(DBManager.default.selectData(name: "DBManager", keys: [],condition: ["id = \(1)"]))
-            }else{
-                print(DBManager.default.updateData(name: "DBManager", keyValues: ["UserName":"ABC"], condition: ["id = \(1)"]))
-            }
             
+        }else if indexPath.section == 1{
             
         }else if indexPath.section == 2 {
             self.navigationController?.pushViewController(JXSettingViewController(), animated: true)

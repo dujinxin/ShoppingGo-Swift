@@ -18,29 +18,20 @@ class DBManager {
     var databaseQueue : FMDatabaseQueue?
     var tableName : String = dbName
     
-//    var name: String {
-//        get {
-//            return dbName
-//        }
-//        set {
-//            self.name = newValue
-//        }
+//    /// 表名
+//    static var name : String {
+//        return dbName
 //    }
-//    
-    /// 表名
-    static var name : String {
-        return dbName
-    }
     static var path : String {
         return NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
     }
     
     /// 检查表是否存在
     var isExist: Bool {
-        return examine(name: tableName)
+        return examine()
     }
-    init(name:String = DBManager.name) {
-        tableName = name
+    init(name:String = dbName) {
+        self.tableName = name
         let path = DBManager.path.appending("/\(name).db")
         databaseQueue = FMDatabaseQueue(path: path)
         print("数据库地址：\(path)")
@@ -70,14 +61,14 @@ class DBManager {
     ///   - name: 表名
     ///   - keys: 字段
     /// - Returns: 结果
-    func createTable(name:String = DBManager.name,keys:Array<String>) -> Bool {
+    func createTable(keys:Array<String>) -> Bool {
         guard keys.isEmpty == false else {
             return false
         }
         var result : Bool = false
         
         databaseQueue?.inDatabase({ (db) in
-            var sql = "create table if not exists \(name) (id integer primary key autoincrement"
+            var sql = "create table if not exists \(self.tableName) (id integer primary key autoincrement"
             for i in 0..<keys.count {
                 sql.append(",\(keys[i]) text")
                 if i == keys.count - 1{
@@ -90,7 +81,7 @@ class DBManager {
                 let rs = db?.executeUpdate(sql, withArgumentsIn: []),
                 rs == true{
                 result = true
-                print("Create Table Success \(name).db = \(DBManager.path)")
+                print("Create Table Success \(self.tableName).db = \(DBManager.path)")
             }else{
                 result = false
                 print("Create Table Error: \(String(describing: db?.lastErrorMessage))")
@@ -102,13 +93,13 @@ class DBManager {
     ///
     /// - Parameter name: 表名
     /// - Returns: 返回结果
-    func dropTable(name:String = DBManager.name) -> Bool {
+    func dropTable() -> Bool {
         if isExist == false {
             return false
         }
         var result = false
         databaseQueue?.inDatabase({ (db) in
-            let sql = "drop table \(name)"
+            let sql = "drop table \(self.tableName)"
             if
                 self.validateSql(db: db, sql: sql) == true,
                 let rs = db?.executeUpdate(sql, withArgumentsIn: nil),
@@ -123,16 +114,16 @@ class DBManager {
         return result
         
     }
-    func examine(name:String = DBManager.name) -> Bool {
+    func examine() -> Bool {
         var result = false
         databaseQueue?.inDatabase({ (db) in
             if
-                let rs = db?.tableExists(name),
+                let rs = db?.tableExists(self.tableName),
                 rs == true{
                 result = true
             }else{
                 result = false
-                print("Examine Table Error: \(String(describing: db?.lastErrorMessage))")
+                print("Table not exists")
             }
         })
         return result
@@ -145,12 +136,12 @@ class DBManager {
     ///   - name: 表名
     ///   - datas: 数据
     /// - Returns: 是否成功
-    func insertData(name:String = DBManager.name,data:Dictionary<String,Any>) -> Bool {
+    func insertData(data:Dictionary<String,Any>) -> Bool {
         if isExist == false {
             return false
         }
         var result : Bool = false
-        var sql = "insert into \(name) ("
+        var sql = "insert into \(self.tableName) ("
         var value = ") values ("
         let lazyMapCollection = data.keys
         let keys = Array(lazyMapCollection)
@@ -171,7 +162,7 @@ class DBManager {
                 let rs = db?.executeUpdate(sql, withArgumentsIn: values),
                 rs == true{
                 result = true
-                print("Insert Data Success \(name).db")
+                print("Insert Data Success \(self.tableName).db")
             }else{
                 result = false
                 print("Insert Data Error: \(String(describing: db?.lastErrorMessage))")
@@ -184,15 +175,14 @@ class DBManager {
     ///   - insert into DBManager (UserGender,UserName) values (?,?)
     ///
     /// - Parameters:
-    ///   - name: 表名
     ///   - datas: 数据
     /// - Returns: 是否成功
-    func insertDatas(name:String = DBManager.name,datas:Array<Dictionary<String,Any>>) -> Bool {
+    func insertDatas(datas:Array<Dictionary<String,Any>>) -> Bool {
         if isExist == false {
             return false
         }
         var result : Bool = false
-        var sql = "insert into \(name) ("
+        var sql = "insert into \(self.tableName) ("
         var value = ") values ("
         let data = datas[0]
         let lazyMapCollection = data.keys
@@ -238,11 +228,10 @@ class DBManager {
     ///   - select UserName,UserImage from DBManager where UserID = 3  按条件 部分字段查询
     ///
     /// - Parameters:
-    ///   - name: 表名
     ///   - keys: 要查询的字段
     ///   - condition: 查询条件
     /// - Returns: 查询结果
-    func selectData(name:String = DBManager.name,keys:Array<String> = [],condition:Array<String>? = nil) -> Array<Any>? {
+    func selectData(keys:Array<String> = [],condition:Array<String>? = nil) -> Array<Any>? {
         if isExist == false {
             return nil
         }
@@ -260,9 +249,9 @@ class DBManager {
                         sql.append(",")
                     }
                 }
-                sql.append(" from \(name)")
+                sql.append(" from \(self.tableName)")
             }else{
-                sql.append("* from \(name)")
+                sql.append("* from \(self.tableName)")
             }
             
             //筛选条件
@@ -309,17 +298,16 @@ class DBManager {
     ///   - update DBManager set UserName='Me',UserAge='28' where id = 1  更新 符合条件数据 字段
     ///
     /// - Parameters:
-    ///   - name: 表名
     ///   - keyValues: 要更新的字段
     ///   - condition: 查询条件,default：[],更新整个表，否则更新符合条件的数据
     /// - Returns: 更新结果
-    func updateData(name:String = DBManager.name,keyValues:Dictionary<String,Any> = Dictionary<String,Any>(),condition:Array<String> = []) -> Bool {
+    func updateData(keyValues:Dictionary<String,Any> = Dictionary<String,Any>(),condition:Array<String> = []) -> Bool {
         if isExist == false {
             return false
         }
         var result = false
         databaseQueue?.inDatabase({ (db) in
-            var sql = "update \(name) set "
+            var sql = "update \(self.tableName) set "
             for (key,value) in keyValues{
                 sql.append("\(key)='\(value)',")
             }
@@ -354,16 +342,15 @@ class DBManager {
     ///   - delete from DBManager where id = 4  删除 符合条件数据
     ///
     /// - Parameters:
-    ///   - name: 表名
     ///   - condition: 条件
     /// - Returns: 结果
-    func deleteData(name:String = DBManager.name,condition:Array<String> = []) -> Bool {
+    func deleteData(condition:Array<String> = []) -> Bool {
         if isExist == false {
             return false
         }
         var result = false
         databaseQueue?.inDatabase({ (db) in
-            var sql = "delete from \(name)"
+            var sql = "delete from \(self.tableName)"
             if condition.isEmpty == false {
                 sql.append(" where ")
                 for i in 0..<condition.count{
@@ -397,7 +384,7 @@ class DBManager {
     ///   - key: 字段名
     ///   - condition: 查询条件
     /// - Returns: 返回条数
-    func selectDataCount(name:String = DBManager.name,key:String = "",condition:Array<String> = []) -> Int {
+    func selectDataCount(key:String = "",condition:Array<String> = []) -> Int {
         if isExist == false {
             return 0
         }
@@ -405,9 +392,9 @@ class DBManager {
         databaseQueue?.inDatabase({ (db) in
             var sql = "select count"
             if key.isEmpty == false{
-                sql.append(" (\(key)) from \(name)")
+                sql.append(" (\(key)) from \(self.tableName)")
             }else{
-                sql.append(" ( * ) from \(name)")
+                sql.append(" ( * ) from \(self.tableName)")
             }
             if condition.isEmpty == false {
                 sql.append(" where ")

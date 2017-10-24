@@ -103,7 +103,7 @@ class JXEditDBUserController: JXTableViewController {
             
             self.showLoadView()
             let dict = ["name":name1,"age":age1,"gender":gender1,"score":score1]
-            if DBManager.default.updateData(keyValues: dict, condition: ["id = \(dbUserEntity.id)"]) == true {
+            if JXBaseDB.default.updateData(keyValues: dict, condition: ["id = \(dbUserEntity.id)"]) == true {
                 self.showNotice(notice: "修改成功")
                 editBlock(dbUserEntity)
                 self.navigationController?.popViewController(animated: true)
@@ -138,8 +138,8 @@ class JXEditDBUserController: JXTableViewController {
     func insertData(data:Dictionary<String,Any> = [:]) -> Bool {
         
         if data.isEmpty == false {
-            let _ = DBManager.default.createTable(keys: Array(data.keys))
-            return DBManager.default.insertData(data: data)
+            let _ = JXBaseDB.default.createTable(keys: Array(data.keys))
+            return JXBaseDB.default.insertData(data: data)
         }else{
             var datas = Array<Dictionary<String,Any>>()
             let nameArr = ["张三","李四","王五","赵六","胡二麻子"]
@@ -154,8 +154,8 @@ class JXEditDBUserController: JXTableViewController {
                     "score":arc4random_uniform(100) + 1] as [String : Any]
                 datas.append(dict)
             }
-            let _ = DBManager.default.createTable(keys: Array(datas[0].keys))
-            return DBManager.default.insertDatas(datas: datas)
+            let _ = JXBaseDB.default.createTable(keys: Array(datas[0].keys))
+            return JXBaseDB.default.insertDatas(datas: datas)
         }
     }
 }

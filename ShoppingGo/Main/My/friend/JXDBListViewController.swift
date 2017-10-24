@@ -41,7 +41,7 @@ class JXDBListViewController: JXTableViewController {
         // Dispose of any resources that can be recreated.
     }
     func dropTable() {
-        if DBManager.default.dropTable() == true {
+        if JXBaseDB.default.dropTable() == true {
             self.showNotice(notice: "删除表成功")
             requestData()
         }
@@ -123,7 +123,7 @@ extension JXDBListViewController {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "删除") { (action, indexPath) in
             print("删除")
             let model = self.dataArray[indexPath.row] as! DBUserModel
-            if DBManager.default.deleteData(condition: ["id = \(model.id)"]) == true{
+            if JXBaseDB.default.deleteData(condition: ["id = \(model.id)"]) == true{
                 self.dataArray.remove(at: indexPath.row)
                 tableView.beginUpdates()
                 tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -152,7 +152,7 @@ extension JXDBListViewController {
     override func updateMainView() {
         
         self.dataArray.removeAll()
-        if let array = DBManager.default.selectData(){
+        if let array = JXBaseDB.default.selectData(){
             print(array)
             for dict in array {
                 if
@@ -163,8 +163,8 @@ extension JXDBListViewController {
                 }
             }
         }
-        //let count = DBManager.default.selectDataCount()
-        let count = DBManager.default.selectDataCount(key: "name", condition: ["id < \(3)"])
+        //let count = JXBaseDB.default.selectDataCount()
+        let count = JXBaseDB.default.selectDataCount(key: "name", condition: ["id < \(3)"])
         self.title = "FMDB-\(count)"
         self.tableView?.reloadData()
     }
