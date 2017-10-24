@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JXTableViewController: BaseViewController{
+class JXTableViewController: JXBaseViewController{
 
     //tableview
     var tableView : UITableView?

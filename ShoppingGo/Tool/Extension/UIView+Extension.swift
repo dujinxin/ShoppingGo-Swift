@@ -81,7 +81,7 @@ public extension UIView {
      *
      * Sets center.x = centerX
      */
-    var JXcenter : CGPoint {
+    var jxCenter : CGPoint {
         get{
             return center
         }

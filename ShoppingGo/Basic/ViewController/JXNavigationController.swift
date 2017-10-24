@@ -35,7 +35,7 @@ extension JXNavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
       
         
-        if  let vc = viewController as? BaseViewController{
+        if  let vc = viewController as? JXBaseViewController{
             if viewControllers.count > 0 {
                 vc.hidesBottomBarWhenPushed = true
                 

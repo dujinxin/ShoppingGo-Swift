@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  JXBaseViewController.swift
 //  ShoppingGo-Swift
 //
 //  Created by 杜进新 on 2017/6/6.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class JXBaseViewController: UIViewController {
     
     //MARK: - custom NavigationBar
     //自定义导航栏
@@ -53,8 +53,8 @@ class BaseViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.white
         view.backgroundColor = UIColor.rgbColor(rgbValue: 0xf1f1f1)
-        view.backgroundColor = UIColor.rgbColor(from: 200, 200, 200)
-        view.backgroundColor = UIColor.randomColor
+        //view.backgroundColor = UIColor.rgbColor(from: 200, 200, 200)
+        //view.backgroundColor = UIColor.randomColor
         
         
         UserManager.default.isLogin ? setUpMainView() : setUpDefaultView()
@@ -71,7 +71,7 @@ class BaseViewController: UIViewController {
 
 }
 
-extension BaseViewController {
+extension JXBaseViewController {
     func setCustomNavigationBar() {
         //隐藏navigationBar
         //1.自定义view代替NavigationBar,需要自己实现手势返回;
@@ -87,7 +87,7 @@ extension BaseViewController {
 
 }
 //MARK: - subviewController need override
-extension BaseViewController {
+extension JXBaseViewController {
     
     /// request data
     func requestData() {
@@ -129,6 +129,6 @@ extension BaseViewController {
     }
 }
 
-extension BaseViewController {
+extension JXBaseViewController {
     
 }

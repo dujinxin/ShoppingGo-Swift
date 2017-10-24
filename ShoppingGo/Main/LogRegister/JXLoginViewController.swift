@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JXLoginViewController: BaseViewController {
+class JXLoginViewController: JXBaseViewController {
 
     lazy var userTextField : UITextField = {
         let textField = UITextField()

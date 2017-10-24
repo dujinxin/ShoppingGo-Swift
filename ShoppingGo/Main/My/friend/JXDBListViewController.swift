@@ -30,7 +30,7 @@ class JXDBListViewController: JXTableViewController {
         self.tableView?.rowHeight = UITableViewAutomaticDimension
         self.tableView?.estimatedRowHeight = 44*kPercent
         
-        self.tableView?.isEditing = true
+        //self.tableView?.isEditing = true
         self.tableView?.allowsMultipleSelectionDuringEditing =  true
         
         self.requestData()

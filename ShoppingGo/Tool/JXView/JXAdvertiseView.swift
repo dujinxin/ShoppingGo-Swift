@@ -38,7 +38,7 @@ class JXAdvertiseView: UIView {
         backgroundColor = UIColor.clear
         
         self.imageView.frame = bounds
-        self.enterButton.frame = CGRect(x: kScreenWidth - 60, y: 20, width: 40, height: 40)
+        self.enterButton.frame = CGRect(x: kScreenWidth - 60, y: kStatusBarHeight, width: 40, height: 40)
         addSubview(self.imageView)
         addSubview(self.enterButton)
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JXUIWebViewController: BaseViewController {
+class JXUIWebViewController: JXBaseViewController {
     
     lazy var webView: UIWebView = {
         let web = UIWebView()

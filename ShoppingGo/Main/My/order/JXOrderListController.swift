@@ -1,8 +1,8 @@
 //
-//  JXAddressListController.swift
+//  JXOrderListController.swift
 //  ShoppingGo
 //
-//  Created by 杜进新 on 2017/8/10.
+//  Created by 杜进新 on 2017/10/24.
 //  Copyright © 2017年 杜进新. All rights reserved.
 //
 
@@ -10,15 +10,14 @@ import UIKit
 
 private let cellId = "cellId"
 
-class JXAddressListController: JXTableViewController {
-
+class JXOrderListController: JXTableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "地址管理"
-        self.customNavigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(edit(isEidt:index:)))
         
-        self.tableView?.frame = CGRect.init(x: 0, y: kNavStatusHeight, width: kScreenWidth, height: kScreenHeight - kNavStatusHeight)
+        self.customNavigationBar.removeFromSuperview()
+        
+        self.tableView?.frame = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavStatusHeight - 44)
         
         self.tableView?.register(UINib.init(nibName: "JXAddressCell", bundle: nil), forCellReuseIdentifier: cellId)
         self.tableView?.sectionFooterHeight = 0.1
@@ -29,12 +28,12 @@ class JXAddressListController: JXTableViewController {
         
         self.requestData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func edit(isEidt:Bool = false,index:Int) {
         let editVC = JXEditAddressController()
         if isEidt {
@@ -56,13 +55,13 @@ class JXAddressListController: JXTableViewController {
     }
 }
 
-extension JXAddressListController {
+extension JXOrderListController {
     
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JXAddressCell
         
@@ -109,7 +108,7 @@ extension JXAddressListController {
     }
 }
 //MARK: - override super func
-extension JXAddressListController {
+extension JXOrderListController {
     
     override func requestData() {
         updateMainView()

@@ -62,7 +62,11 @@ extension JXSettingViewController {
         
         //SLComposeViewController
         if indexPath.section == 0 {
-            self.navigationController?.pushViewController(JXAddressListController(), animated: true)
+            if indexPath.row == 0 {
+                self.navigationController?.pushViewController(JXOrderManageController(), animated: true)
+            }else{
+                self.navigationController?.pushViewController(JXAddressListController(), animated: true)
+            }
         }else if indexPath.section == 1{
             self.navigationController?.pushViewController(JXDBListViewController(), animated: true)
         }else if indexPath.section == 2 {

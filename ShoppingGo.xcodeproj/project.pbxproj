@@ -41,7 +41,7 @@
 		35260D2C1EE696EF001B31A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D2B1EE696EF001B31A1 /* AppDelegate.swift */; };
 		35260D2E1EE696EF001B31A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D2D1EE696EF001B31A1 /* ViewController.swift */; };
 		35260D331EE696EF001B31A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35260D321EE696EF001B31A1 /* Assets.xcassets */; };
-		35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D411EE697AD001B31A1 /* BaseViewController.swift */; };
+		35260D491EE697AD001B31A1 /* JXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D411EE697AD001B31A1 /* JXBaseViewController.swift */; };
 		35260D4C1EE697AD001B31A1 /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D451EE697AD001B31A1 /* BusinessViewController.swift */; };
 		35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D461EE697AD001B31A1 /* FindViewController.swift */; };
 		35260D4E1EE697AD001B31A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35260D471EE697AD001B31A1 /* HomeViewController.swift */; };
@@ -81,6 +81,9 @@
 		35DE9E971F14A917006F271E /* JXRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E921F14A917006F271E /* JXRequest.swift */; };
 		35DE9E9B1F14BD6D006F271E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E9A1F14BD6D006F271E /* UserManager.swift */; };
 		35DE9E9D1F14BDAF006F271E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E9C1F14BDAF006F271E /* BaseModel.swift */; };
+		35F7853E1F9F1FC800C77942 /* JXOrderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F7853D1F9F1FC800C77942 /* JXOrderListController.swift */; };
+		35F785401F9F204100C77942 /* JXOrderManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F7853F1F9F204100C77942 /* JXOrderManageController.swift */; };
+		35F785421F9F36EC00C77942 /* JXContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F785411F9F36EC00C77942 /* JXContactsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,7 +124,7 @@
 		35260D2D1EE696EF001B31A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35260D321EE696EF001B31A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35260D371EE696EF001B31A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35260D411EE697AD001B31A1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		35260D411EE697AD001B31A1 /* JXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseViewController.swift; sourceTree = "<group>"; };
 		35260D451EE697AD001B31A1 /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		35260D461EE697AD001B31A1 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		35260D471EE697AD001B31A1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +164,9 @@
 		35DE9E921F14A917006F271E /* JXRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXRequest.swift; sourceTree = "<group>"; };
 		35DE9E9A1F14BD6D006F271E /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		35DE9E9C1F14BDAF006F271E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		35F7853D1F9F1FC800C77942 /* JXOrderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXOrderListController.swift; sourceTree = "<group>"; };
+		35F7853F1F9F204100C77942 /* JXOrderManageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXOrderManageController.swift; sourceTree = "<group>"; };
+		35F785411F9F36EC00C77942 /* JXContactsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXContactsController.swift; sourceTree = "<group>"; };
 		F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +222,7 @@
 				3559482B1F34782E008145BB /* JXSettingViewController.swift */,
 				355948581F3BF9F5008145BB /* JXFeedbackViewController.swift */,
 				35BF03951F45A364004A77E9 /* JXUserInfoViewController.swift */,
+				35F785411F9F36EC00C77942 /* JXContactsController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -334,7 +341,7 @@
 			children = (
 				3514D72D1F204E59001744DD /* JXNavigationController.swift */,
 				3514D72E1F204E59001744DD /* JXTabBarController.swift */,
-				35260D411EE697AD001B31A1 /* BaseViewController.swift */,
+				35260D411EE697AD001B31A1 /* JXBaseViewController.swift */,
 				3597502A1EE793A300419474 /* JXTableViewController.swift */,
 				351DD3281F1756F400E90170 /* JXUIWebViewController.swift */,
 				351DD32A1F17602300E90170 /* JXWkWebViewController.swift */,
@@ -358,11 +365,11 @@
 		35260D501EE6BB6C001B31A1 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				351296ED1F99907F003A08F2 /* UIView+Inherit */,
 				351DD3191F15BC3D00E90170 /* JXViewController */,
+				351DD2FE1F14E1AE00E90170 /* JXView */,
+				351296ED1F99907F003A08F2 /* UIView+Inherit */,
 				351DD2F61F14E1AE00E90170 /* Additions */,
 				351DD2F71F14E1AE00E90170 /* Extension */,
-				351DD2FE1F14E1AE00E90170 /* JXView */,
 				35DE9E981F14BD4C006F271E /* CommonManager */,
 				3597505D1EEBCF5000419474 /* JXNetwork */,
 				3597505B1EEA9FF500419474 /* ApiEnum.swift */,
@@ -418,6 +425,8 @@
 		3559485D1F3BFEBF008145BB /* order */ = {
 			isa = PBXGroup;
 			children = (
+				35F7853F1F9F204100C77942 /* JXOrderManageController.swift */,
+				35F7853D1F9F1FC800C77942 /* JXOrderListController.swift */,
 			);
 			path = order;
 			sourceTree = "<group>";
@@ -646,6 +655,7 @@
 				35BF038C1F42CD08004A77E9 /* DBManager.swift in Sources */,
 				3597502B1EE793A300419474 /* JXTableViewController.swift in Sources */,
 				35BF039B1F468C89004A77E9 /* JXBaseDB.swift in Sources */,
+				35F785401F9F204100C77942 /* JXOrderManageController.swift in Sources */,
 				355948241F3415CF008145BB /* SDWebImage+Addition.swift in Sources */,
 				355947AA1F2B3A74008145BB /* JXBezierView.swift in Sources */,
 				351DD3291F1756F400E90170 /* JXUIWebViewController.swift in Sources */,
@@ -670,6 +680,7 @@
 				351DD3171F14E70200E90170 /* ProjectHeader.swift in Sources */,
 				351DD3051F14E1AE00E90170 /* String+Extension.swift in Sources */,
 				351296EF1F9990A5003A08F2 /* JXNavigationBar.swift in Sources */,
+				35F7853E1F9F1FC800C77942 /* JXOrderListController.swift in Sources */,
 				355948281F346751008145BB /* JXColorView.swift in Sources */,
 				35BF03961F45A364004A77E9 /* JXUserInfoViewController.swift in Sources */,
 				351DD30F1F14E1AE00E90170 /* JXSelectView.swift in Sources */,
@@ -700,9 +711,10 @@
 				3597505C1EEA9FF500419474 /* ApiEnum.swift in Sources */,
 				35260D4D1EE697AD001B31A1 /* FindViewController.swift in Sources */,
 				355948731F3C6C28008145BB /* JXAdditionView.swift in Sources */,
+				35F785421F9F36EC00C77942 /* JXContactsController.swift in Sources */,
 				3514D7301F204E59001744DD /* JXTabBarController.swift in Sources */,
 				351DD30A1F14E1AE00E90170 /* UIView+Extension.swift in Sources */,
-				35260D491EE697AD001B31A1 /* BaseViewController.swift in Sources */,
+				35260D491EE697AD001B31A1 /* JXBaseViewController.swift in Sources */,
 				355948261F3455C9008145BB /* JXViewManager.swift in Sources */,
 				355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */,
 			);

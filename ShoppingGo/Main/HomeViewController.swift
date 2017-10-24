@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: JXBaseViewController {
 
     lazy var additionView: JXAdditionView = {
         let addition = JXAdditionView(frame: CGRect())

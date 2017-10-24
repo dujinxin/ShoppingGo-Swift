@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JXFeedbackViewController: BaseViewController {
+class JXFeedbackViewController: JXBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
