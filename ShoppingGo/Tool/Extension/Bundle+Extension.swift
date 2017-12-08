@@ -10,7 +10,7 @@ import Foundation
 
 extension Bundle {
     /// 工程名称
-    var bundleName: String {
+    var name: String {
         return (Bundle.main.infoDictionary?["CFBundleName"] as? String) ?? ""
     }
     /// 版本号

@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  ShoppingGo
+
+  Created by 杜进新 on 2017/12/4.
+  Copyright © 2017年 杜进新. All rights reserved.
+*/
+"CFBundleDisplayName"="ShoppingGo-swift";
+"CFBundleName"="ShoppingGo-swift";

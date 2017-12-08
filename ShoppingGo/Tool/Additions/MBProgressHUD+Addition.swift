@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import MBProgressHUD
+
+extension MBProgressHUD {
+    
+}

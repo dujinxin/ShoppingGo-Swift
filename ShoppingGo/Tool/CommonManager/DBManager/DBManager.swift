@@ -13,6 +13,7 @@ private let userPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPat
 private let dbName = "DBManager"
 
 class DBManager {
+    
     static let `default` = DBManager(name: dbName)
     
     var databaseQueue : FMDatabaseQueue?

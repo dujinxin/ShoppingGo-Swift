@@ -32,6 +32,11 @@ class JXNavigationController: UINavigationController {
 
 extension JXNavigationController {
     
+    /// 重写push方法
+    ///
+    /// - Parameters:
+    ///   - viewController: 将要push的viewController
+    ///   - animated: 是否使用动画
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
       
         
@@ -51,6 +56,7 @@ extension JXNavigationController {
         super.pushViewController(viewController, animated: true)
     }
     
+    /// 自定义导航栏的返回按钮事件
     func pop() {
         popViewController(animated: true)
     }

@@ -9,7 +9,6 @@
 import Foundation
 import FMDB
 
-private let userPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
 private let dbName = "JXBaseDB"
 
 class JXBaseDB {
@@ -17,19 +16,8 @@ class JXBaseDB {
     
     var manager : DBManager!
     var tableName : String = dbName
-    /// 表名
-    static var name : String {
-        return dbName
-    }
-    static var path : String {
-        return NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
-    }
     
-    /// 检查表是否存在
-    var isExist: Bool {
-        return examine()
-    }
-    init(name:String = JXBaseDB.name) {
+    init(name:String = dbName) {
         tableName = name
         manager = DBManager(name: name)
     }
@@ -46,9 +34,6 @@ class JXBaseDB {
     /// - Returns: 返回结果
     func dropTable() -> Bool {
         return self.manager.dropTable()
-    }
-    func examine() -> Bool {
-        return self.manager.examine()
     }
     /// 插入数据
     /// - Parameters:

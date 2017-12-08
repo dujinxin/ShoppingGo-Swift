@@ -29,7 +29,12 @@ extension JXViewManager {
     ///MBProgressHUD loading view
     func showMBProgressHUD(view:UIView) {
         hud = MBProgressHUD.showAdded(to: view, animated: true)
-        
+        hud?.bezelView.color = UIColor.rgbColor(rgbValue: 0x333333, alpha: 0.8)
+        hud?.label.text = "编辑成功"
+        //hud?.customView = UIImageView(image: #imageLiteral(resourceName: "address_selected"))
+        hud?.customView = UIImageView.init(image: #imageLiteral(resourceName: "share_default"))
+        hud?.mode = .customView
+        hud?.removeFromSuperViewOnHide = true
     }
     func hideMBProgressHUD(view:UIView) {
         //MBProgressHUD.hide(for: view, animated: true)

@@ -43,7 +43,6 @@ extension UIImage {
         
         return newImage
     }
-
     static func image(originalImage:UIImage?,rect:CGRect,radius:CGFloat) -> UIImage? {
         guard let image = originalImage else {
             return UIImage.init()
@@ -74,7 +73,7 @@ extension UIImage {
         
         return newImage
     }
-    class func imageScreenshot(view: UIView) -> UIImage? {
+    static func imageScreenshot(view: UIView) -> UIImage? {
         let rect = view.bounds
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
@@ -87,6 +86,7 @@ extension UIImage {
     }
     
 }
+//MARK:保存图片到相册
 extension UIImage {
     
     
@@ -219,5 +219,46 @@ extension UIImage {
                 print("保存到胶卷相册失败 error = \(String(describing: error?.localizedDescription))")
             }
         })
+    }
+}
+//MARK:保存到文件中
+extension UIImage {
+    
+    /// 保存数据到文件中
+    ///
+    /// - Parameters:
+    ///   - data: 数据
+    ///   - name: 数据名称
+    static func insert(image:UIImage,name:String) ->Bool{
+        guard let data = UIImageJPEGRepresentation(image, 1.0) else {
+            return false
+        }
+        return FileManager.insert(data: data, toFile: name)
+    }
+    /// 修改文件中的数据
+    ///
+    /// - Parameters:
+    ///   - data: 数据
+    ///   - name: 数据名称
+    static func update(image:UIImage,name:String) ->Bool {
+        guard let data = UIImageJPEGRepresentation(image, 1.0) else {
+            return false
+        }
+        return FileManager.update(inFile: data, name: name)
+    }
+    /// 获取文件中的数据
+    ///
+    /// - Parameters:
+    ///   - data: 数据
+    ///   - name: 数据名称
+    static func select(name:String) -> Data? {
+        let data = FileManager.select(fromFile: name) as? Data
+        return data
+    }
+    /// 移除文件中数据
+    ///
+    /// - Parameter name: 数据名称
+    static func delete(name:String) ->Bool{
+        return FileManager.delete(fromFile: name)
     }
 }

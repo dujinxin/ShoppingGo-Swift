@@ -12,10 +12,25 @@ import WebKit
 class JXWkWebViewController: JXBaseViewController {
 
     lazy var webView: WKWebView = {
-        let web = WKWebView()
+        let config = WKWebViewConfiguration()
+        //初始化偏好设置属性：preferences
+        let preferences = WKPreferences()
+        config.preferences = preferences
+        //The minimum font size in points default is 0
+        config.preferences.minimumFontSize = 10
+        //是否支持JavaScript
+        config.preferences.javaScriptEnabled = true
+        //不通过用户交互，是否可以打开窗口
+        config.preferences.javaScriptCanOpenWindowsAutomatically = false
+        //通过JS与webView内容交互
+        let userContentController = WKUserContentController()
+        config.userContentController = userContentController
+        // 注入JS对象名称senderModel，当JS通过senderModel来调用时，我们可以在WKScriptMessageHandler代理中接收到
+        let web = WKWebView(frame: CGRect(), configuration: config)
         
-        //web.uiDelegate = self
+        web.uiDelegate = self
         web.navigationDelegate = self
+        
         return web
     }()
     lazy var processView: UIProgressView = {
@@ -26,10 +41,6 @@ class JXWkWebViewController: JXBaseViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        if let url = URL(string: "https://www.baidu.com") {
-//            self.webView.load(URLRequest(url: url))
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +77,6 @@ class JXWkWebViewController: JXBaseViewController {
     deinit {
         self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
     }
-    
 }
 
 extension JXWkWebViewController:WKUIDelegate{
@@ -136,26 +146,33 @@ extension JXWkWebViewController:WKNavigationDelegate{
         print("fail:\(error.localizedDescription)")
     }
     
-    
+    //当webView的web内容进程被终止时调用。(iOS 9.0之后)
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         
     }
     //监听页面跳转的代理方法，分为：收到跳转与决定是否跳转两种
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-//        
-//    }
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-//        
-//    }
-//    
-//    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-//        
-//    }
-//    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//        
-//    }
-//    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-//        
-//    }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    //收到服务器重定向时调用
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    //当webView需要响应身份验证时调用(如需验证服务器证书)
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        completionHandler(.performDefaultHandling, nil)
+    }
+    ////加载错误时调用
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+    }
     
+}
+extension JXWkWebViewController :WKScriptMessageHandler{
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("message:",message)
+    }
 }

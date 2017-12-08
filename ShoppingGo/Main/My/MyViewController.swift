@@ -78,7 +78,6 @@ class MyViewController: JXTableViewController {
             self.userImageView.image = UIImage.image(originalImage: UIImage(named: "portrait_default"), rect: CGRect.init(x: 0, y: 0, width: 68*kPercent/2, height: 68*kPercent/2), radius: 68*kPercent/2)
             self.nameLabel.text = "登录"
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -210,7 +209,7 @@ extension MyViewController {
             
         }else if indexPath.section == 2 {
             self.navigationController?.pushViewController(JXSettingViewController(), animated: true)
-        } else {
+        }else {
             
         }
     }

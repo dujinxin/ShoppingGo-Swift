@@ -15,7 +15,6 @@ class JXUserDB: JXBaseDB {
     static let shareInstance = JXUserDB(name: dbName)
     
     var userModel : UserModel = UserModel()
-    
 
     override init(name: String) {
         super.init(name: name)
@@ -24,7 +23,7 @@ class JXUserDB: JXBaseDB {
     /// 用户数据初始化
     func setUserInfo() {
         if
-            self.isExist == true,
+            self.manager.isExist == true,
             let data = self.selectData(),
             data.isEmpty == false{
             

@@ -70,9 +70,9 @@ extension JXTabBarController {
     /// - Parameter info: type:[key:value] className,title,imageName
     /// - Returns: viewController
     func setViewcontroller(info:[String:AnyObject]) -> UIViewController {
-        guard let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as? String,
+        guard Bundle.main.name.isEmpty == false,
               let vcName = info["className"],
-              let Class = NSClassFromString(bundleName + "." + (vcName as! String)) as? JXBaseViewController.Type
+              let Class = NSClassFromString(Bundle.main.name + "." + (vcName as! String)) as? JXBaseViewController.Type
             
             else {
             return UIViewController()
