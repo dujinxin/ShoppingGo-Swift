@@ -18,7 +18,7 @@ class JXNavigationController: UINavigationController {
         self.navigationBar.barStyle = .blackTranslucent
         self.navigationBar.barTintColor = UIColor.orange//导航条颜色
         self.navigationBar.tintColor = UIColor.white   //item图片文字颜色
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
+        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.black,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 22)]//标题设置
         
         self.navigationBar.isHidden = true
     }
@@ -57,7 +57,7 @@ extension JXNavigationController {
     }
     
     /// 自定义导航栏的返回按钮事件
-    func pop() {
+    @objc func pop() {
         popViewController(animated: true)
     }
 }

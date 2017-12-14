@@ -22,11 +22,11 @@ class JXStringView: UIView {
         let paragraph = NSMutableParagraphStyle.init()
         paragraph.lineSpacing = 5
         let attributes = [
-            NSFontAttributeName:UIFont.boldSystemFont(ofSize: UIFont.labelFontSize),
-            NSForegroundColorAttributeName:UIColor.red,
-            NSBackgroundColorAttributeName:UIColor.yellow,
-            NSParagraphStyleAttributeName:paragraph
-            ] as [String : Any]
+            NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: UIFont.labelFontSize),
+            NSAttributedStringKey.foregroundColor:UIColor.red,
+            NSAttributedStringKey.backgroundColor:UIColor.yellow,
+            NSAttributedStringKey.paragraphStyle:paragraph
+            ]
         //从指定点开始绘制，不会换行
         //text.draw(at: rect.origin, withAttributes: attributes)
         //在指定区域绘制，会自动换行，超出部分不显示

@@ -13,16 +13,16 @@ private let userPath = NSHomeDirectory() + "/Documents/userAccound.json"
 
 class UserModel: BaseModel {
     
-    var Token : String?
-    var RefreshToken : String?
-    var PhoneNumber : String?
-    var UserID : Int = 0
-    var UserName : String?
-    var UserAge : Int = 0
-    var UserImage : String?
-    var UserGender : Int = 0
-    var HxAccount : String?
-    var HxPassword : String?
+    @objc var Token : String?
+    @objc var RefreshToken : String?
+    @objc var PhoneNumber : String?
+    @objc var UserID : Int = 0
+    @objc var UserName : String?
+    @objc var UserAge : Int = 0
+    @objc var UserImage : String?
+    @objc var UserGender : Int = 0
+    @objc var HxAccount : String?
+    @objc var HxPassword : String?
     
 }
 

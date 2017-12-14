@@ -18,7 +18,7 @@ class JXBaseViewController: UIViewController {
         navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.orange//导航条颜色
         navigationBar.tintColor = UIColor.white //item图片文字颜色
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.red,NSFontAttributeName:UIFont.systemFont(ofSize: 20)]//标题设置
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.red,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)]//标题设置
         return navigationBar
     }()
     lazy var customNavigationItem: UINavigationItem = {
@@ -90,14 +90,14 @@ extension JXBaseViewController {
 extension JXBaseViewController {
     
     /// request data
-    func requestData() {
+    @objc func requestData() {
         
     }
-    func setUpMainView() {
+    @objc func setUpMainView() {
         //
     }
     /// add default view eg:no data,no network,no login
-    func setUpDefaultView() {
+    @objc func setUpDefaultView() {
         defaultView.frame = view.bounds
         view.addSubview(defaultView)
         defaultView.info = defaultInfo
@@ -105,7 +105,7 @@ extension JXBaseViewController {
             self.requestData()
         }
     }
-    func updateMainView() {
+    @objc func updateMainView() {
         
     }
     

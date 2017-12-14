@@ -89,16 +89,16 @@ class MyViewController: JXTableViewController {
     
     
 
-    func login() {
+    @objc func login() {
         present(JXLoginViewController(), animated: true, completion: nil)
     }
-    func userInfo() {
+    @objc func userInfo() {
         self.navigationController?.pushViewController(JXUserInfoViewController(), animated: true)
     }
     @objc private func nextPage() {
   
     }
-    func buttonAction(button:UIButton) {
+    @objc func buttonAction(button:UIButton) {
         print(button.tag)
         let v = JXDrawViewController()
         v.title = "绘图"

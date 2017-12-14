@@ -58,7 +58,7 @@ class JXAdvertiseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func autoChangeNumber(timer:Timer) {
+    @objc func autoChangeNumber(timer:Timer) {
         if
             let numberStr = self.enterButton.currentTitle,
             var number = Int(numberStr),
@@ -71,7 +71,7 @@ class JXAdvertiseView: UIView {
         }
     }
     
-    func touchDismiss() {
+    @objc func touchDismiss() {
         
         self.adTimer?.invalidate()
         /// animate 放大动画，消失

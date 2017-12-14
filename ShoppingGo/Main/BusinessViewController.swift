@@ -15,7 +15,7 @@ class BusinessViewController: JXBaseViewController {
 
         navigationController?.navigationBar.barTintColor = UIColor.orange//导航条颜色
         navigationController?.navigationBar.tintColor = UIColor.red   //item图片文字颜色
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blue,NSFontAttributeName:UIFont.systemFont(ofSize: 22)]//标题设置
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.blue,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 22)]//标题设置
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "title_icon_notice"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextPage))
         

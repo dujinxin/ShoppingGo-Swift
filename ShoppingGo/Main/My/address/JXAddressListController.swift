@@ -35,7 +35,7 @@ class JXAddressListController: JXTableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func edit(isEidt:Bool = false,index:Int) {
+    @objc func edit(isEidt:Bool = false,index:Int) {
         let editVC = JXEditAddressController()
         if isEidt {
             editVC.title = "编辑地址"

@@ -57,14 +57,14 @@ extension String {
         }
         
         let ocText = self as NSString
-        var attributes : Dictionary<String, Any>
+        var attributes : Dictionary<NSAttributedStringKey, Any>
         let paragraph = NSMutableParagraphStyle.init()
         paragraph.lineSpacing = lineSpace
         
         if lineSpace < 0 {
-            attributes = [NSFontAttributeName:UIFont.systemFont(ofSize: fontSize)]
+            attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: fontSize)]
         }else{
-            attributes = [NSFontAttributeName:UIFont.systemFont(ofSize: fontSize),NSParagraphStyleAttributeName:paragraph]
+            attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: fontSize),NSAttributedStringKey.paragraphStyle:paragraph]
         }
         //usesLineFragmentOrigin 绘制文本时使用 line fragement origin 而不是 baseline origin
         //usesFontLeading 根据字体计算高度

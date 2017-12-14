@@ -96,15 +96,15 @@ class JXTopBarView: UIView {
             if i == 0 {
                 button.isSelected = true
                 let attributeString = NSMutableAttributedString.init(string: title)
-                attributeString.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 14),NSForegroundColorAttributeName:attribute.highlightedColor], range: NSRange.init(location: 0, length: 3))
-                attributeString.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 12),NSForegroundColorAttributeName:attribute.highlightedColor], range: NSRange.init(location: 3, length: title.count - 3))
+                attributeString.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14),NSAttributedStringKey.foregroundColor:attribute.highlightedColor], range: NSRange.init(location: 0, length: 3))
+                attributeString.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12),NSAttributedStringKey.foregroundColor:attribute.highlightedColor], range: NSRange.init(location: 3, length: title.count - 3))
                 
                 button.setAttributedTitle(attributeString, for: .selected)
                 
                 
                 let attributeString1 = NSMutableAttributedString.init(string: title)
-                attributeString1.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 14),NSForegroundColorAttributeName:attribute.normalColor], range: NSRange.init(location: 0, length: 3))
-                attributeString1.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 12),NSForegroundColorAttributeName:attribute.normalColor], range: NSRange.init(location: 3, length: title.count - 3))
+                attributeString1.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14),NSAttributedStringKey.foregroundColor:attribute.normalColor], range: NSRange.init(location: 0, length: 3))
+                attributeString1.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12),NSAttributedStringKey.foregroundColor:attribute.normalColor], range: NSRange.init(location: 3, length: title.count - 3))
                 
                 button.setAttributedTitle(attributeString1, for: .normal)
                 
@@ -162,15 +162,15 @@ class JXTopBarView: UIView {
                 if button.tag == 0 {
                 
                     let attributeString = NSMutableAttributedString.init(string: title)
-                    attributeString.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 14),NSForegroundColorAttributeName:attribute.highlightedColor], range: NSRange.init(location: 0, length: 3))
-                    attributeString.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 12),NSForegroundColorAttributeName:attribute.highlightedColor], range: NSRange.init(location: 3, length: title.count - 3))
+                    attributeString.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14),NSAttributedStringKey.foregroundColor:attribute.highlightedColor], range: NSRange.init(location: 0, length: 3))
+                    attributeString.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12),NSAttributedStringKey.foregroundColor:attribute.highlightedColor], range: NSRange.init(location: 3, length: title.count - 3))
                     
                     button.setAttributedTitle(attributeString, for: .selected)
                     
                     
                     let attributeString1 = NSMutableAttributedString.init(string: title)
-                    attributeString1.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 14),NSForegroundColorAttributeName:attribute.normalColor], range: NSRange.init(location: 0, length: 3))
-                    attributeString1.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 12),NSForegroundColorAttributeName:attribute.normalColor], range: NSRange.init(location: 3, length: title.count - 3))
+                    attributeString1.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14),NSAttributedStringKey.foregroundColor:attribute.normalColor], range: NSRange.init(location: 0, length: 3))
+                    attributeString1.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12),NSAttributedStringKey.foregroundColor:attribute.normalColor], range: NSRange.init(location: 3, length: title.count - 3))
                     
                     button.setAttributedTitle(attributeString1, for: .normal)
                 }

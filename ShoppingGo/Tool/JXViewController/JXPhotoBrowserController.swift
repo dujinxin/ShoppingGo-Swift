@@ -106,7 +106,7 @@ class JXPhotoBrowserController: UICollectionViewController {
         }else{
             cell.imageView.image = UIImage(named: urlStr)
         }
-        cell.closeBlock = { _ in
+        cell.closeBlock = {
             self.dismiss(animated: true, completion: nil)
         }
         cell.showAddtionBlock = {
@@ -211,7 +211,7 @@ class PhotoImageView: UICollectionViewCell,UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     //MARK: - imageView gesture method
-    func tapDismiss(tap:UITapGestureRecognizer) {
+    @objc func tapDismiss(tap:UITapGestureRecognizer) {
         //收起
         print("收起")
         if let block = closeBlock {
@@ -221,7 +221,7 @@ class PhotoImageView: UICollectionViewCell,UIScrollViewDelegate {
     /// 缩放
     ///
     /// - Parameter tap: 双击
-    func tapZoomScale(tap:UITapGestureRecognizer) {
+    @objc func tapZoomScale(tap:UITapGestureRecognizer) {
         //
         UIView.animate(withDuration: 0.3, animations: { 
             if self.scrollView.zoomScale == 1.0 {
@@ -236,7 +236,7 @@ class PhotoImageView: UICollectionViewCell,UIScrollViewDelegate {
     /// 缩放
     ///
     /// - Parameter pinch: pinch gesture
-    func pinchZoonScale(pinch:UIPinchGestureRecognizer) {
+    @objc func pinchZoonScale(pinch:UIPinchGestureRecognizer) {
         var size = pinch.view?.frame.size
         size?.width *= pinch.scale
         size?.height *= pinch.scale
@@ -245,7 +245,7 @@ class PhotoImageView: UICollectionViewCell,UIScrollViewDelegate {
     /// 长按
     ///
     /// - Parameter press: press gesture
-    func pressAction(press:UILongPressGestureRecognizer) {
+    @objc func pressAction(press:UILongPressGestureRecognizer) {
         //print("long press")
         switch press.state {
         case .began:

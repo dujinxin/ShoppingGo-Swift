@@ -96,7 +96,7 @@ class JXPlaceHolderTextView: UITextView {
         self.placeHolderView.isHidden = !newText.isEmpty
     }
     /// 添加通知，是为了确保用户修改值时placeHolder正常显示
-    func placeHolderTextChange(nofiy:Notification) {
+    @objc func placeHolderTextChange(nofiy:Notification) {
         if placeHolderText.isEmpty == true {
             return
         }

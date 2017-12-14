@@ -116,15 +116,15 @@ extension JXLoginViewController : UITextFieldDelegate{
         
     }
     
-    func textFieldEditingChanged() {
+    @objc func textFieldEditingChanged() {
         
     }
-    func dismissVC() {
+    @objc func dismissVC() {
         dismiss(animated: true) { 
             
         }
     }
-    func login() {
+    @objc func login() {
         self.showLoadView()
         JXRequest.request(url: ApiString.userLogin.rawValue, param: ["ua":userTextField.text!,"Up":passwordTextField.text!], success: { (data, msg) in
             self.hideLoadView()

@@ -191,7 +191,7 @@ extension JXGuideView {
         }
     }
     
-    func touchDismiss(button:UIButton) {
+    @objc func touchDismiss(button:UIButton) {
         //收起
         print("收起")
         if let block = dismissBlock {

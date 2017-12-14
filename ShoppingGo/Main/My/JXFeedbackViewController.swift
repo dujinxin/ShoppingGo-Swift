@@ -57,7 +57,7 @@ extension JXFeedbackViewController : UITextViewDelegate{
         }
         return true
     }
-    func placeHolderTextChange(nofiy:Notification) {
+    @objc func placeHolderTextChange(nofiy:Notification) {
         
     }
 }

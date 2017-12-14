@@ -58,7 +58,7 @@ class JXEditAddressController: JXTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func save() {
+    @objc func save() {
         var name : String?
         var phone : String?
         //var address : String?

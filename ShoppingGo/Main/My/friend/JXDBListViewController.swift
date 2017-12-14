@@ -40,20 +40,20 @@ class JXDBListViewController: JXTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func dropTable() {
+    @objc func dropTable() {
         if JXBaseDB.default.dropTable() == true {
             self.showNotice(notice: "删除表成功")
             requestData()
         }
     }
-    func editChanged() {
+    @objc func editChanged() {
         guard var isEdit = self.tableView?.isEditing else {
             return
         }
         isEdit = !isEdit
         self.tableView?.setEditing(isEdit, animated: true)
     }
-    func edit(isEidt:Bool = false,index:Int) {
+    @objc func edit(isEidt:Bool = false,index:Int) {
         let editVC = JXEditDBUserController()
         if isEidt {
             editVC.title = "修改数据"

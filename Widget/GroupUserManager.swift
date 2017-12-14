@@ -14,16 +14,16 @@ private let pathComponent = "Library/Caches/userAccound.json"
 
 class GroupUserModel: NSObject {
     
-    var Token : String?
-    var RefreshToken : String?
-    var PhoneNumber : String?
-    var UserID : Int = 0
-    var UserName : String?
-    var UserAge : Int = 0
-    var UserImage : String?
-    var UserGender : Int = 0
-    var HxAccount : String?
-    var HxPassword : String?
+    @objc var Token : String?
+    @objc var RefreshToken : String?
+    @objc var PhoneNumber : String?
+    @objc var UserID : Int = 0
+    @objc var UserName : String?
+    @objc var UserAge : Int = 0
+    @objc var UserImage : String?
+    @objc var UserGender : Int = 0
+    @objc var HxAccount : String?
+    @objc var HxPassword : String?
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
@@ -57,14 +57,15 @@ class GroupUserManager {
                 return
         }
         //不起作用，不知为何，愁死......
+        //MARK:找到原因了，是因为widget使用的swift4.0版本，而swift4.0的属性remove掉了set方法，从而导致属性设置出错，目前的解决方法是把属性定义为oc属性（加关键字@objc）
         userModel.setValuesForKeys(dict)
         
-        userModel.UserName = dict["UserName"] as? String
-        userModel.Token = dict["Token"] as? String
-        userModel.PhoneNumber = dict["PhoneNumber"] as? String
-        userModel.UserImage = dict["UserImage"] as? String
-        userModel.UserAge = dict["UserAge"] as? Int ?? 0
-        userModel.UserGender = dict["UserGender"] as? Int ?? 0
+//        userModel.UserName = dict["UserName"] as? String
+//        userModel.Token = dict["Token"] as? String
+//        userModel.PhoneNumber = dict["PhoneNumber"] as? String
+//        userModel.UserImage = dict["UserImage"] as? String
+//        userModel.UserAge = dict["UserAge"] as? Int ?? 0
+//        userModel.UserGender = dict["UserGender"] as? Int ?? 0
         
         print("用户地址：\(url)")
         msg = "用户地址：\(userModel.UserName)"

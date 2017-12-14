@@ -28,7 +28,7 @@ class HomeViewController: JXBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func additionClick() {
+    @objc func additionClick() {
         let addition = JXAdditionView(frame: CGRect())
         addition.arrowPoint = CGPoint(x: kScreenWidth - 25, y: 67)
         addition.dataSource = self

@@ -116,7 +116,7 @@ extension JXTabBarController {
         //不是首次使用，本地有保存token,所以直接用长token去刷新token即可
         UserManager.default.refreshToken(completion: nil)
     }
-    func presentLoginViewController(notif:Notification) {
+    @objc func presentLoginViewController(notif:Notification) {
         present(JXLoginViewController(), animated: true) {}
     }
 }

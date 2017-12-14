@@ -44,7 +44,7 @@ class JXEditDBUserController: JXTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func save() {
+    @objc func save() {
         var name : String?
         var age : String?
         var gender : String?
@@ -130,7 +130,7 @@ class JXEditDBUserController: JXTableViewController {
             }
         }
     }
-    func insertDatasClick() {
+    @objc func insertDatasClick() {
         if self.insertData() == true {
             self.showNotice(notice: "批量添加成功")
         }

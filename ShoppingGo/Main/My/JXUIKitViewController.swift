@@ -88,7 +88,6 @@ extension JXUIKitViewController {
 }
 extension JXUIKitViewController {
     
-    
     override func setUpDefaultView() {
         
     }

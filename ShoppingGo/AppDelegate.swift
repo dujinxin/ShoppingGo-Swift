@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }else if url.host == "notice"{
                     JXViewManager.manager.showJXNoticeView(notice: "Widget message")
                 }else{
-                    print("未定义host:\(url.host)")
+                    print("未定义host:\(String(describing: url.host))")
                 }
             }
         }
