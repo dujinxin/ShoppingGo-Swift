@@ -10,5 +10,11 @@ target 'ShoppingGo' do
   pod "MBProgressHUD"
   pod "FMDB"
   pod "SnapKit"
+  
 end
 
+target 'Widget' do
+  use_frameworks!
+
+  pod "SDWebImage"
+end

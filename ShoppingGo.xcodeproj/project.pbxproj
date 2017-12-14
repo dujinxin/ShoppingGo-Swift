@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12CDBE06ABE582A9A12A743E /* Pods_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7070ABA17526247132B959 /* Pods_Widget.framework */; };
 		2CE2BBEE9D969C72D5CCFD28 /* Pods_ShoppingGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */; };
 		351296EF1F9990A5003A08F2 /* JXNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351296EE1F9990A5003A08F2 /* JXNavigationBar.swift */; };
 		3514D65B1F187117001744DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3514D65A1F187117001744DD /* UIViewController+Extension.swift */; };
@@ -213,7 +214,10 @@
 		35F7853D1F9F1FC800C77942 /* JXOrderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXOrderListController.swift; sourceTree = "<group>"; };
 		35F7853F1F9F204100C77942 /* JXOrderManageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXOrderManageController.swift; sourceTree = "<group>"; };
 		35F785411F9F36EC00C77942 /* JXContactsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXContactsController.swift; sourceTree = "<group>"; };
+		9F0AE18DF462D43EAE46D288 /* Pods-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Widget/Pods-Widget.release.xcconfig"; sourceTree = "<group>"; };
+		EF7070ABA17526247132B959 /* Pods_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F095A86DA34B38E1AFA68FBB /* Pods-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Widget/Pods-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35CB20441FDE909F001EBA33 /* NotificationCenter.framework in Frameworks */,
+				12CDBE06ABE582A9A12A743E /* Pods_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +247,8 @@
 			children = (
 				33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */,
 				F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */,
+				F095A86DA34B38E1AFA68FBB /* Pods-Widget.debug.xcconfig */,
+				9F0AE18DF462D43EAE46D288 /* Pods-Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -596,6 +603,7 @@
 			children = (
 				F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */,
 				35CB20431FDE909F001EBA33 /* NotificationCenter.framework */,
+				EF7070ABA17526247132B959 /* Pods_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -629,9 +637,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35CB20511FDE909F001EBA33 /* Build configuration list for PBXNativeTarget "Widget" */;
 			buildPhases = (
+				5C7607197220E7E6757281CD /* [CP] Check Pods Manifest.lock */,
 				35CB203E1FDE909F001EBA33 /* Sources */,
 				35CB203F1FDE909F001EBA33 /* Frameworks */,
 				35CB20401FDE909F001EBA33 /* Resources */,
+				A55891C0D602C88964A7D48E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -756,6 +766,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C7607197220E7E6757281CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5DC92F2A2E65E3E54B148F4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -769,6 +794,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A55891C0D602C88964A7D48E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Widget/Pods-Widget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1053,6 +1093,7 @@
 		};
 		35CB204F1FDE909F001EBA33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F095A86DA34B38E1AFA68FBB /* Pods-Widget.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -1082,6 +1123,7 @@
 		};
 		35CB20501FDE909F001EBA33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F0AE18DF462D43EAE46D288 /* Pods-Widget.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;

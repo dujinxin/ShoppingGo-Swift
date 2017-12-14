@@ -9,6 +9,8 @@
 import UIKit
 import NotificationCenter
 
+import SDWebImage
+
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var textLabel: UILabel!
@@ -20,13 +22,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 80, height: 40)
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         button.setTitle("测试", for: .normal)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
         button.center = CGPoint(x: self.view.center.x, y: 200)
         
         button.setTitle(GroupUserManager.default.userModel.UserName, for: .normal)
+        button.sd_setImage(with: URL(string: GroupUserManager.default.userModel.UserImage!), for: .normal)
+        button.contentMode = .scaleAspectFill
         
         self.textLabel.text = GroupUserManager.default.msg
     }
