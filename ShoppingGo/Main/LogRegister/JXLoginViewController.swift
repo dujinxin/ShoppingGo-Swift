@@ -131,7 +131,11 @@ extension JXLoginViewController : UITextFieldDelegate{
             guard let data = data as? Dictionary<String, Any> else{
                 return
             }
+            //group文件存储
+            GroupUserManager.default.saveUserInfo(dict: data)
+            //文件存储
             let isSuccess = UserManager.default.saveUserInfo(dict: data)
+            //数据库存储
             let _ = JXUserDB.shareInstance.createTable(keys: Array(data.keys))
             let _ = JXUserDB.shareInstance.saveUserInfo(data: data)
             print("保存token：\(isSuccess)")

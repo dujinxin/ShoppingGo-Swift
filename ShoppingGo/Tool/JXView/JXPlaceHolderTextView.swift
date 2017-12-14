@@ -20,19 +20,17 @@ class JXPlaceHolderTextView: UITextView {
     var placeHolderText : String = "" {
         didSet{
             self.placeHolderView.text = placeHolderText
+            self.placeHolderView.isHidden = placeHolderText.isEmpty
         }
     }
-    /// //UITextField 默认为R:0 G:0 B:0.1 A:0.22
-    var placeHolderColor : UIColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0.1, alpha: 0.22) {
+    /// UITextField 默认为R:0 G:0 B:0.1 A:0.22
+    var placeHolderColor : UIColor = UIColor(red: 0, green: 0, blue: 0.1, alpha: 0.22) {
         didSet{
             self.placeHolderView.textColor = placeHolderColor
         }
     }
     /// 与文本字体大小一致
     //var placeHolderFont : UIFont!
-    
-    
-    
     
     lazy var placeHolderView: UILabel = {
         let lab = UILabel()
@@ -41,6 +39,7 @@ class JXPlaceHolderTextView: UITextView {
         lab.textColor = self.placeHolderColor
         lab.text = self.placeHolderText
         lab.textAlignment = .left
+        lab.isHidden = true
         lab.sizeToFit()
      
         return lab
@@ -82,14 +81,21 @@ class JXPlaceHolderTextView: UITextView {
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        self.removeObserver(self, forKeyPath: "text")
     }
     func setPlaceHolderView() {
         addSubview(self.placeHolderView)
         sendSubview(toBack: self.placeHolderView)
-        
+        self.addObserver(self, forKeyPath: "text", options: [.old,.new], context: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(placeHolderTextChange(nofiy:)), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
     }
-    
+    /// 添加观察者，是为了确保用户设置初始值时placeHolder正常显示
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let keyPath = keyPath,keyPath == "text",let change = change,let newText = change[.newKey] as? String else { return }
+        print(newText)
+        self.placeHolderView.isHidden = !newText.isEmpty
+    }
+    /// 添加通知，是为了确保用户修改值时placeHolder正常显示
     func placeHolderTextChange(nofiy:Notification) {
         if placeHolderText.isEmpty == true {
             return

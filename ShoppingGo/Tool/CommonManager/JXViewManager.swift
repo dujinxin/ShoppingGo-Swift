@@ -58,3 +58,16 @@ extension JXViewManager {
         noticeView?.show()
     }
 }
+
+extension JXViewManager {
+    func pushViewController(_ viewController:UIViewController) {
+        if let vc = UIViewController.topStackViewController {
+            vc.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    func presentViewController(_ viewController:UIViewController) {
+        if let vc = UIViewController.topStackViewController {
+            vc.present(viewController, animated: true, completion: {})
+        }
+    }
+}

@@ -41,8 +41,17 @@ class JXTableViewController: JXBaseViewController{
     }
     
 }
-
-
+extension JXTableViewController {
+    override func requestData() {
+        
+    }
+    /// request data
+    ///
+    /// - Parameter withPage: load data for page,
+    func request(withPage:Int) {
+        
+    }
+}
 extension JXTableViewController : UITableViewDelegate,UITableViewDataSource{
     
     func setTableView(style:UITableViewStyle) {

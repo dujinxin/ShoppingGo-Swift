@@ -11,3 +11,4 @@ target 'ShoppingGo' do
   pod "FMDB"
   pod "SnapKit"
 end
+

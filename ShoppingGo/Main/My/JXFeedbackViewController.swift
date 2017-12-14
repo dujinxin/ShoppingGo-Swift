@@ -10,6 +10,14 @@ import UIKit
 
 class JXFeedbackViewController: JXBaseViewController {
     
+    lazy var textView: JXPlaceHolderTextView = {
+        //        let textView = JXPlaceHolderTextView(frame: CGRect(x: 10, y:kNavStatusHeight + 10, width: kScreenWidth - 20, height: 80), textContainer: NSTextContainer(size: CGSize(width: 100, height: 44)))
+        let textView = JXPlaceHolderTextView(frame: CGRect(x: 10, y:kNavStatusHeight + 10, width: kScreenWidth - 20, height: 80))
+        textView.placeHolderText = "为了寻你，我错过了许许许多多的良辰美景!"
+        textView.delegate = self
+        return textView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,18 +35,17 @@ class JXFeedbackViewController: JXBaseViewController {
 
 extension JXFeedbackViewController : UITextViewDelegate{
     override func setUpMainView() {
-        //        let textView = JXPlaceHolderTextView(frame: CGRect(x: 10, y:kNavStatusHeight + 10, width: kScreenWidth - 20, height: 80), textContainer: NSTextContainer(size: CGSize(width: 100, height: 44)))
-        let textView = JXPlaceHolderTextView(frame: CGRect(x: 10, y:kNavStatusHeight + 10, width: kScreenWidth - 20, height: 80))
-        textView.placeHolderText = "为了寻你，我错过了许许许多多的良辰美景!"
-        textView.delegate = self
-        view.addSubview(textView)
+
+        view.addSubview(self.textView)
+
+        //self.textView.text = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
         
         NotificationCenter.default.addObserver(self, selector: #selector(placeHolderTextChange(nofiy:)), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
         
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         //限制输入字符个数
-        if textView.text.characters.count > 100 {
+        if range.location >= 100{
             
             self.showNotice(notice: "字符个数不能大于100")
             return false

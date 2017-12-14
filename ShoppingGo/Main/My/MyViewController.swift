@@ -63,6 +63,7 @@ class MyViewController: JXTableViewController {
         
         self.customNavigationItem.rightBarButtonItem = UIBarButtonItem.init(imageName: "title_icon_notice", target: self, action: #selector(nextPage))
         
+        print(GroupUserManager.default.userModel.UserName)
         
         setHeadView()
         

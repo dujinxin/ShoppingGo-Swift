@@ -78,6 +78,12 @@
 		35CB1FD81FD7C122001EBA33 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB1FD71FD7C122001EBA33 /* DataManager.swift */; };
 		35CB1FDC1FD7F89D001EBA33 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB1FDB1FD7F89D001EBA33 /* FileManager+Extension.swift */; };
 		35CB1FE01FD8E5B0001EBA33 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB1FDF1FD8E5B0001EBA33 /* UserDefaults+Extension.swift */; };
+		35CB20441FDE909F001EBA33 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CB20431FDE909F001EBA33 /* NotificationCenter.framework */; };
+		35CB20471FDE909F001EBA33 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20461FDE909F001EBA33 /* TodayViewController.swift */; };
+		35CB204A1FDE909F001EBA33 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CB20481FDE909F001EBA33 /* MainInterface.storyboard */; };
+		35CB204E1FDE909F001EBA33 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 35CB20421FDE909F001EBA33 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35CB20571FE11F2D001EBA33 /* GroupUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20561FE11F2D001EBA33 /* GroupUserManager.swift */; };
+		35CB20591FE13EF1001EBA33 /* GroupUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20581FE13EF1001EBA33 /* GroupUserManager.swift */; };
 		35DE9E931F14A917006F271E /* JXBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E8E1F14A917006F271E /* JXBaseRequest.swift */; };
 		35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E8F1F14A917006F271E /* JXNetworkError.swift */; };
 		35DE9E951F14A917006F271E /* JXNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E901F14A917006F271E /* JXNetworkManager.swift */; };
@@ -88,6 +94,30 @@
 		35F785401F9F204100C77942 /* JXOrderManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F7853F1F9F204100C77942 /* JXOrderManageController.swift */; };
 		35F785421F9F36EC00C77942 /* JXContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F785411F9F36EC00C77942 /* JXContactsController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35CB204C1FDE909F001EBA33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35260D201EE696EF001B31A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35CB20411FDE909F001EBA33;
+			remoteInfo = Widget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		35CB20521FDE909F001EBA33 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				35CB204E1FDE909F001EBA33 /* Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingGo/Pods-ShoppingGo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +195,15 @@
 		35CB1FD71FD7C122001EBA33 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		35CB1FDB1FD7F89D001EBA33 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		35CB1FDF1FD8E5B0001EBA33 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		35CB20421FDE909F001EBA33 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		35CB20431FDE909F001EBA33 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		35CB20461FDE909F001EBA33 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		35CB20491FDE909F001EBA33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		35CB204B1FDE909F001EBA33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35CB20531FE0D9AD001EBA33 /* ShoppingGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShoppingGo.entitlements; sourceTree = "<group>"; };
+		35CB20561FE11F2D001EBA33 /* GroupUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUserManager.swift; sourceTree = "<group>"; };
+		35CB20581FE13EF1001EBA33 /* GroupUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserManager.swift; sourceTree = "<group>"; };
+		35CB205B1FE22DEF001EBA33 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		35DE9E8E1F14A917006F271E /* JXBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseRequest.swift; sourceTree = "<group>"; };
 		35DE9E8F1F14A917006F271E /* JXNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkError.swift; sourceTree = "<group>"; };
 		35DE9E901F14A917006F271E /* JXNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkManager.swift; sourceTree = "<group>"; };
@@ -184,6 +223,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE2BBEE9D969C72D5CCFD28 /* Pods_ShoppingGo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CB203F1FDE909F001EBA33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CB20441FDE909F001EBA33 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				35260D2A1EE696EF001B31A1 /* ShoppingGo */,
+				35CB20451FDE909F001EBA33 /* Widget */,
 				35260D291EE696EF001B31A1 /* Products */,
 				273C03ABE8E514D0085F3DDD /* Pods */,
 				6C219682BB50C243C35AE9F1 /* Frameworks */,
@@ -301,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				35260D281EE696EF001B31A1 /* ShoppingGo.app */,
+				35CB20421FDE909F001EBA33 /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,6 +357,7 @@
 		35260D2A1EE696EF001B31A1 /* ShoppingGo */ = {
 			isa = PBXGroup;
 			children = (
+				35CB20531FE0D9AD001EBA33 /* ShoppingGo.entitlements */,
 				35260D3D1EE697AD001B31A1 /* Basic */,
 				35260D501EE6BB6C001B31A1 /* Tool */,
 				35260D441EE697AD001B31A1 /* Main */,
@@ -508,6 +558,18 @@
 			path = Photo;
 			sourceTree = "<group>";
 		};
+		35CB20451FDE909F001EBA33 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				35CB205B1FE22DEF001EBA33 /* Widget.entitlements */,
+				35CB20581FE13EF1001EBA33 /* GroupUserManager.swift */,
+				35CB20461FDE909F001EBA33 /* TodayViewController.swift */,
+				35CB20481FDE909F001EBA33 /* MainInterface.storyboard */,
+				35CB204B1FDE909F001EBA33 /* Info.plist */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		35DE9E981F14BD4C006F271E /* CommonManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				35DE9E9A1F14BD6D006F271E /* UserManager.swift */,
+				35CB20561FE11F2D001EBA33 /* GroupUserManager.swift */,
 			);
 			path = UserManager;
 			sourceTree = "<group>";
@@ -532,6 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				F07534B2E8D83D4B13ADC460 /* Pods_ShoppingGo.framework */,
+				35CB20431FDE909F001EBA33 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -549,15 +613,34 @@
 				35260D261EE696EF001B31A1 /* Resources */,
 				240B19F868771E172926939A /* [CP] Embed Pods Frameworks */,
 				22A7809498CD3188E5E19878 /* [CP] Copy Pods Resources */,
+				35CB20521FDE909F001EBA33 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				35CB204D1FDE909F001EBA33 /* PBXTargetDependency */,
 			);
 			name = ShoppingGo;
 			productName = ShoppingGo;
 			productReference = 35260D281EE696EF001B31A1 /* ShoppingGo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		35CB20411FDE909F001EBA33 /* Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35CB20511FDE909F001EBA33 /* Build configuration list for PBXNativeTarget "Widget" */;
+			buildPhases = (
+				35CB203E1FDE909F001EBA33 /* Sources */,
+				35CB203F1FDE909F001EBA33 /* Frameworks */,
+				35CB20401FDE909F001EBA33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Widget;
+			productName = Widget;
+			productReference = 35CB20421FDE909F001EBA33 /* Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -566,15 +649,36 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JX;
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "杜进新";
 				TargetAttributes = {
 					35260D271EE696EF001B31A1 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = JD78BK6EHC;
+						DevelopmentTeam = PZN2XEQRUA;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					35CB20411FDE909F001EBA33 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = PZN2XEQRUA;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -585,6 +689,7 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				Base,
 			);
 			mainGroup = 35260D1F1EE696EF001B31A1;
 			productRefGroup = 35260D291EE696EF001B31A1 /* Products */;
@@ -592,6 +697,7 @@
 			projectRoot = "";
 			targets = (
 				35260D271EE696EF001B31A1 /* ShoppingGo */,
+				35CB20411FDE909F001EBA33 /* Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -606,6 +712,14 @@
 				35BF03921F442221004A77E9 /* JXDBListCell.xib in Resources */,
 				3514D6801F1D9E17001744DD /* Localizable.strings in Resources */,
 				35CB1FCC1FD52FA8001EBA33 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CB20401FDE909F001EBA33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CB204A1FDE909F001EBA33 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,13 +849,31 @@
 				3514D7301F204E59001744DD /* JXTabBarController.swift in Sources */,
 				351DD30A1F14E1AE00E90170 /* UIView+Extension.swift in Sources */,
 				35260D491EE697AD001B31A1 /* JXBaseViewController.swift in Sources */,
+				35CB20571FE11F2D001EBA33 /* GroupUserManager.swift in Sources */,
 				355948261F3455C9008145BB /* JXViewManager.swift in Sources */,
 				35CB1FE01FD8E5B0001EBA33 /* UserDefaults+Extension.swift in Sources */,
 				355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		35CB203E1FDE909F001EBA33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CB20591FE13EF1001EBA33 /* GroupUserManager.swift in Sources */,
+				35CB20471FDE909F001EBA33 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35CB204D1FDE909F001EBA33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35CB20411FDE909F001EBA33 /* Widget */;
+			targetProxy = 35CB204C1FDE909F001EBA33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3514D6821F1D9E17001744DD /* Localizable.strings */ = {
@@ -760,6 +892,14 @@
 				35CB1FCF1FD52FBB001EBA33 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		35CB20481FDE909F001EBA33 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35CB20491FDE909F001EBA33 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -864,15 +1004,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33983F2A219F7DCD75ADBC1E /* Pods-ShoppingGo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = JD78BK6EHC;
+				CODE_SIGN_ENTITLEMENTS = ShoppingGo/ShoppingGo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZN2XEQRUA;
 				INFOPLIST_FILE = ShoppingGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MySelf.ShoppingGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zpsy.ShoppingGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -883,17 +1029,81 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5947C9FA650EA55E37E4914 /* Pods-ShoppingGo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = JD78BK6EHC;
+				CODE_SIGN_ENTITLEMENTS = ShoppingGo/ShoppingGo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZN2XEQRUA;
 				INFOPLIST_FILE = ShoppingGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MySelf.ShoppingGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zpsy.ShoppingGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		35CB204F1FDE909F001EBA33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZN2XEQRUA;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zpsy.ShoppingGo.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35CB20501FDE909F001EBA33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZN2XEQRUA;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zpsy.ShoppingGo.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -914,6 +1124,15 @@
 			buildConfigurations = (
 				35260D3B1EE696EF001B31A1 /* Debug */,
 				35260D3C1EE696EF001B31A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35CB20511FDE909F001EBA33 /* Build configuration list for PBXNativeTarget "Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35CB204F1FDE909F001EBA33 /* Debug */,
+				35CB20501FDE909F001EBA33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

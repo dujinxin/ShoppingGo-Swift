@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         
         let vc = JXTabBarController()
+        vc.delegate = self
         
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
@@ -51,7 +52,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url)
+        if app.canOpenURL(url) {
+            if (url.scheme == "Widget") {
+                if url.host == "my" {
+                    let tabVC = self.window?.rootViewController as! JXTabBarController
+                    tabVC.selectedIndex = 3
+                }else if url.host == "order" {
+                    let infoVC = JXOrderManageController()
+                    JXViewManager.manager.pushViewController(infoVC)
+                }else if url.host == "address" {
+                    let infoVC = JXAddressListController()
+                    JXViewManager.manager.pushViewController(infoVC)
+                }else if url.host == "myInfo"{
+                    let infoVC = JXUserInfoViewController()
+                    JXViewManager.manager.presentViewController(infoVC)
+                }else if url.host == "notice"{
+                    JXViewManager.manager.showJXNoticeView(notice: "Widget message")
+                }else{
+                    print("未定义host:\(String(describing: url.host))")
+                }
+            }
+        }
+        return true
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print(url)
+        if application.canOpenURL(url) {
+            if (url.scheme == "Widget") {
+                if url.host == "my" {
+                    let tabVC = self.window?.rootViewController as! JXTabBarController
+                    tabVC.selectedIndex = 3
+                }else if url.host == "order" {
+                    let infoVC = JXOrderManageController()
+                    JXViewManager.manager.pushViewController(infoVC)
+                }else if url.host == "address" {
+                    let infoVC = JXAddressListController()
+                    JXViewManager.manager.pushViewController(infoVC)
+                }else if url.host == "myInfo"{
+                    let infoVC = JXUserInfoViewController()
+                    JXViewManager.manager.presentViewController(infoVC)
+                }else if url.host == "notice"{
+                    JXViewManager.manager.showJXNoticeView(notice: "Widget message")
+                }else{
+                    print("未定义host:\(url.host)")
+                }
+            }
+        }
+        return true
+    }
 
-
+}
+extension AppDelegate:UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+    }
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return true
+    }
 }
 

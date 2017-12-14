@@ -93,13 +93,6 @@ extension JXBaseViewController {
     func requestData() {
         
     }
-    
-    /// request data
-    ///
-    /// - Parameter withPage: load data for page,
-    func request(withPage:Int) {
-        
-    }
     func setUpMainView() {
         //
     }

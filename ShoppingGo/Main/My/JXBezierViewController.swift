@@ -91,6 +91,7 @@ extension JXBezierViewController {
     override func setUpDefaultView() {
         
     }
+    
     override func requestData() {
         updateMainView()
     }
