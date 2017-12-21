@@ -10,9 +10,9 @@ import UIKit
 
 class JXAddressEntity: BaseModel {
 
-    var name : String?
-    var phone : String?
-    var address : String?
-    var isDefault : Int = 0
+    @objc var name : String?
+    @objc var phone : String?
+    @objc var address : String?
+    @objc var isDefault : Int = 0
     
 }

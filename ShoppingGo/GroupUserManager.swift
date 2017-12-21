@@ -33,20 +33,18 @@ class GroupUserModel: NSObject {
 class GroupUserManager {
     
     static let `default` = GroupUserManager()
+    var isFile :Bool = true
+    
+    var msg : String = "null"
     
     var userModel : GroupUserModel = GroupUserModel()
     /// 获得存储的路径
     var pathUrl: URL? {
-        var url : URL?
-//        if #available(iOS 11.0, *) {
-//            url = NSFileProviderManager.default.documentStorageURL
-//        } else {
-            //获得当前的组的路径
-            url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupBundleIdentifier)
-//        }
+        
+        //获得当前的组的路径
+        var url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupBundleIdentifier)
         //返回拼接完毕的路径
         url?.appendPathComponent(pathComponent)
-        
         return url
     }
     
@@ -60,8 +58,20 @@ class GroupUserManager {
                 print("用户地址不存在:\(String(describing: self.pathUrl))")
                 return
         }
-        self.userModel.setValuesForKeys(dict)
+        saveUser(toUserDefaults: dict, key: "")
+        //不起作用，不知为何，愁死......
+        //MARK:找到原因了，是因为widget使用的swift4.0版本，而swift4.0的属性remove掉了set方法，从而导致属性设置出错，目前的解决方法是把属性定义为oc属性（加关键字@objc）
+        userModel.setValuesForKeys(dict)
+        
+//        userModel.UserName = dict["UserName"] as? String
+//        userModel.Token = dict["Token"] as? String
+//        userModel.PhoneNumber = dict["PhoneNumber"] as? String
+//        userModel.UserImage = dict["UserImage"] as? String
+//        userModel.UserAge = dict["UserAge"] as? Int ?? 0
+//        userModel.UserGender = dict["UserGender"] as? Int ?? 0
+        
         print("用户地址：\(url)")
+        msg = "用户地址：\(userModel.UserName)"
     }
     
     var isLogin: Bool {
@@ -91,5 +101,19 @@ class GroupUserManager {
             print("删除用户文件出错")
         }
     }
+    
+    func saveUser(toUserDefaults dict:Dictionary<String,Any>, key:String) {
+        let userDefaults = UserDefaults.init(suiteName: groupBundleIdentifier)
+        userDefaults?.set(dict, forKey: "key_userDefaults_user")
+        userDefaults?.synchronize()
+    }
+    func getUser(fromUserDefaults key:String) -> Dictionary<String,Any>?{
+        let userDefaults = UserDefaults.init(suiteName: groupBundleIdentifier)
+        if let dict = userDefaults?.object(forKey: "key_userDefaults_user") {
+            return dict as? Dictionary<String, Any>
+        }else{
+            print("未查询到用户数据")
+            return nil
+        }
+    }
 }
-

@@ -2,6 +2,65 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<string>字典信息，如传值使用 （可选）</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>标签的唯一标识 （必填）</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>标签标题（必填）</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>标签副标题 （可选）</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>使用系统图标的类型，如搜索、定位、home等（可选）</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>使用项目中的图片作为标签图标 （可选）</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<string>字典信息，如传值使用 （可选）</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>标签的唯一标识 （必填）</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>标签标题（必填）</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>标签副标题 （可选）</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>使用系统图标的类型，如搜索、定位、home等（可选）</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>使用项目中的图片作为标签图标 （可选）</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<string>字典信息，如传值使用 （可选）</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>标签的唯一标识 （必填）</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>标签标题（必填）</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>标签副标题 （可选）</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>使用系统图标的类型，如搜索、定位、home等（可选）</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>使用项目中的图片作为标签图标 （可选）</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<string>字典信息，如传值使用 （可选）</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>标签的唯一标识 （必填）</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>标签标题（必填）</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>标签副标题 （可选）</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>使用系统图标的类型，如搜索、定位、home等（可选）</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>使用项目中的图片作为标签图标 （可选）</string>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

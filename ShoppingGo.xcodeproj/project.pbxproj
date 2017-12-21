@@ -83,8 +83,8 @@
 		35CB20471FDE909F001EBA33 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20461FDE909F001EBA33 /* TodayViewController.swift */; };
 		35CB204A1FDE909F001EBA33 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CB20481FDE909F001EBA33 /* MainInterface.storyboard */; };
 		35CB204E1FDE909F001EBA33 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 35CB20421FDE909F001EBA33 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		35CB20571FE11F2D001EBA33 /* GroupUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20561FE11F2D001EBA33 /* GroupUserManager.swift */; };
-		35CB20591FE13EF1001EBA33 /* GroupUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20581FE13EF1001EBA33 /* GroupUserManager.swift */; };
+		35CB20B81FE92F86001EBA33 /* GroupUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20B71FE92F86001EBA33 /* GroupUserManager.swift */; };
+		35CB20BC1FE9FC3F001EBA33 /* GroupUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB20B71FE92F86001EBA33 /* GroupUserManager.swift */; };
 		35DE9E931F14A917006F271E /* JXBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E8E1F14A917006F271E /* JXBaseRequest.swift */; };
 		35DE9E941F14A917006F271E /* JXNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E8F1F14A917006F271E /* JXNetworkError.swift */; };
 		35DE9E951F14A917006F271E /* JXNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE9E901F14A917006F271E /* JXNetworkManager.swift */; };
@@ -116,6 +116,16 @@
 				35CB204E1FDE909F001EBA33 /* Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CB206E1FE922C7001EBA33 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -202,9 +212,8 @@
 		35CB20491FDE909F001EBA33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		35CB204B1FDE909F001EBA33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CB20531FE0D9AD001EBA33 /* ShoppingGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShoppingGo.entitlements; sourceTree = "<group>"; };
-		35CB20561FE11F2D001EBA33 /* GroupUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUserManager.swift; sourceTree = "<group>"; };
-		35CB20581FE13EF1001EBA33 /* GroupUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserManager.swift; sourceTree = "<group>"; };
 		35CB205B1FE22DEF001EBA33 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		35CB20B71FE92F86001EBA33 /* GroupUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserManager.swift; sourceTree = "<group>"; };
 		35DE9E8E1F14A917006F271E /* JXBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseRequest.swift; sourceTree = "<group>"; };
 		35DE9E8F1F14A917006F271E /* JXNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkError.swift; sourceTree = "<group>"; };
 		35DE9E901F14A917006F271E /* JXNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNetworkManager.swift; sourceTree = "<group>"; };
@@ -364,6 +373,7 @@
 		35260D2A1EE696EF001B31A1 /* ShoppingGo */ = {
 			isa = PBXGroup;
 			children = (
+				35CB20B71FE92F86001EBA33 /* GroupUserManager.swift */,
 				35CB20531FE0D9AD001EBA33 /* ShoppingGo.entitlements */,
 				35260D3D1EE697AD001B31A1 /* Basic */,
 				35260D501EE6BB6C001B31A1 /* Tool */,
@@ -569,7 +579,6 @@
 			isa = PBXGroup;
 			children = (
 				35CB205B1FE22DEF001EBA33 /* Widget.entitlements */,
-				35CB20581FE13EF1001EBA33 /* GroupUserManager.swift */,
 				35CB20461FDE909F001EBA33 /* TodayViewController.swift */,
 				35CB20481FDE909F001EBA33 /* MainInterface.storyboard */,
 				35CB204B1FDE909F001EBA33 /* Info.plist */,
@@ -593,7 +602,6 @@
 			isa = PBXGroup;
 			children = (
 				35DE9E9A1F14BD6D006F271E /* UserManager.swift */,
-				35CB20561FE11F2D001EBA33 /* GroupUserManager.swift */,
 			);
 			path = UserManager;
 			sourceTree = "<group>";
@@ -622,6 +630,7 @@
 				240B19F868771E172926939A /* [CP] Embed Pods Frameworks */,
 				22A7809498CD3188E5E19878 /* [CP] Copy Pods Resources */,
 				35CB20521FDE909F001EBA33 /* Embed App Extensions */,
+				35CB206E1FE922C7001EBA33 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -889,7 +898,7 @@
 				3514D7301F204E59001744DD /* JXTabBarController.swift in Sources */,
 				351DD30A1F14E1AE00E90170 /* UIView+Extension.swift in Sources */,
 				35260D491EE697AD001B31A1 /* JXBaseViewController.swift in Sources */,
-				35CB20571FE11F2D001EBA33 /* GroupUserManager.swift in Sources */,
+				35CB20B81FE92F86001EBA33 /* GroupUserManager.swift in Sources */,
 				355948261F3455C9008145BB /* JXViewManager.swift in Sources */,
 				35CB1FE01FD8E5B0001EBA33 /* UserDefaults+Extension.swift in Sources */,
 				355947AE1F2B4C45008145BB /* JXStringView.swift in Sources */,
@@ -900,7 +909,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CB20591FE13EF1001EBA33 /* GroupUserManager.swift in Sources */,
+				35CB20BC1FE9FC3F001EBA33 /* GroupUserManager.swift in Sources */,
 				35CB20471FDE909F001EBA33 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1110,7 +1119,7 @@
 				DEVELOPMENT_TEAM = PZN2XEQRUA;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zpsy.ShoppingGo.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1140,7 +1149,7 @@
 				DEVELOPMENT_TEAM = PZN2XEQRUA;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zpsy.ShoppingGo.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

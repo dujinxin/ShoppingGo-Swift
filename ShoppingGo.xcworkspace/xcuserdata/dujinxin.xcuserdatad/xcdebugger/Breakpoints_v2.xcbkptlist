@@ -346,12 +346,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingGo/Main/LogRegister/JXLoginViewController.swift"
-            timestampString = "534929224.197994"
+            timestampString = "535375762.094155"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "dismissVC()"
+            landmarkName = "textFieldEditingChanged()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -873,11 +873,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Widget/TodayViewController.swift"
-            timestampString = "534933781.665272"
+            timestampString = "535375762.095717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "segmentAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
